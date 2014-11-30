@@ -3,13 +3,20 @@
 	
 	<xsl:output method="xml" indent="yes"></xsl:output>
 	
-	<xsl:template match="/" name="MultilineTextOutput">
-	<CarTypes>
-	<xsl:apply-templates> </xsl:apply-templates>
-	</CarTypes>
-		<!-- TODO: Auto-generated template -->
-	</xsl:template>
-	
-	<xsl:copy-of select="/Hotwire/MetaData/CarMetaData/node()"></xsl:copy-of>
+	 <xsl:template match="/">
+      
+     <xsl:for-each select="Hotwire/CarMetaData/CarTypes/Cartype">
+     <CarType>
+	 <xsl:copy-of select="CarTypeName"> </xsl:copy-of>
+         <xsl:copy-of select="CarTypeCode"> </xsl:copy-of>
+         <xsl:copy-of select="PossibleModels"></xsl:copy-of>
+         </CarType>
+   </xsl:for-each>
+	 </xsl:template>
+	 
+	<!-- <xsl:copy>
+                                <xsl:apply-templates match="@*|node()"/>
+                        </xsl:copy> -->
+	<!--  <xsl:copy-of select="/Hotwire/MetaData/CarMetaData/node()"></xsl:copy-of>-->
 	 
 </xsl:stylesheet>
