@@ -70,8 +70,8 @@ public class CarRentalWebServiceClient {
 	    {
 	        file.createNewFile( );
 	    }
-	    FileWriter fw = new FileWriter( file.getAbsoluteFile( ) );
-	    BufferedWriter bw = new BufferedWriter( fw );		   
+	    FileWriter fw = new FileWriter(file.getAbsoluteFile( ) );
+	    BufferedWriter bw = new BufferedWriter(fw);		   
 	    bw.write(xml);
 	    bw.close( );
 	  
@@ -89,7 +89,7 @@ public class CarRentalWebServiceClient {
 	}
 
 	
-	public void writeCarTypeToXsl()
+	public void writeCarTypetoXml()
 	{
 		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
 		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/extractAllCarTypes.xsl");
@@ -111,15 +111,14 @@ public class CarRentalWebServiceClient {
 			e.printStackTrace();
 		}
 		
-		
-		
+		System.out.println("Check XML File");		
 		
 	}
 	
 	public static void main(String[] args) {
 		CarRentalWebServiceClient o = new CarRentalWebServiceClient();
-		//System.out.println(o.getCarTypeInformation());
-		o.writeCarTypeToXsl();
+		System.out.println(o.getCarTypeInformation());
+		o.writeCarTypetoXml();
 	}
 
 }
