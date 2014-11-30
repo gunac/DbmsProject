@@ -1,0 +1,6 @@
+package Model;
+
+public class Features {
+	
+	private int Feature_id;
+}

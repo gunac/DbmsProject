@@ -1,0 +1,10 @@
+package Model;
+
+public class CarType {
+	
+	private String CarTypeCode;
+	private String CarTypeName;
+	private Features PossibleFeatures;
+	private CarModel PossibleModels;
+
+}

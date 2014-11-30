@@ -1,0 +1,55 @@
+package Model;
+
+import java.util.List;
+
+public class CarType {
+	
+	private String CarTypeCode;
+	private String CarTypeName;
+	private Features FeatureId;
+	private List<CarModel> CarId;
+	public String getCarTypeCode() {
+		return CarTypeCode;
+	}
+	public void setCarTypeCode(String carTypeCode) {
+		CarTypeCode = carTypeCode;
+	}
+	public String getCarTypeName() {
+		return CarTypeName;
+	}
+	public void setCarTypeName(String carTypeName) {
+		CarTypeName = carTypeName;
+	}
+	public Features getFeatureId() {
+		return FeatureId;
+	}
+	public void setFeatureId(Features featureId) {
+		FeatureId = featureId;
+	}
+	public List<CarModel> getCarId() {
+		return CarId;
+	}
+	public void setCarId(List<CarModel> carId) {
+		CarId = carId;
+	}	
+	public CarType() {
+		super();
+	}
+	public CarType(String carTypeCode, String carTypeName, Features featureId,
+			List<CarModel> carId) {
+		super();
+		CarTypeCode = carTypeCode;
+		CarTypeName = carTypeName;
+		FeatureId = featureId;
+		CarId = carId;
+	}
+	
+	public CarType(String carTypeCode, String carTypeName) {
+		super();
+		CarTypeCode = carTypeCode;
+		CarTypeName = carTypeName;		
+	}
+	
+	
+
+}

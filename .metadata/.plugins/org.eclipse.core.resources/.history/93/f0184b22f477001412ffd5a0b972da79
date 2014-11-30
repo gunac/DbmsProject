@@ -1,0 +1,7 @@
+package Model;
+
+public class Features {
+	
+	private int FeatureId;
+	private String description;
+}

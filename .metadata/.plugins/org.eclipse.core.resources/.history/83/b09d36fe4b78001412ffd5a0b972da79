@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Hotwire>
+<Errors/>
+<MetaData>
+<CarMetaData>
+<CarTypes>
+<CarType>
+<TypicalSeating>2 adults, 2 children</TypicalSeating>
+<CarTypeName>Compact</CarTypeName>
+<CarTypeCode>CCAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Nissan Versa, Toyota Yaris, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>2 adults, 2 children</TypicalSeating>
+<CarTypeName>Economy</CarTypeName>
+<CarTypeCode>ECAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Air Conditioning, Air Bags, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Chevy Aveo, Hyundai Accent, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>5 adults</TypicalSeating>
+<CarTypeName>Full Size</CarTypeName>
+<CarTypeCode>FCAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Chevy Impala, Hyundai Sonata, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>7 adults</TypicalSeating>
+<CarTypeName>Full Size SUV</CarTypeName>
+<CarTypeCode>FFAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Cruise Control, AM/FM Stereo, CD Player
+</PossibleFeatures>
+<PossibleModels>Chevy Tahoe, Toyota Highlander, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>4 adults</TypicalSeating>
+<CarTypeName>Midsize</CarTypeName>
+<CarTypeCode>ICAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Toyota Corolla, Nissan Sentra, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>4 adults</TypicalSeating>
+<CarTypeName>Midsize SUV</CarTypeName>
+<CarTypeCode>IFAR</CarTypeCode>
+<PossibleFeatures>Automatic Transmission, Air Conditioning</PossibleFeatures>
+<PossibleModels>Ford Escape, Toyota Rav4 or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>5 adults</TypicalSeating>
+<CarTypeName>Luxury</CarTypeName>
+<CarTypeCode>LCAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo, CD Player
+</PossibleFeatures>
+<PossibleModels>Lincoln Town Car, Cadillac DTS, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>7 adults</TypicalSeating>
+<CarTypeName>Minivan</CarTypeName>
+<CarTypeCode>MVAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Dodge Grand Caravan or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>5 adults</TypicalSeating>
+<CarTypeName>Premium</CarTypeName>
+<CarTypeCode>PCAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo, CD Player
+</PossibleFeatures>
+<PossibleModels>Ford Crown Victoria, Buick Lucerne, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>2 adults, 2 children</TypicalSeating>
+<CarTypeName>Standard</CarTypeName>
+<CarTypeCode>SCAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Ford Fusion, Chrysler Sebring, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>5 adults</TypicalSeating>
+<CarTypeName>Standard SUV</CarTypeName>
+<CarTypeCode>SFAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo, CD Player
+</PossibleFeatures>
+<PossibleModels>Jeep Grand Cherokee or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>4 adults</TypicalSeating>
+<CarTypeName>Standard Pickup truck</CarTypeName>
+<CarTypeCode>SPAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Cruise Control, Anti-Lock Brakes, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Chevy Colorado or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>4 adults</TypicalSeating>
+<CarTypeName>Convertible</CarTypeName>
+<CarTypeCode>STAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Cruise Control, Anti-Lock Brakes, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>Ford Mustang, Chrysler Sebring, or similar</PossibleModels>
+</CarType>
+<CarType>
+<TypicalSeating>4 adults or more</TypicalSeating>
+<CarTypeName>Special car</CarTypeName>
+<CarTypeCode>XXAR</CarTypeCode>
+<PossibleFeatures>
+Automatic Transmission, Air Conditioning, Air Bags, AM/FM Stereo
+</PossibleFeatures>
+<PossibleModels>
+Compact size or larger but priced low like a compact
+</PossibleModels>
+</CarType>
+</CarTypes>
+</CarMetaData>
+</MetaData>
+<Result>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5MDQ-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5MDQ-&useCluster=3</ResultId>
+<HWRefNumber>4300153111</HWRefNumber>
+<SubTotal>23.58</SubTotal>
+<TaxesAndFees>15.59</TaxesAndFees>
+<TotalPrice>39.17</TotalPrice>
+<CarTypeCode>ECAR</CarTypeCode>
+<DailyRate>11.79</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5NDQ-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5NDQ-&useCluster=3</ResultId>
+<HWRefNumber>3551107419</HWRefNumber>
+<SubTotal>25.26</SubTotal>
+<TaxesAndFees>16.00</TaxesAndFees>
+<TotalPrice>41.26</TotalPrice>
+<CarTypeCode>CCAR</CarTypeCode>
+<DailyRate>12.63</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5NDU-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5NDU-&useCluster=3</ResultId>
+<HWRefNumber>4366328731</HWRefNumber>
+<SubTotal>28.10</SubTotal>
+<TaxesAndFees>16.66</TaxesAndFees>
+<TotalPrice>44.76</TotalPrice>
+<CarTypeCode>ICAR</CarTypeCode>
+<DailyRate>14.05</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5OTQ-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5OTQ-&useCluster=3</ResultId>
+<HWRefNumber>3432466572</HWRefNumber>
+<SubTotal>36.14</SubTotal>
+<TaxesAndFees>18.57</TaxesAndFees>
+<TotalPrice>54.71</TotalPrice>
+<CarTypeCode>SCAR</CarTypeCode>
+<DailyRate>18.07</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5NzI-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5NzI-&useCluster=3</ResultId>
+<HWRefNumber>4404115697</HWRefNumber>
+<SubTotal>36.18</SubTotal>
+<TaxesAndFees>18.58</TaxesAndFees>
+<TotalPrice>54.76</TotalPrice>
+<CarTypeCode>FCAR</CarTypeCode>
+<DailyRate>18.09</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5Mzg-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5Mzg-&useCluster=3</ResultId>
+<HWRefNumber>3483112435</HWRefNumber>
+<SubTotal>52.46</SubTotal>
+<TaxesAndFees>22.44</TaxesAndFees>
+<TotalPrice>74.90</TotalPrice>
+<CarTypeCode>XXAR</CarTypeCode>
+<DailyRate>26.23</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5Njg-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5Njg-&useCluster=3</ResultId>
+<HWRefNumber>3198264518</HWRefNumber>
+<SubTotal>56.74</SubTotal>
+<TaxesAndFees>23.45</TaxesAndFees>
+<TotalPrice>80.19</TotalPrice>
+<CarTypeCode>PCAR</CarTypeCode>
+<DailyRate>28.37</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk4ODE-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk4ODE-&useCluster=3</ResultId>
+<HWRefNumber>3162635759</HWRefNumber>
+<SubTotal>58.78</SubTotal>
+<TaxesAndFees>23.94</TaxesAndFees>
+<TotalPrice>82.72</TotalPrice>
+<CarTypeCode>IFAR</CarTypeCode>
+<DailyRate>29.39</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5OTc-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5OTc-&useCluster=3</ResultId>
+<HWRefNumber>3290157807</HWRefNumber>
+<SubTotal>66.66</SubTotal>
+<TaxesAndFees>25.81</TaxesAndFees>
+<TotalPrice>92.47</TotalPrice>
+<CarTypeCode>MVAR</CarTypeCode>
+<DailyRate>33.33</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5Mzk-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5Mzk-&useCluster=3</ResultId>
+<HWRefNumber>4116691889</HWRefNumber>
+<SubTotal>76.74</SubTotal>
+<TaxesAndFees>28.20</TaxesAndFees>
+<TotalPrice>104.94</TotalPrice>
+<CarTypeCode>LCAR</CarTypeCode>
+<DailyRate>38.37</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5MTM-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5MTM-&useCluster=3</ResultId>
+<HWRefNumber>4486147574</HWRefNumber>
+<SubTotal>78.38</SubTotal>
+<TaxesAndFees>28.59</TaxesAndFees>
+<TotalPrice>106.97</TotalPrice>
+<CarTypeCode>SFAR</CarTypeCode>
+<DailyRate>39.19</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMjAwMDk-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMjAwMDk-&useCluster=3</ResultId>
+<HWRefNumber>4641415225</HWRefNumber>
+<SubTotal>91.40</SubTotal>
+<TaxesAndFees>31.67</TaxesAndFees>
+<TotalPrice>123.07</TotalPrice>
+<CarTypeCode>STAR</CarTypeCode>
+<DailyRate>45.70</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMTk5NDA-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMTk5NDA-&useCluster=3</ResultId>
+<HWRefNumber>4288021988</HWRefNumber>
+<SubTotal>128.38</SubTotal>
+<TaxesAndFees>40.44</TaxesAndFees>
+<TotalPrice>168.82</TotalPrice>
+<CarTypeCode>FFAR</CarTypeCode>
+<DailyRate>64.19</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+<CarResult>
+<CurrencyCode>USD</CurrencyCode>
+<DeepLink>
+http://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTMxMjI3MzozODM1NzMzMjAwMTc-&useCluster=3&sid=S001&bid=B001&inputId=api-results&actionType=303&useCluster=3
+</DeepLink>
+<ResultId>ODI2OTMxMjI3MzozODM1NzMzMjAwMTc-&useCluster=3</ResultId>
+<HWRefNumber>4346926081</HWRefNumber>
+<SubTotal>178.20</SubTotal>
+<TaxesAndFees>53.24</TaxesAndFees>
+<TotalPrice>231.44</TotalPrice>
+<CarTypeCode>SPAR</CarTypeCode>
+<DailyRate>89.10</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<MileageDescription>Unlimited</MileageDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</CarResult>
+</Result>
+<StatusCode>0</StatusCode>
+<StatusDesc>success</StatusDesc>
+</Hotwire>
