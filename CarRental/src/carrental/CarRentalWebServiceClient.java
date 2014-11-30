@@ -11,12 +11,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.*;
+ 
+
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import Model.CarType;
 
@@ -119,6 +124,14 @@ public class CarRentalWebServiceClient {
 		CarRentalWebServiceClient o = new CarRentalWebServiceClient();
 		System.out.println(o.getCarTypeInformation());
 		o.writeCarTypetoXml();
+        
+		String cars = "Santro, Verna, Maruthi, Swift";
+		String[] carss = cars.split(",");
+		 for(String v : carss){
+		System.out.println(v);}
+		
+		
+		
 	}
 
 }

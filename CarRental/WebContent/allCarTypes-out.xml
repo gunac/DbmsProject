@@ -2,11 +2,13 @@
 <CarType>
 <CarTypeName>Compact</CarTypeName>
 <CarTypeCode>CCAR</CarTypeCode>
+<CarTypeCode>CCAR</CarTypeCode>
 <PossibleModels>Nissan Versa, Toyota Yaris, or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Economy</CarTypeName>
+<CarTypeCode>ECAR</CarTypeCode>
 <CarTypeCode>ECAR</CarTypeCode>
 <PossibleModels>Chevy Aveo, Hyundai Accent, or similar</PossibleModels>
 </CarType>
@@ -14,11 +16,13 @@
 <CarType>
 <CarTypeName>Full Size</CarTypeName>
 <CarTypeCode>FCAR</CarTypeCode>
+<CarTypeCode>FCAR</CarTypeCode>
 <PossibleModels>Chevy Impala, Hyundai Sonata, or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Full Size SUV</CarTypeName>
+<CarTypeCode>FFAR</CarTypeCode>
 <CarTypeCode>FFAR</CarTypeCode>
 <PossibleModels>Chevy Tahoe, Toyota Highlander, or similar</PossibleModels>
 </CarType>
@@ -26,11 +30,13 @@
 <CarType>
 <CarTypeName>Midsize</CarTypeName>
 <CarTypeCode>ICAR</CarTypeCode>
+<CarTypeCode>ICAR</CarTypeCode>
 <PossibleModels>Toyota Corolla, Nissan Sentra, or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Midsize SUV</CarTypeName>
+<CarTypeCode>IFAR</CarTypeCode>
 <CarTypeCode>IFAR</CarTypeCode>
 <PossibleModels>Ford Escape, Toyota Rav4 or similar</PossibleModels>
 </CarType>
@@ -38,11 +44,13 @@
 <CarType>
 <CarTypeName>Luxury</CarTypeName>
 <CarTypeCode>LCAR</CarTypeCode>
+<CarTypeCode>LCAR</CarTypeCode>
 <PossibleModels>Lincoln Town Car, Cadillac DTS, or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Minivan</CarTypeName>
+<CarTypeCode>MVAR</CarTypeCode>
 <CarTypeCode>MVAR</CarTypeCode>
 <PossibleModels>Dodge Grand Caravan or similar</PossibleModels>
 </CarType>
@@ -50,11 +58,13 @@
 <CarType>
 <CarTypeName>Premium</CarTypeName>
 <CarTypeCode>PCAR</CarTypeCode>
+<CarTypeCode>PCAR</CarTypeCode>
 <PossibleModels>Ford Crown Victoria, Buick Lucerne, or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Standard</CarTypeName>
+<CarTypeCode>SCAR</CarTypeCode>
 <CarTypeCode>SCAR</CarTypeCode>
 <PossibleModels>Ford Fusion, Chrysler Sebring, or similar</PossibleModels>
 </CarType>
@@ -62,11 +72,13 @@
 <CarType>
 <CarTypeName>Standard SUV</CarTypeName>
 <CarTypeCode>SFAR</CarTypeCode>
+<CarTypeCode>SFAR</CarTypeCode>
 <PossibleModels>Jeep Grand Cherokee or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Standard Pickup truck</CarTypeName>
+<CarTypeCode>SPAR</CarTypeCode>
 <CarTypeCode>SPAR</CarTypeCode>
 <PossibleModels>Chevy Colorado or similar</PossibleModels>
 </CarType>
@@ -74,12 +86,15 @@
 <CarType>
 <CarTypeName>Convertible</CarTypeName>
 <CarTypeCode>STAR</CarTypeCode>
+<CarTypeCode>STAR</CarTypeCode>
 <PossibleModels>Ford Mustang, Chrysler Sebring,  or similar</PossibleModels>
 </CarType>
 <br/>
 <CarType>
 <CarTypeName>Special car</CarTypeName>
 <CarTypeCode>XXAR</CarTypeCode>
+<CarTypeCode>XXAR</CarTypeCode>
 <PossibleModels>Compact size or larger but priced low like a compact</PossibleModels>
 </CarType>
-<br/>USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5MjU-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5MjU-&amp;useCluster=3436317159423.5815.5939.17ECAR11.7912/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5NjU-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5NjU-&amp;useCluster=3378978756425.2616.0041.26CCAR12.6312/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5NjY-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5NjY-&amp;useCluster=3478735912528.1016.6644.76ICAR14.0512/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzQwMTU-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzQwMTU-&amp;useCluster=3344970434636.1418.5754.71SCAR18.0712/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5OTM-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5OTM-&amp;useCluster=3327416436936.1818.5854.76FCAR18.0912/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5NTk-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5NTk-&amp;useCluster=3450093763152.1622.3774.53XXAR26.0812/04/201423:3012/03/201410:00Counter in airport; Shuttle to carUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5ODk-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5ODk-&amp;useCluster=3324948372756.7423.4580.19PCAR28.3712/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5MDI-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5MDI-&amp;useCluster=3304754622558.7823.9482.72IFAR29.3912/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzQwMTg-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzQwMTg-&amp;useCluster=3464471744966.6625.8192.47MVAR33.3312/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5NjA-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5NjA-&amp;useCluster=3473721883976.7428.20104.94LCAR38.3712/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5MzQ-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5MzQ-&amp;useCluster=3412339676478.3828.59106.97SFAR39.1912/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzQwMzA-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzQwMzA-&amp;useCluster=3413028675091.4031.67123.07STAR45.7012/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzM5NjE-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzM5NjE-&amp;useCluster=33100720610128.3840.44168.82FFAR64.1912/04/201423:3012/03/201410:00Off Airport - Shuttle to VendorUnlimitedLAX2USDhttp://www.hotwire.com/car/deeplink-details.jsp?resultId=ODI2OTU3NDk5MTozODM1OTI2NzQwMzg-&amp;useCluster=3&amp;sid=S001&amp;bid=B001&amp;inputId=api-results&amp;actionType=303&amp;useCluster=3ODI2OTU3NDk5MTozODM1OTI2NzQwMzg-&amp;useCluster=33485404916178.2053.24231.44SPAR89.1012/04/201423:3012/03/201410:00Counter in airport; Shuttle to carUnlimitedLAX20success</CarTypes>
+<br/>
+</CarTypes>

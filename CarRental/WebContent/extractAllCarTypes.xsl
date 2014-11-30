@@ -9,12 +9,16 @@
     </CarTypes>
 	 </xsl:template>
 	 
+	  <!-- Drop elements -->
+  <xsl:template match="Error | DeepLink | Result | StatusCode | StatusDesc"/> 
+  
 	 <xsl:template match="CarType">
 	   <CarType>
-	 <xsl:copy-of select="CarTypeName"> </xsl:copy-of>
+	    <xsl:copy-of select="CarTypeName | CarTypeCode"> </xsl:copy-of>
+	  
          <xsl:copy-of select="CarTypeCode"> </xsl:copy-of>
          <xsl:copy-of select="PossibleModels"></xsl:copy-of>
        </CarType>
-       <br></br>
+      
 	 </xsl:template>	 
 </xsl:stylesheet>
