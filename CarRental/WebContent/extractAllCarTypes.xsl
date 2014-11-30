@@ -4,21 +4,43 @@
 	<xsl:output method="xml" indent="yes"></xsl:output>
 	
 	 <xsl:template match="/">
-     <CarTypes>
+     <RentalInformation>
        <xsl:apply-templates/>    
-    </CarTypes>
+    </RentalInformation>
 	 </xsl:template>
 	 
-	  <!-- Drop elements -->
-  <xsl:template match="Error | DeepLink | Result | StatusCode | StatusDesc"/> 
+	  <xsl:template match="CarTypes">
+	  <CarTypes>
+       <xsl:apply-templates/>    
+    </CarTypes>
+    </xsl:template>
   
 	 <xsl:template match="CarType">
 	   <CarType>
 	    <xsl:copy-of select="CarTypeName | CarTypeCode"> </xsl:copy-of>
-	  
-         <xsl:copy-of select="CarTypeCode"> </xsl:copy-of>
-         <xsl:copy-of select="PossibleModels"></xsl:copy-of>
-       </CarType>
-      
-	 </xsl:template>	 
+	  	<xsl:copy-of select="PossibleModels"></xsl:copy-of>
+       </CarType>      
+	 </xsl:template>
+	 
+		   <!-- Drop elements -->
+  		<xsl:template match="Error | DeepLink  ">
+   <xsl:apply-templates/>   
+  </xsl:template> 
+ 
+ <xsl:template match="Result ">
+ <RentalData>
+   <xsl:apply-templates/>  
+   </RentalData> 
+  </xsl:template> 
+
+  <xsl:template match="CarResult">
+    
+  <Result>
+   <xsl:copy-of select="SubTotal | CarTyTaxesAndFees | TotalPrice | CarTypeCode | DailyRate"> </xsl:copy-of>
+   <xsl:copy-of select="DropoffDay | DropoffTime | PickupDay | PickupTime | LocationDescription | PickupAirport | RentalDays"> </xsl:copy-of>
+           </Result>
+           
+ </xsl:template>
+	 
+	 	 <xsl:template match=" StatusCode | StatusDesc"/>
 </xsl:stylesheet>

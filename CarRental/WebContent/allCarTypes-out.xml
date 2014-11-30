@@ -1,100 +1,258 @@
-<?xml version="1.0" encoding="UTF-8"?><CarTypes>
+<?xml version="1.0" encoding="UTF-8"?><RentalInformation>
+<CarTypes>
 <CarType>
 <CarTypeName>Compact</CarTypeName>
 <CarTypeCode>CCAR</CarTypeCode>
-<CarTypeCode>CCAR</CarTypeCode>
 <PossibleModels>Nissan Versa, Toyota Yaris, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Economy</CarTypeName>
 <CarTypeCode>ECAR</CarTypeCode>
-<CarTypeCode>ECAR</CarTypeCode>
 <PossibleModels>Chevy Aveo, Hyundai Accent, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Full Size</CarTypeName>
 <CarTypeCode>FCAR</CarTypeCode>
-<CarTypeCode>FCAR</CarTypeCode>
 <PossibleModels>Chevy Impala, Hyundai Sonata, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Full Size SUV</CarTypeName>
 <CarTypeCode>FFAR</CarTypeCode>
-<CarTypeCode>FFAR</CarTypeCode>
 <PossibleModels>Chevy Tahoe, Toyota Highlander, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Midsize</CarTypeName>
 <CarTypeCode>ICAR</CarTypeCode>
-<CarTypeCode>ICAR</CarTypeCode>
 <PossibleModels>Toyota Corolla, Nissan Sentra, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Midsize SUV</CarTypeName>
 <CarTypeCode>IFAR</CarTypeCode>
-<CarTypeCode>IFAR</CarTypeCode>
 <PossibleModels>Ford Escape, Toyota Rav4 or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Luxury</CarTypeName>
 <CarTypeCode>LCAR</CarTypeCode>
-<CarTypeCode>LCAR</CarTypeCode>
 <PossibleModels>Lincoln Town Car, Cadillac DTS, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Minivan</CarTypeName>
 <CarTypeCode>MVAR</CarTypeCode>
-<CarTypeCode>MVAR</CarTypeCode>
 <PossibleModels>Dodge Grand Caravan or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Premium</CarTypeName>
 <CarTypeCode>PCAR</CarTypeCode>
-<CarTypeCode>PCAR</CarTypeCode>
 <PossibleModels>Ford Crown Victoria, Buick Lucerne, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Standard</CarTypeName>
 <CarTypeCode>SCAR</CarTypeCode>
-<CarTypeCode>SCAR</CarTypeCode>
 <PossibleModels>Ford Fusion, Chrysler Sebring, or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Standard SUV</CarTypeName>
 <CarTypeCode>SFAR</CarTypeCode>
-<CarTypeCode>SFAR</CarTypeCode>
 <PossibleModels>Jeep Grand Cherokee or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Standard Pickup truck</CarTypeName>
 <CarTypeCode>SPAR</CarTypeCode>
-<CarTypeCode>SPAR</CarTypeCode>
 <PossibleModels>Chevy Colorado or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Convertible</CarTypeName>
 <CarTypeCode>STAR</CarTypeCode>
-<CarTypeCode>STAR</CarTypeCode>
 <PossibleModels>Ford Mustang, Chrysler Sebring,  or similar</PossibleModels>
 </CarType>
-<br/>
 <CarType>
 <CarTypeName>Special car</CarTypeName>
 <CarTypeCode>XXAR</CarTypeCode>
-<CarTypeCode>XXAR</CarTypeCode>
 <PossibleModels>Compact size or larger but priced low like a compact</PossibleModels>
 </CarType>
-<br/>
 </CarTypes>
+<RentalData>
+<Result>
+<SubTotal>23.58</SubTotal>
+<TotalPrice>39.17</TotalPrice>
+<CarTypeCode>ECAR</CarTypeCode>
+<DailyRate>11.79</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>25.28</SubTotal>
+<TotalPrice>41.28</TotalPrice>
+<CarTypeCode>CCAR</CarTypeCode>
+<DailyRate>12.64</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>28.10</SubTotal>
+<TotalPrice>44.76</TotalPrice>
+<CarTypeCode>ICAR</CarTypeCode>
+<DailyRate>14.05</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>34.36</SubTotal>
+<TotalPrice>52.51</TotalPrice>
+<CarTypeCode>FCAR</CarTypeCode>
+<DailyRate>17.18</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>35.38</SubTotal>
+<TotalPrice>53.77</TotalPrice>
+<CarTypeCode>SCAR</CarTypeCode>
+<DailyRate>17.69</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>40.00</SubTotal>
+<TotalPrice>59.48</TotalPrice>
+<CarTypeCode>XXAR</CarTypeCode>
+<DailyRate>20.00</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>58.78</SubTotal>
+<TotalPrice>82.72</TotalPrice>
+<CarTypeCode>IFAR</CarTypeCode>
+<DailyRate>29.39</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>53.90</SubTotal>
+<TotalPrice>86.69</TotalPrice>
+<CarTypeCode>PCAR</CarTypeCode>
+<DailyRate>26.95</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>66.66</SubTotal>
+<TotalPrice>92.47</TotalPrice>
+<CarTypeCode>MVAR</CarTypeCode>
+<DailyRate>33.33</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>76.74</SubTotal>
+<TotalPrice>104.94</TotalPrice>
+<CarTypeCode>LCAR</CarTypeCode>
+<DailyRate>38.37</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>78.38</SubTotal>
+<TotalPrice>106.97</TotalPrice>
+<CarTypeCode>SFAR</CarTypeCode>
+<DailyRate>39.19</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>86.72</SubTotal>
+<TotalPrice>117.27</TotalPrice>
+<CarTypeCode>STAR</CarTypeCode>
+<DailyRate>43.36</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>128.38</SubTotal>
+<TotalPrice>168.82</TotalPrice>
+<CarTypeCode>FFAR</CarTypeCode>
+<DailyRate>64.19</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+<Result>
+<SubTotal>178.20</SubTotal>
+<TotalPrice>231.44</TotalPrice>
+<CarTypeCode>SPAR</CarTypeCode>
+<DailyRate>89.10</DailyRate>
+<DropoffDay>12/04/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/03/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Result>
+</RentalData>
+</RentalInformation>
