@@ -1,1 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?><CarType>
+<CarTypeName>Compact</CarTypeName>
+<CarTypeName>Economy</CarTypeName>
+<CarTypeName>Full Size</CarTypeName>
+<CarTypeName>Full Size SUV</CarTypeName>
+<CarTypeName>Midsize</CarTypeName>
+<CarTypeName>Midsize SUV</CarTypeName>
+<CarTypeName>Luxury</CarTypeName>
+<CarTypeName>Minivan</CarTypeName>
+<CarTypeName>Premium</CarTypeName>
+<CarTypeName>Standard</CarTypeName>
+<CarTypeName>Standard SUV</CarTypeName>
+<CarTypeName>Standard Pickup truck</CarTypeName>
+<CarTypeName>Convertible</CarTypeName>
+<CarTypeName>Special car</CarTypeName>
+<CarTypeCode>CCAR</CarTypeCode>
+<CarTypeCode>ECAR</CarTypeCode>
+<CarTypeCode>FCAR</CarTypeCode>
+<CarTypeCode>FFAR</CarTypeCode>
+<CarTypeCode>ICAR</CarTypeCode>
+<CarTypeCode>IFAR</CarTypeCode>
+<CarTypeCode>LCAR</CarTypeCode>
+<CarTypeCode>MVAR</CarTypeCode>
+<CarTypeCode>PCAR</CarTypeCode>
+<CarTypeCode>SCAR</CarTypeCode>
+<CarTypeCode>SFAR</CarTypeCode>
+<CarTypeCode>SPAR</CarTypeCode>
+<CarTypeCode>STAR</CarTypeCode>
+<CarTypeCode>XXAR</CarTypeCode>
+<CarTypeCode>ECAR</CarTypeCode>
+<CarTypeCode>CCAR</CarTypeCode>
+<CarTypeCode>ICAR</CarTypeCode>
+<CarTypeCode>SCAR</CarTypeCode>
+<CarTypeCode>FCAR</CarTypeCode>
+<CarTypeCode>XXAR</CarTypeCode>
+<CarTypeCode>PCAR</CarTypeCode>
+<CarTypeCode>IFAR</CarTypeCode>
+<CarTypeCode>MVAR</CarTypeCode>
+<CarTypeCode>LCAR</CarTypeCode>
+<CarTypeCode>SFAR</CarTypeCode>
+<CarTypeCode>STAR</CarTypeCode>
+<CarTypeCode>FFAR</CarTypeCode>
+<CarTypeCode>SPAR</CarTypeCode>
+<PossibleModels>Nissan Versa, Toyota Yaris, or similar</PossibleModels>
+<PossibleModels>Chevy Aveo, Hyundai Accent, or similar</PossibleModels>
+<PossibleModels>Chevy Impala, Hyundai Sonata, or similar</PossibleModels>
+<PossibleModels>Chevy Tahoe, Toyota Highlander, or similar</PossibleModels>
+<PossibleModels>Toyota Corolla, Nissan Sentra, or similar</PossibleModels>
+<PossibleModels>Ford Escape, Toyota Rav4 or similar</PossibleModels>
+<PossibleModels>Lincoln Town Car, Cadillac DTS, or similar</PossibleModels>
+<PossibleModels>Dodge Grand Caravan or similar</PossibleModels>
+<PossibleModels>Ford Crown Victoria, Buick Lucerne, or similar</PossibleModels>
+<PossibleModels>Ford Fusion, Chrysler Sebring, or similar</PossibleModels>
+<PossibleModels>Jeep Grand Cherokee or similar</PossibleModels>
+<PossibleModels>Chevy Colorado or similar</PossibleModels>
+<PossibleModels>Ford Mustang, Chrysler Sebring,  or similar</PossibleModels>
+<PossibleModels>Compact size or larger but priced low like a compact</PossibleModels>
+</CarType>
