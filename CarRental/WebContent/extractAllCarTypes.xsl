@@ -4,19 +4,17 @@
 	<xsl:output method="xml" indent="yes"></xsl:output>
 	
 	 <xsl:template match="/">
-      
-      
-     <CarType>
-	 <xsl:copy-of select="//CarTypeName"> </xsl:copy-of>
-         <xsl:copy-of select="//CarTypeCode"> </xsl:copy-of>
-         <xsl:copy-of select="//PossibleModels"></xsl:copy-of>
-         </CarType>
-   
+     <CarTypes>
+       <xsl:apply-templates/>    
+    </CarTypes>
 	 </xsl:template>
 	 
-	<!-- <xsl:copy>
-                                <xsl:apply-templates match="@*|node()"/>
-                        </xsl:copy> -->
-	<!--  <xsl:copy-of select="/Hotwire/MetaData/CarMetaData/node()"></xsl:copy-of>-->
-	 
+	 <xsl:template match="CarType">
+	   <CarType>
+	 <xsl:copy-of select="CarTypeName"> </xsl:copy-of>
+         <xsl:copy-of select="CarTypeCode"> </xsl:copy-of>
+         <xsl:copy-of select="PossibleModels"></xsl:copy-of>
+       </CarType>
+       <br></br>
+	 </xsl:template>	 
 </xsl:stylesheet>
