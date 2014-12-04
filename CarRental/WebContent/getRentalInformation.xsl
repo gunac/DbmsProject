@@ -4,25 +4,13 @@
 	<xsl:output method="xml" indent="yes"></xsl:output>
 	
 	 <xsl:template match="/">
-       <CarTypes>
-       	<xsl:apply-templates/>    
-      </CarTypes>
+     <RentalInformation>
+       <xsl:apply-templates/>    
+    </RentalInformation>
 	 </xsl:template>
 	 
-	  <xsl:template match="CarTypes">
-	
-       <xsl:apply-templates/>    
-   
-    </xsl:template>
-  
-	 <xsl:template match="CarType">
-	   <CarType>
-	    <xsl:copy-of select="CarTypeCode"> </xsl:copy-of>
-	  	   <xsl:copy-of select="CarTypeName"> </xsl:copy-of>
-	  	   <xsl:copy-of select="TypicalSeating"> </xsl:copy-of>
-	  	 
-       </CarType>      
-	 </xsl:template>
+	  <xsl:template match="MetaData"/>
+	 
 	 
 		   <!-- Drop elements -->
   		<xsl:template match="Error | DeepLink  ">

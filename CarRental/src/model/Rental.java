@@ -1,21 +1,36 @@
-package Model;
+package model;
 
 import java.util.Date;
 
-public class Rental {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+@Entity 
+public class Rental {
+	 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)	
+	
+	
 	private int RentId;
+	private CarType CarTypeCode;
+	private String LocationDescription;	
 	private double SubTotal;
 	private double TaxesAndFees;
-	private double TotalPrice;
-	private CarType CarTypeCode;
+	private double TotalPrice;	
 	private double DailyRate;
+	@Temporal(TemporalType.DATE)
 	private Date DropoffDay;
-	private Date DropoffTime;
-	private Date PickupDay;
-	private Date PickupTime;
-	private String LocationDescription;
-	private String PickupAirport;
+	@Temporal(TemporalType.DATE)	 
+	private Date PickupDay;	 
 	private int RentalDays;
 	
 	public int getRentId() {
@@ -42,6 +57,10 @@ public class Rental {
 	public void setTotalPrice(double totalPrice) {
 		TotalPrice = totalPrice;
 	}
+	
+	// creates a foreign key in Tower Table
+	@ManyToOne()
+	@JoinColumn(name="CarTypeCode")
 	public CarType getCarTypeCode() {
 		return CarTypeCode;
 	}
@@ -60,36 +79,21 @@ public class Rental {
 	public void setDropoffDay(Date dropoffDay) {
 		DropoffDay = dropoffDay;
 	}
-	public Date getDropoffTime() {
-		return DropoffTime;
-	}
-	public void setDropoffTime(Date dropoffTime) {
-		DropoffTime = dropoffTime;
-	}
+	 
 	public Date getPickupDay() {
 		return PickupDay;
 	}
 	public void setPickupDay(Date pickupDay) {
 		PickupDay = pickupDay;
 	}
-	public Date getPickupTime() {
-		return PickupTime;
-	}
-	public void setPickupTime(Date pickupTime) {
-		PickupTime = pickupTime;
-	}
+	 
 	public String getLocationDescription() {
 		return LocationDescription;
 	}
 	public void setLocationDescription(String locationDescription) {
 		LocationDescription = locationDescription;
 	}
-	public String getPickupAirport() {
-		return PickupAirport;
-	}
-	public void setPickupAirport(String pickupAirport) {
-		PickupAirport = pickupAirport;
-	}
+	 
 	public int getRentalDays() {
 		return RentalDays;
 	}

@@ -23,7 +23,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import Model.CarType;
+import model.CarType;
 
 public class CarRentalWebServiceClient {
 	
@@ -37,8 +37,8 @@ public class CarRentalWebServiceClient {
 		String startdate, enddate, pickuptime, dropofftime , dest;
 		
 		dest = "LAX";
-		startdate = "12/03/2014";
-		enddate = "12/04/2014";
+		startdate = "12/07/2014";
+		enddate = "12/08/2014";
 		pickuptime = "10:00";
 		dropofftime = "23:30";
 		
@@ -120,17 +120,41 @@ public class CarRentalWebServiceClient {
 		
 	}
 	
+	public void getRentalInformationFromApi()
+	{
+		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/getRentalInformation.xsl");
+		File outputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/rentalInformation-out.xml");
+	
+	
+		StreamSource inputXml = new  StreamSource(inputXmlFile);
+		StreamSource xslt = new StreamSource(xsltFile);
+		StreamResult outputXml = new StreamResult(outputXmlFile);
+		TransformerFactory tf = TransformerFactory.newInstance();
+		try {
+			Transformer tx = tf.newTransformer(xslt);
+			tx.transform(inputXml, outputXml);
+		} catch (TransformerConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("Check Rental Information Xml File");	
+	}
+	
+	
 	public static void main(String[] args) {
 		CarRentalWebServiceClient o = new CarRentalWebServiceClient();
 		System.out.println(o.getCarTypeInformation());
 		o.writeCarTypetoXml();
-        
+        o.getRentalInformationFromApi();
 		String cars = "Santro, Verna, Maruthi, Swift";
 		String[] carss = cars.split(",");
-		 for(String v : carss){
-		System.out.println(v);}
-		
-		
+		for(String v : carss){
+		System.out.println(v);}	
 		
 	}
 

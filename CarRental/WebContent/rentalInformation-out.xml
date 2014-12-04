@@ -1,74 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><CarTypes>
-<CarType>
-<CarTypeCode>CCAR</CarTypeCode>
-<CarTypeName>Compact</CarTypeName>
-<TypicalSeating>2 adults, 2 children</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>ECAR</CarTypeCode>
-<CarTypeName>Economy</CarTypeName>
-<TypicalSeating>2 adults, 2 children</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>FCAR</CarTypeCode>
-<CarTypeName>Full Size</CarTypeName>
-<TypicalSeating>5 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>FFAR</CarTypeCode>
-<CarTypeName>Full Size SUV</CarTypeName>
-<TypicalSeating>7 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>ICAR</CarTypeCode>
-<CarTypeName>Midsize</CarTypeName>
-<TypicalSeating>4 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>IFAR</CarTypeCode>
-<CarTypeName>Midsize SUV</CarTypeName>
-<TypicalSeating>4 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>LCAR</CarTypeCode>
-<CarTypeName>Luxury</CarTypeName>
-<TypicalSeating>5 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>MVAR</CarTypeCode>
-<CarTypeName>Minivan</CarTypeName>
-<TypicalSeating>7 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>PCAR</CarTypeCode>
-<CarTypeName>Premium</CarTypeName>
-<TypicalSeating>5 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>SCAR</CarTypeCode>
-<CarTypeName>Standard</CarTypeName>
-<TypicalSeating>2 adults, 2 children</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>SFAR</CarTypeCode>
-<CarTypeName>Standard SUV</CarTypeName>
-<TypicalSeating>5 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>SPAR</CarTypeCode>
-<CarTypeName>Standard Pickup truck</CarTypeName>
-<TypicalSeating>4 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>STAR</CarTypeCode>
-<CarTypeName>Convertible</CarTypeName>
-<TypicalSeating>4 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>XXAR</CarTypeCode>
-<CarTypeName>Special car</CarTypeName>
-<TypicalSeating>4 adults or more</TypicalSeating>
-</CarType>
+<?xml version="1.0" encoding="UTF-8"?><RentalInformation>
 <RentalData>
 <Result>
 <SubTotal>29.90</SubTotal>
@@ -253,4 +183,4 @@
 <RentalDays>2</RentalDays>
 </Result>
 </RentalData>
-</CarTypes>
+</RentalInformation>
