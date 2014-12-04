@@ -1,0 +1,12 @@
+package model;
+
+public class Customer {
+	
+	private int CustomerId;
+	private String Name;
+	private Date Dob;
+	private String Email;
+	private String Password;
+	private String LicenseNo;
+
+}

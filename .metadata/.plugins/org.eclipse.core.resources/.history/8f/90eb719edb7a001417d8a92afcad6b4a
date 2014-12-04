@@ -1,0 +1,59 @@
+package Model;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class CarType {
+	
+	@Id
+	private String CarTypeCode;
+	private String CarTypeName;
+	private CarFeature FeatureId;
+	private List<CarModel> CarId;
+	
+	public String getCarTypeCode() {
+		return CarTypeCode;
+	}
+	public void setCarTypeCode(String carTypeCode) {
+		CarTypeCode = carTypeCode;
+	}
+	public String getCarTypeName() {
+		return CarTypeName;
+	}
+	public void setCarTypeName(String carTypeName) {
+		CarTypeName = carTypeName;
+	}
+	public CarFeature getFeatureId() {
+		return FeatureId;
+	}
+	public void setFeatureId(CarFeature featureId) {
+		FeatureId = featureId;
+	}
+	public List<CarModel> getCarId() {
+		return CarId;
+	}
+	public void setCarId(List<CarModel> carId) {
+		CarId = carId;
+	}	
+	public CarType() {
+		super();
+	}
+	public CarType(String carTypeCode, String carTypeName, CarFeature featureId,
+			List<CarModel> carId) {
+		super();
+		CarTypeCode = carTypeCode;
+		CarTypeName = carTypeName;
+		FeatureId = featureId;
+		CarId = carId;
+	}	
+	public CarType(String carTypeCode, String carTypeName) {
+		super();
+		CarTypeCode = carTypeCode;
+		CarTypeName = carTypeName;		
+	}
+}

@@ -1,0 +1,39 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(namespace = "CARTYPES.ROOT.NODE")
+public class ListCarTypes {
+
+	// Name of the xml element 
+	@XmlElementWrapper(name = "CarTypes")
+	@XmlElement(name="CarType")
+	private ArrayList<CarType> bcarTypes;
+
+	public ArrayList<CarType> getCarTypes() {
+		return bcarTypes;
+	}
+
+	public void setCarTypes(ArrayList<CarType> carTypes) {
+		this.bcarTypes = carTypes;
+	}
+
+	public ListCarTypes(ArrayList<CarType> carTypes) {
+		super();
+		this.bcarTypes = carTypes;
+	}
+
+	public ListCarTypes() {
+		super();
+	}
+	
+	
+	
+}

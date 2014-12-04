@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CarTypes>
+    <CarType>
+        <CarTypeCode>Gu</CarTypeCode>
+        <CarTypeName>NAME</CarTypeName>
+        <TypicalSeating>2 seats only</TypicalSeating>
+    </CarType>
+    <CarType>
+        <CarTypeCode>DD</CarTypeCode>
+        <CarTypeName>NAME</CarTypeName>
+        <TypicalSeating>2 seats only</TypicalSeating>
+    </CarType>
+</CarTypes>

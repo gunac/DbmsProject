@@ -30,19 +30,12 @@
   </xsl:template> 
  
  <xsl:template match="Result ">
- <RentalData>
+  
    <xsl:apply-templates/>  
-   </RentalData> 
+   
   </xsl:template> 
 
-  <xsl:template match="CarResult">
-    
-  <Result>
-   <xsl:copy-of select="SubTotal | CarTyTaxesAndFees | TotalPrice | CarTypeCode | DailyRate"> </xsl:copy-of>
-   <xsl:copy-of select="DropoffDay | DropoffTime | PickupDay | PickupTime | LocationDescription | PickupAirport | RentalDays"> </xsl:copy-of>
-           </Result>
-           
- </xsl:template>
-	 
+  <xsl:template match="CarResult"/>
+   
 	 	 <xsl:template match=" StatusCode | StatusDesc"/>
 </xsl:stylesheet>

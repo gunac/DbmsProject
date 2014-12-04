@@ -6,34 +6,37 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
  
-@XmlRootElement(name="CarType") 
+@XmlRootElement(name="CarType")
 @Entity
 public class CarType {
 	
-	@Id
-	@XmlElement(name="CarTypeCode")
+	@Id	
 	private String CarTypeCode;
-	@XmlElement(name="CarTypeName")
-	private String CarTypeName;
-	@XmlElement(name="TypicalSeating")
+	private String CarTypeName;	
 	private String SeatingInfo;
 	
+	@XmlElement(name = "CarTypeCode")
 	public String getCarTypeCode() {
 		return CarTypeCode;
 	}
 	public void setCarTypeCode(String carTypeCode) {
 		CarTypeCode = carTypeCode;
 	}
+	@XmlElement(name = "CarTypeName")
 	public String getCarTypeName() {
 		return CarTypeName;
 	}
+	
 	public void setCarTypeName(String carTypeName) {
 		CarTypeName = carTypeName;
 	}
+	@XmlElement(name = "TypicalSeating")
 	public String getSeatingInfo() {
 		return SeatingInfo;
 	}

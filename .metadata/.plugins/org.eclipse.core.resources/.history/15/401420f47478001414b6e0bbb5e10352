@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarType>
+<CarTypeName>Compact</CarTypeName>
+<CarTypeCode>CCAR</CarTypeCode>
+<PossibleModels>Nissan Versa, Toyota Yaris, or similar</PossibleModels>
+</CarType>
+<CarType>
+<CarTypeName>Economy</CarTypeName>
+<CarTypeCode>ECAR</CarTypeCode>
+<PossibleModels>Chevy Aveo, Hyundai Accent, or similar</PossibleModels>
+</CarType>
+<CarType>
+<CarTypeName>Full Size</CarTypeName>
+<CarTypeCode>FCAR</CarTypeCode>
+<PossibleModels>Chevy Impala, Hyundai Sonata, or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Full Size SUV</CarTypeName>
+<CarTypeCode>FFAR</CarTypeCode>
+<PossibleModels>Chevy Tahoe, Toyota Highlander, or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Midsize</CarTypeName>
+<CarTypeCode>ICAR</CarTypeCode>
+<PossibleModels>Toyota Corolla, Nissan Sentra, or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Midsize SUV</CarTypeName>
+<CarTypeCode>IFAR</CarTypeCode>
+<PossibleModels>Ford Escape, Toyota Rav4 or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Luxury</CarTypeName>
+<CarTypeCode>LCAR</CarTypeCode>
+<PossibleModels>Lincoln Town Car, Cadillac DTS, or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Minivan</CarTypeName>
+<CarTypeCode>MVAR</CarTypeCode>
+<PossibleModels>Dodge Grand Caravan or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Premium</CarTypeName>
+<CarTypeCode>PCAR</CarTypeCode>
+<PossibleModels>Ford Crown Victoria, Buick Lucerne, or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Standard</CarTypeName>
+<CarTypeCode>SCAR</CarTypeCode>
+<PossibleModels>Ford Fusion, Chrysler Sebring, or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Standard SUV</CarTypeName>
+<CarTypeCode>SFAR</CarTypeCode>
+<PossibleModels>Jeep Grand Cherokee or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Standard Pickup truck</CarTypeName>
+<CarTypeCode>SPAR</CarTypeCode>
+<PossibleModels>Chevy Colorado or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Convertible</CarTypeName>
+<CarTypeCode>STAR</CarTypeCode>
+<PossibleModels>Ford Mustang, Chrysler Sebring,  or similar</PossibleModels>
+</CarType><CarType>
+<CarTypeName>Special car</CarTypeName>
+<CarTypeCode>XXAR</CarTypeCode>
+<PossibleModels>Compact size or larger but priced low like a compact</PossibleModels>
+</CarType>

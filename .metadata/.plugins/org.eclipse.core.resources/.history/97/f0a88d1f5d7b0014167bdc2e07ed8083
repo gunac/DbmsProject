@@ -1,0 +1,24 @@
+package ApplicationDao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class CarTypeDao {
+	
+	
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("jpa");
+	
+	EntityManager em = null;
+	
+	public CarTypeDao(){
+		em = factory.createEntityManager();
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		 		
+	}
+
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	
+	<xsl:output method="xml" indent="yes"></xsl:output>
+	
+	 <xsl:template match="/">
+     <CarTypes>
+       <xsl:apply-templates/>    
+    </CarTypes>
+	 </xsl:template>
+	 
+	
+  
+	 <xsl:template match="CarType">
+	   <CarType>
+	    <xsl:copy-of select="CarTypeName | CarTypeCode"> </xsl:copy-of>
+	  	<xsl:copy-of select="PossibleModels"></xsl:copy-of>
+       </CarType>      
+	 </xsl:template>
+	 
+		   <!-- Drop elements -->
+  		<xsl:template match="Error | DeepLink | Result ">
+   <xsl:apply-templates/>   
+  </xsl:template> 
+  <RentalData>
+  <xsl:template match="CarResult">
+  <Result>
+   <xsl:copy-of select="SubTotal | CarTyTaxesAndFees | TotalPrice | CarTypeCode | DailyRate"> </xsl:copy-of>
+   <xsl:copy-of select="DropoffDay | DropoffTime | PickupDay | PickupTime | LocationDescription | PickupAirport | RentalDays"> </xsl:copy-of>
+           </Result>
+ </xsl:template>
+	 </RentalData>
+	 	 <xsl:template match=" StatusCode | StatusDesc"/>
+</xsl:stylesheet>

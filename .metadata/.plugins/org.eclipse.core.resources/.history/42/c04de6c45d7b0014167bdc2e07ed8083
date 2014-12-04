@@ -1,0 +1,32 @@
+package ApplicationDao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class CarTypeDao {
+	
+	
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("jpa");
+	
+	EntityManager em = null;
+	
+	public CarTypeDao(){
+		em = factory.createEntityManager();
+	}	
+	
+	
+	// inserts a new site record into the database and then returns a list of all the sites	
+		public List<CarType> createCarType(Site siteObj){
+			em.getTransaction().begin();
+			em.persist(siteObj);
+			em.getTransaction().commit();
+			return findAllSites();
+		}
+			
+	
+	public static void main(String[] args) {
+		 		
+	}
+
+}
