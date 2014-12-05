@@ -1,0 +1,35 @@
+package ApplicationDao;
+
+import java.util.List;
+
+import javax.persistence.Query;
+
+import model.Rental;
+import model.RentalInstances;
+
+public class CarModelDao {
+
+	public void insertCarModel(CarModel carmodel){
+		em.getTransaction().begin();
+
+		for(Rental rental : lstrentalInstances.getRentalTypes())
+		{
+			em.persist(rental);
+		}
+
+		em.getTransaction().commit();
+
+	}
+	
+	public List<Rental> getAllRental() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT r FROM Rental r", Rental.class);
+		List<Rental> lstRentalInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstRentalInfo;
+	}
+	public static void main(String[] args) {
+		 
+	}
+
+}

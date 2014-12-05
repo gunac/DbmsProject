@@ -5,10 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import model.CarType;
 import model.CarTypeInstances;
- 
+
 public class CarTypeDao {
 
 
@@ -27,21 +28,25 @@ public class CarTypeDao {
 		em.getTransaction().begin();
 		em.persist(cartypeObj);
 		em.getTransaction().commit();
-
 	}
 
-	public void createCarType(CarTypeInstances lstcartypeObj){
+	public void insertCarTypeInstances(CarTypeInstances lstcartypeObj){
 		em.getTransaction().begin();
 		for(CarType ct : lstcartypeObj.getCarTypes())
 		{
 			em.persist(ct);
 		}
-		 
+
 		em.getTransaction().commit();
-
 	}
-
-
+	
+	public List<CarType> getAllCarTypes() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT c FROM CarType s", CarType.class);
+		List<CarType> lstCarTypeInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstCarTypeInfo;
+	}
 
 	public static void main(String[] args) {
 

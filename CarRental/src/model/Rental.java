@@ -26,7 +26,7 @@ public class Rental implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)		
 	private int RentId;	
 	private String CarTypeCode;
-	private String LocationDescription;	
+	private String Location;	
 	private double SubTotal;
 	private double TaxesAndFees;
 	private double TotalPrice;	
@@ -114,12 +114,12 @@ public class Rental implements Serializable {
 		}
 	}
 		
-	@XmlElement(name = "LocationDescription") 
-	public String getLocationDescription() {
-		return LocationDescription;
+	@XmlElement(name = "PickupAirport") 
+	public String getLocation() {
+		return Location;
 	}
-	public void setLocationDescription(String locationDescription) {
-		LocationDescription = locationDescription;
+	public void setLocation(String Location) {
+		Location = Location;
 	}
 	
 	@XmlElement(name = "RentalDays") 
@@ -129,13 +129,13 @@ public class Rental implements Serializable {
 	public void setRentalDays(int rentalDays) {
 		RentalDays = rentalDays;
 	}
-	public Rental(int rentId, String carTypeCode, String locationDescription,
+	public Rental(int rentId, String carTypeCode, String location,
 			double subTotal, double taxesAndFees, double totalPrice,
 			double dailyRate, Date dropoffDay, Date pickupDay, int rentalDays) {
 		super();
 		RentId = rentId;
 		CarTypeCode = carTypeCode;
-		LocationDescription = locationDescription;
+		Location = location;
 		SubTotal = subTotal;
 		TaxesAndFees = taxesAndFees;
 		TotalPrice = totalPrice;
@@ -147,12 +147,12 @@ public class Rental implements Serializable {
 	public Rental() {
 		super();
 	}
-	public Rental(String carTypeCode, String locationDescription,
+	public Rental(String carTypeCode, String location,
 			double subTotal, double taxesAndFees, double totalPrice,
 			double dailyRate, Date dropoffDay, Date pickupDay, int rentalDays) {
 		super();
 		CarTypeCode = carTypeCode;
-		LocationDescription = locationDescription;
+		Location = location;
 		SubTotal = subTotal;
 		TaxesAndFees = taxesAndFees;
 		TotalPrice = totalPrice;

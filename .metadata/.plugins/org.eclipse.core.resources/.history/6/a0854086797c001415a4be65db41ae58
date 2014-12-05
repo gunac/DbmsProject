@@ -1,0 +1,44 @@
+package ApplicationDao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+ 
+import model.Orders;
+
+public class OrdersDao {
+	
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("CarRental");
+
+	EntityManager em = null;
+
+	public OrdersDao(){
+		em = factory.createEntityManager();
+	}
+	
+	// Can be used to show in admin page
+	public List<Orders> getAllOrders() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT r FROM Orders r", Orders.class);
+		List<Orders> lstOrderInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstOrderInfo;
+	}
+
+	// Used to show History for a user
+	public List<Orders> getOrderByCustomerId(int customerId){
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId = : customerId", Orders.class);
+		List<Orders> lstOrderInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstOrderInfo;
+	}
+
+	public static void main(String[] args) {
+		
+	}
+
+}

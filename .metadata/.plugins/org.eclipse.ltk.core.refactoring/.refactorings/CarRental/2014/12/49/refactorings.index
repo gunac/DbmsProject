@@ -20,3 +20,17 @@
 1417767954883	Rename type 'Order'
 1417771693068	Delete element
 1417771700479	Delete element
+1417775076130	Rename method 'createCarType'
+1417776167740	Rename method 'createRentalInfo'
+1417776489426	Rename local variable 'site'
+1417776499957	Rename local variable 'siteObj'
+1417776764553	Rename local variable 'siteObj'
+1417776772633	Rename local variable 'siteId'
+1417779639416	Rename local variable 'modelId'
+1417780054858	Rename local variable 'cusObj'
+1417781823026	Rename local variable 'id'
+1417781957896	Rename type 'OrderDao'
+1417782582388	Rename method 'getLocationDescription'
+1417782594943	Rename method 'setLocationDescription'
+1417782616797	Rename method 'setLocationDescription'
+1417782635292	Rename method 'getLocationDescription'

@@ -29,7 +29,7 @@ public class RentalInstancesJaxb {
 			rentalInstances =(RentalInstances) unmarshaller.unmarshal(file);
 			
 			RentalDao dao = new RentalDao();
-			dao.createRentalInfo(rentalInstances);
+			dao.insertRentalInstances(rentalInstances);
 
 			System.out.println("Obj created");
 

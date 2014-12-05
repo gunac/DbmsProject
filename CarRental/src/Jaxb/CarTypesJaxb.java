@@ -74,7 +74,7 @@ public class CarTypesJaxb {
 			carTypeInstances =(CarTypeInstances) unmarshaller.unmarshal(file);
 			
 			CarTypeDao dao = new CarTypeDao();
-			dao.createCarType(carTypeInstances);
+			dao.insertCarTypeInstances(carTypeInstances);
 
 			System.out.println("Obj created");
 

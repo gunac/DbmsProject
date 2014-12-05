@@ -27,7 +27,7 @@
     
   <Rental>
    <xsl:copy-of select="SubTotal | CarTyTaxesAndFees | TotalPrice | CarTypeCode | DailyRate"> </xsl:copy-of>
-   <xsl:copy-of select="DropoffDay | DropoffTime | PickupDay | PickupTime | LocationDescription | PickupAirport | RentalDays"> </xsl:copy-of>
+   <xsl:copy-of select="DropoffDay | DropoffTime | PickupDay | PickupTime | PickupAirport | RentalDays"> </xsl:copy-of>
            </Rental>
            
  </xsl:template>

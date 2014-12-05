@@ -1,0 +1,66 @@
+package ApplicationDao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import model.CarModel;
+
+
+public class CarModelDao {
+
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("CarRental");
+
+	EntityManager em = null;
+
+	public CarModelDao(){
+		em = factory.createEntityManager();
+	}	
+
+	public void insertCarModel(CarModel carmodel){
+		em.getTransaction().begin();
+		em.persist(carmodel);
+		em.getTransaction().commit();
+	}
+
+	public List<CarModel> getAllCarModel() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT cm FROM CarModel cm", CarModel.class);
+		List<CarModel> lstCarModelInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstCarModelInfo;
+	}
+
+	 
+	public boolean updateCarModel(int modelId, CarModel carmodel)
+	{			
+		em.getTransaction().begin();
+		CarModel carmodelObj = em.find(CarModel.class, modelId);		
+		carmodelObj.setCarTypeCode(carmodel.getCarTypeCode());
+		carmodelObj.setCount(carmodel.getCount());
+		carmodelObj.setModelName(carmodel.getModelName());
+		em.merge(carmodelObj);
+		em.getTransaction().commit();
+		return true;
+	}
+
+	//  removes a site record whose id is siteId and the returns a list of all the sites
+	public List<Site> removeSite(int siteId){
+		em.getTransaction().begin();
+		Site siteObj = em.find(Site.class, siteId);		
+		em.remove(siteObj);
+		em.getTransaction().commit();
+		return findAllSites();
+	}
+
+
+
+
+	public static void main(String[] args) {
+
+	}
+
+}

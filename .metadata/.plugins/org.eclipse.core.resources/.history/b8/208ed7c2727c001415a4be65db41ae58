@@ -1,0 +1,77 @@
+package ApplicationDao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import model.Customer;
+ 
+
+public class CustomerDao {
+	
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("CarRental");
+
+	EntityManager em = null;
+
+	public CustomerDao(){
+		em = factory.createEntityManager();
+	}	
+	
+	// insert
+	public void insertCustomer(Customer Customer){
+		em.getTransaction().begin();
+		em.persist(Customer);
+		em.getTransaction().commit();
+	}
+
+	// Read all
+	public List<Customer> getAllCustomer() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT c FROM Customer c", Customer.class);
+		List<Customer> lstCustomerInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstCustomerInfo;
+	}
+	
+	public Customer getCustomerById(int id){
+		em.getTransaction().begin();
+	}
+
+	// Update
+	public boolean updateCustomer(int customerId, Customer customer)
+	{			
+		em.getTransaction().begin();
+		Customer CustomerObj = em.find(Customer.class, customerId);	
+		CustomerObj.setDob(customer.getDob());
+		CustomerObj.setEmail(customer.getEmail());
+		CustomerObj.setLicenseNo(customer.getLicenseNo());
+		CustomerObj.setName(customer.getName());
+		em.merge(CustomerObj);
+		em.getTransaction().commit();
+		return true;
+	}
+	
+	// Update Customers's count
+	public boolean updateCustomer(int modelId, int count)
+	{			
+		em.getTransaction().begin();
+		Customer CustomerObj = em.find(Customer.class, modelId);		
+		CustomerObj.setCount(count);
+		em.merge(CustomerObj);
+		em.getTransaction().commit();
+		return true;
+	}
+	
+	//  removes 
+	public boolean removeSite(int modelId){
+		em.getTransaction().begin();
+		Customer CustomerObj = em.find(Customer.class, modelId);		
+		em.remove(CustomerObj);
+		em.getTransaction().commit();
+		return true;
+	}
+
+}

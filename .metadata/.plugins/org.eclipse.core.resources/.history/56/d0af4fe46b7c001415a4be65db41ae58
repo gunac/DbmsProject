@@ -1,0 +1,42 @@
+package ApplicationDao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import model.CarModel;
+import model.Rental;
+import model.RentalInstances;
+
+public class CarModelDao {
+
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("CarRental");
+
+	EntityManager em = null;
+
+	public CarModelDao(){
+		em = factory.createEntityManager();
+	}	
+
+	public void insertCarModel(CarModel carmodel){
+		em.getTransaction().begin();
+		em.persist(carmodel);
+		em.getTransaction().commit();
+
+	}
+	
+	public List<Rental> getAllRental() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT r FROM Rental r", Rental.class);
+		List<Rental> lstRentalInfo = q.getResultList();
+		em.getTransaction().commit();
+		return lstRentalInfo;
+	}
+	public static void main(String[] args) {
+		 
+	}
+
+}

@@ -52,10 +52,10 @@ public class Orders {
 	public void setModelId(int modelId) {
 		ModelId = modelId;
 	}
-	public String getLocationDescription() {
+	public String getLocation() {
 		return LocationDescription;
 	}
-	public void setLocationDescription(String locationDescription) {
+	public void setLocation(String locationDescription) {
 		LocationDescription = locationDescription;
 	}
 	public double getSubTotal() {
