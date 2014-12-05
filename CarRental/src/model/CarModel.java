@@ -14,9 +14,10 @@ public class CarModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	 
 	private int ModelId;
-	private CarType CarTypeCode;
+	private String CarTypeCode;
 	private String ModelName;
 	private int Count;
+	
 	public int getModelId() {
 		return ModelId;
 	}
@@ -25,12 +26,11 @@ public class CarModel {
 	}
 	
 	// creates a foreign key in Tower Table
-		@ManyToOne()
-		@JoinColumn(name="CarTypeCode")
-	public CarType getCarTypeCode() {
+		 
+	public String getCarTypeCode() {
 		return CarTypeCode;
 	}
-	public void setCarTypeCode(CarType carTypeCode) {
+	public void setCarTypeCode(String carTypeCode) {
 		CarTypeCode = carTypeCode;
 	}
 	public String getModelName() {
@@ -45,7 +45,7 @@ public class CarModel {
 	public void setCount(int count) {
 		Count = count;
 	}
-	public CarModel(int modelId, CarType carTypeCode, String modelName, int count) {
+	public CarModel(int modelId, String carTypeCode, String modelName, int count) {
 		super();
 		ModelId = modelId;
 		CarTypeCode = carTypeCode;
@@ -55,7 +55,7 @@ public class CarModel {
 	public CarModel() {
 		super();
 	}
-	public CarModel(CarType carTypeCode, String modelName, int count) {
+	public CarModel(String carTypeCode, String modelName, int count) {
 		super();
 		CarTypeCode = carTypeCode;
 		ModelName = modelName;

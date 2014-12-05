@@ -21,6 +21,8 @@ public class Customer {
 	private String Email;
 	private String Password;
 	private String LicenseNo;
+	private int RoleId;
+	
 	public int getCustomerId() {
 		return CustomerId;
 	}

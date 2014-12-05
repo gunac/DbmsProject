@@ -9,8 +9,7 @@ import javax.persistence.Id;
 public class CarFeature {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	 
+	@GeneratedValue(strategy = GenerationType.AUTO)	 
 	private int FeatureId;
 	private String Description;
 	

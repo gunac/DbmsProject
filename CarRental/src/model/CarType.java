@@ -1,6 +1,8 @@
 package model;
  
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
  
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  
 @XmlRootElement(name="CarType")
 @Entity
-public class CarType {
+public class CarType implements Serializable {
 	
 	@Id	
 	private String CarTypeCode;
@@ -42,8 +44,7 @@ public class CarType {
 	}
 	public void setSeatingInfo(String seatingInfo) {
 		SeatingInfo = seatingInfo;
-	}
-	
+	}	
 	
 	public CarType() {
 		super();

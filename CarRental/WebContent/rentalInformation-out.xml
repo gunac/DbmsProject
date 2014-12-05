@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?><RentalInstances>
 <Rental>
-<SubTotal>33.32</SubTotal>
-<TotalPrice>51.22</TotalPrice>
-<CarTypeCode>SCAR</CarTypeCode>
-<DailyRate>16.66</DailyRate>
+<SubTotal>28.62</SubTotal>
+<TotalPrice>45.56</TotalPrice>
+<CarTypeCode>ICAR</CarTypeCode>
+<DailyRate>14.31</DailyRate>
 <DropoffDay>12/08/2014</DropoffDay>
 <DropoffTime>23:30</DropoffTime>
 <PickupDay>12/07/2014</PickupDay>
 <PickupTime>10:00</PickupTime>
-<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
 </Rental>
 <Rental>
-<SubTotal>33.32</SubTotal>
-<TotalPrice>51.22</TotalPrice>
-<CarTypeCode>FCAR</CarTypeCode>
-<DailyRate>16.66</DailyRate>
+<SubTotal>30.00</SubTotal>
+<TotalPrice>47.11</TotalPrice>
+<CarTypeCode>XXAR</CarTypeCode>
+<DailyRate>15.00</DailyRate>
 <DropoffDay>12/08/2014</DropoffDay>
 <DropoffTime>23:30</DropoffTime>
 <PickupDay>12/07/2014</PickupDay>
 <PickupTime>10:00</PickupTime>
-<LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Rental>
+<Rental>
+<SubTotal>30.42</SubTotal>
+<TotalPrice>47.80</TotalPrice>
+<CarTypeCode>SCAR</CarTypeCode>
+<DailyRate>15.21</DailyRate>
+<DropoffDay>12/08/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/07/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
+<PickupAirport>LAX</PickupAirport>
+<RentalDays>2</RentalDays>
+</Rental>
+<Rental>
+<SubTotal>32.18</SubTotal>
+<TotalPrice>50.00</TotalPrice>
+<CarTypeCode>FCAR</CarTypeCode>
+<DailyRate>16.09</DailyRate>
+<DropoffDay>12/08/2014</DropoffDay>
+<DropoffTime>23:30</DropoffTime>
+<PickupDay>12/07/2014</PickupDay>
+<PickupTime>10:00</PickupTime>
+<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
 </Rental>
@@ -39,36 +65,10 @@
 <RentalDays>2</RentalDays>
 </Rental>
 <Rental>
-<SubTotal>36.80</SubTotal>
-<TotalPrice>55.53</TotalPrice>
-<CarTypeCode>XXAR</CarTypeCode>
-<DailyRate>18.40</DailyRate>
-<DropoffDay>12/08/2014</DropoffDay>
-<DropoffTime>23:30</DropoffTime>
-<PickupDay>12/07/2014</PickupDay>
-<PickupTime>10:00</PickupTime>
-<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
-<PickupAirport>LAX</PickupAirport>
-<RentalDays>2</RentalDays>
-</Rental>
-<Rental>
 <SubTotal>27.90</SubTotal>
 <TotalPrice>61.60</TotalPrice>
 <CarTypeCode>CCAR</CarTypeCode>
 <DailyRate>13.95</DailyRate>
-<DropoffDay>12/08/2014</DropoffDay>
-<DropoffTime>23:30</DropoffTime>
-<PickupDay>12/07/2014</PickupDay>
-<PickupTime>10:00</PickupTime>
-<LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
-<PickupAirport>LAX</PickupAirport>
-<RentalDays>2</RentalDays>
-</Rental>
-<Rental>
-<SubTotal>31.90</SubTotal>
-<TotalPrice>66.86</TotalPrice>
-<CarTypeCode>ICAR</CarTypeCode>
-<DailyRate>15.95</DailyRate>
 <DropoffDay>12/08/2014</DropoffDay>
 <DropoffTime>23:30</DropoffTime>
 <PickupDay>12/07/2014</PickupDay>
