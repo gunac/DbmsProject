@@ -22,6 +22,7 @@ public class RentalDao {
 	
 	public void createRentalInfo(RentalInstances lstrentalInstances){
 		em.getTransaction().begin();
+		
 		for(Rental rental : lstrentalInstances.getRentalTypes())
 		{
 			em.persist(rental);

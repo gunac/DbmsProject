@@ -1,9 +1,0 @@
-package Model;
-
-public class CarModel {
-	
-	private int CarId;
-	private String CarName;
-	private String Seats;
-
-}

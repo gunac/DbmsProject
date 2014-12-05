@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 public class Orders {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)		
 	private int OrderId;
 	private int CustomerId;
 	private int ModelId;

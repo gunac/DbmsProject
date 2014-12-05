@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 public class CarModel {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	 
 	private int ModelId;
 	private String CarTypeCode;
 	private String ModelName;

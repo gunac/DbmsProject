@@ -40,11 +40,20 @@
 <fullyQualifiedTypeName name="javax.xml.bind.JAXBContext"/>
 <fullyQualifiedTypeName name="javax.xml.bind.Unmarshaller"/>
 <fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlElementWrapper"/>
-<fullyQualifiedTypeName name="model.CarType"/>
 <fullyQualifiedTypeName name="javax.xml.bind.Marshaller"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="Jaxb.CarTypesJaxb"/>
-<fullyQualifiedTypeName name="model.ListCarTypes"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="model.CarType"/>
+<fullyQualifiedTypeName name="ApplicationDao.CarTypeDao"/>
+<fullyQualifiedTypeName name="model.ListCarTypes"/>
+<fullyQualifiedTypeName name="model.CarTypeInstances"/>
+<fullyQualifiedTypeName name="model.RentalInstances"/>
+<fullyQualifiedTypeName name="model.Rental"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="Jaxb.RentalInstancesJaxb"/>
+<fullyQualifiedTypeName name="ApplicationDao.RentalDao"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 </qualifiedTypeNameHistroy>

@@ -1,7 +1,0 @@
-package Model;
-
-public class Rental {
-
-	private int RentId;
-	private double 
-}

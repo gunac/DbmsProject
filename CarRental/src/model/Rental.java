@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -22,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Rental implements Serializable {
 	 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)		
 	private int RentId;	
 	private String CarTypeCode;
 	private String LocationDescription;	
@@ -86,7 +87,15 @@ public class Rental implements Serializable {
 		return DropoffDay;
 	}
 	public void setDropoffDay(Date dropoffDay) {
+		if(dropoffDay == null)
+		{
+			Date date = new Date();
+			dropoffDay = date;
+		}
+		else
+		{
 		DropoffDay = dropoffDay;
+		}
 	}
 	 
 	@XmlElement(name = "PickupDay")
@@ -94,7 +103,15 @@ public class Rental implements Serializable {
 		return PickupDay;
 	}
 	public void setPickupDay(Date pickupDay) {
+		if(pickupDay == null)
+		{
+			Date date = new Date();
+			PickupDay = date;
+		}
+		else
+		{
 		PickupDay = pickupDay;
+		}
 	}
 		
 	@XmlElement(name = "LocationDescription") 

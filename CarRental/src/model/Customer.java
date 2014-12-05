@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 public class Customer {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)		
+	@GeneratedValue(strategy = GenerationType.IDENTITY)		
 	private int CustomerId;
 	private String Name;
 	@Temporal(TemporalType.DATE)
@@ -80,9 +80,6 @@ public class Customer {
 		Email = email;
 		Password = password;
 		LicenseNo = licenseNo;
-	}
-	
-	
-	
+	}	
 
 }

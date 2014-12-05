@@ -88,7 +88,7 @@ public class CarTypesJaxb {
 	public static void main(String[] args) {
 
 		CarTypesJaxb jb = new CarTypesJaxb();
-		jb.createCarTpeXml();
+		//jb.createCarTpeXml();
 		
 		// Inserts CarType data into XML CALL ONLY ONCE!
 	    jb.createCarTypeObjFromXML();

@@ -44,6 +44,7 @@ public class RentalInstancesJaxb {
 	public static void main(String[] args) {
 		RentalInstancesJaxb j = new RentalInstancesJaxb();
 		j.createRentalInstancesFromXML();
+		System.out.println("Check rental database");
 
 	}
 
