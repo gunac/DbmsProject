@@ -12,3 +12,8 @@
 1417683713247	Delete element
 1417732395497	Delete element
 1417732444867	Delete element
+1417737069282	Copy compilation units
+1417738084377	Rename type 'ListCarTypes'
+1417738149579	Rename local variable 'lstcarTypeObj'
+1417739317531	Rename local variable 'carTypeInstances'
+1417739416274	Rename local variable 'lstcartypeObj'

@@ -7,11 +7,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import model.CarType;
-
+import model.CarTypeInstances;
+ 
 public class CarTypeDao {
 
 
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("jpa");
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("CarRental");
 
 	EntityManager em = null;
 
@@ -29,11 +30,13 @@ public class CarTypeDao {
 
 	}
 
-	public void createCarType(List<CarType> lstcartypeObj){
+	public void createCarType(CarTypeInstances lstcartypeObj){
 		em.getTransaction().begin();
-		foreach(CarType c : lstcartypeObj){
-			em.persist(c);
+		for(CarType ct : lstcartypeObj.getCarTypes())
+		{
+			em.persist(ct);
 		}
+		 
 		em.getTransaction().commit();
 
 	}

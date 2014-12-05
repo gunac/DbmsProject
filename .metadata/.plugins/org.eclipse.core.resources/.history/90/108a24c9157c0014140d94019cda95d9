@@ -1,0 +1,5 @@
+package ApplicationDao;
+
+public class RentalDao {
+
+}

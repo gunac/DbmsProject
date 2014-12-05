@@ -1,0 +1,19 @@
+package ApplicationDao;
+
+import model.CarType;
+import model.CarTypeInstances;
+
+public class RentalDao {
+
+	
+	public void createCarType(CarTypeInstances lstcartypeObj){
+		em.getTransaction().begin();
+		for(CarType ct : lstcartypeObj.getCarTypes())
+		{
+			em.persist(ct);
+		}
+		 
+		em.getTransaction().commit();
+
+	}
+}

@@ -1,0 +1,12 @@
+package Jaxb;
+
+public class RentalInstancesJaxb {
+
+	
+	public void createCarTypeObjFromXML()
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

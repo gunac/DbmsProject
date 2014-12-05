@@ -1,0 +1,9 @@
+package model;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlRootElement(name="Rental")
+public class RentalInstances {
+
+}

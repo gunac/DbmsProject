@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><RentalInformation>
-<RentalData>
-<Result>
+<?xml version="1.0" encoding="UTF-8"?><RentalInstances>
+<Rental>
 <SubTotal>33.32</SubTotal>
 <TotalPrice>51.22</TotalPrice>
 <CarTypeCode>SCAR</CarTypeCode>
@@ -12,8 +11,8 @@
 <LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>33.32</SubTotal>
 <TotalPrice>51.22</TotalPrice>
 <CarTypeCode>FCAR</CarTypeCode>
@@ -25,8 +24,8 @@
 <LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>21.90</SubTotal>
 <TotalPrice>54.34</TotalPrice>
 <CarTypeCode>ECAR</CarTypeCode>
@@ -38,8 +37,8 @@
 <LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>36.80</SubTotal>
 <TotalPrice>55.53</TotalPrice>
 <CarTypeCode>XXAR</CarTypeCode>
@@ -51,8 +50,8 @@
 <LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>27.90</SubTotal>
 <TotalPrice>61.60</TotalPrice>
 <CarTypeCode>CCAR</CarTypeCode>
@@ -64,8 +63,8 @@
 <LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>31.90</SubTotal>
 <TotalPrice>66.86</TotalPrice>
 <CarTypeCode>ICAR</CarTypeCode>
@@ -77,8 +76,8 @@
 <LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>66.66</SubTotal>
 <TotalPrice>92.47</TotalPrice>
 <CarTypeCode>MVAR</CarTypeCode>
@@ -90,8 +89,8 @@
 <LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>69.66</SubTotal>
 <TotalPrice>96.18</TotalPrice>
 <CarTypeCode>IFAR</CarTypeCode>
@@ -103,8 +102,8 @@
 <LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>76.74</SubTotal>
 <TotalPrice>104.94</TotalPrice>
 <CarTypeCode>LCAR</CarTypeCode>
@@ -116,8 +115,8 @@
 <LocationDescription>Off Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>110.00</SubTotal>
 <TotalPrice>146.08</TotalPrice>
 <CarTypeCode>SPAR</CarTypeCode>
@@ -129,8 +128,8 @@
 <LocationDescription>Counter in airport; Shuttle to car</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>105.90</SubTotal>
 <TotalPrice>154.31</TotalPrice>
 <CarTypeCode>STAR</CarTypeCode>
@@ -142,8 +141,8 @@
 <LocationDescription>On Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-<Result>
+</Rental>
+<Rental>
 <SubTotal>113.90</SubTotal>
 <TotalPrice>164.27</TotalPrice>
 <CarTypeCode>FFAR</CarTypeCode>
@@ -155,6 +154,5 @@
 <LocationDescription>On Airport - Shuttle to Vendor</LocationDescription>
 <PickupAirport>LAX</PickupAirport>
 <RentalDays>2</RentalDays>
-</Result>
-</RentalData>
-</RentalInformation>
+</Rental>
+</RentalInstances>
