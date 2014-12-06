@@ -38,6 +38,17 @@ public class Customer {
 	public Date getDob() {
 		return Dob;
 	}
+	public Customer(int customerId, String name, Date dob, String email,
+			String password, String licenseNo, int roleId) {
+		super();
+		CustomerId = customerId;
+		Name = name;
+		Dob = dob;
+		Email = email;
+		Password = password;
+		LicenseNo = licenseNo;
+		RoleId = roleId;
+	}
 	public void setDob(Date dob) {
 		Dob = dob;
 	}
@@ -80,6 +91,12 @@ public class Customer {
 		Email = email;
 		Password = password;
 		LicenseNo = licenseNo;
+	}
+	public int getRoleId() {
+		return RoleId;
+	}
+	public void setRoleId(int roleId) {
+		RoleId = roleId;
 	}	
 
 }

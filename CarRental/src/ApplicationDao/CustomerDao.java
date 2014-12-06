@@ -34,7 +34,7 @@ public class CustomerDao {
 		List<Customer> lstCustomerInfo = q.getResultList();
 		em.getTransaction().commit();
 		return lstCustomerInfo;
-	}
+	}	
 
 	// get by id
 	public Customer getCustomerById(int id){
@@ -48,7 +48,7 @@ public class CustomerDao {
 	// if list count > 0 => Email exists
 	public List<Customer> getCustomerByEmail(String email) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = : email", Customer.class);
+		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = :email", Customer.class);
 		List<Customer> lstCustomerInfo = q.getResultList();
 		em.getTransaction().commit();
 		return lstCustomerInfo;
@@ -57,10 +57,19 @@ public class CustomerDao {
 	// Get Password for given Email 
 	public String getCustomerPassword(String email) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = : email", Customer.class);
+		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = :email", Customer.class);
 		Customer cusObj = (Customer) q.getSingleResult();
 		em.getTransaction().commit();
 		return cusObj.getPassword();
+	}
+	
+	//Get Customer by email and password
+	public Customer getCustomerByEmailandPassword(String email, String password) {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = :email and c.Password = :password", Customer.class);
+		Customer cusObj = (Customer) q.getSingleResult();
+		em.getTransaction().commit();
+		return cusObj;
 	}
 
 
@@ -88,5 +97,5 @@ public class CustomerDao {
 		em.getTransaction().commit();
 		return true;
 	}
-
+	
 }
