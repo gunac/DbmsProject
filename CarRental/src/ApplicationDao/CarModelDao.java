@@ -48,7 +48,7 @@ public class CarModelDao {
 	
 
 	// Update
-	public boolean updateCarModel(int modelId, CarModel carmodel)
+	public void updateCarModel(int modelId, CarModel carmodel)
 	{			
 		em.getTransaction().begin();
 		CarModel carmodelObj = em.find(CarModel.class, modelId);		
@@ -57,7 +57,7 @@ public class CarModelDao {
 		carmodelObj.setModelName(carmodel.getModelName());
 		em.merge(carmodelObj);
 		em.getTransaction().commit();
-		return true;
+		
 	}
 	
 	// Update Carmodels's count

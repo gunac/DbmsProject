@@ -48,7 +48,18 @@
 		if ("select".equals(action) && !idStr.equals("0")
 				&& !idStr.equals("null")) {
 			int id = Integer.parseInt(idStr);
-			carModelDao.getModelById(id);
+			carmodel = carModelDao.getModelById(id);
+			request.setAttribute("carType", carmodel.getCarTypeCode());
+			
+		}
+		// Update A Model
+		if ("update".equals(action) && !idStr.equals("0")
+				&& !idStr.equals("null") && !carType.equals("0")) {
+			int id = Integer.parseInt(idStr);
+			int count = Integer.parseInt(modelCount);
+			carmodel = new CarModel(carType, modelName, count);
+			carModelDao.updateCarModel(id, carmodel);			
+			request.setAttribute("carType", carmodel.getCarTypeCode());
 			
 		}
 
@@ -56,6 +67,7 @@
 	%>
 	<form action="createModel.jsp">
 		<table class="table">
+		<!--  CAR TYPE DROP DOWN -->
 			<tr>
 				<td><label> Select a Car Type </label></td>
 				<td><select name="carType">
@@ -73,18 +85,18 @@
 				<td><label id="error" style="visibility: hidden;">Please
 						select Car Type</label></td>
 			</tr>
+		<!-- CAR MODEL NAME AND COUNT FIELDS -->
+		<input type="hidden" name="id" value="<%=carmodel.getModelId()%>">
 			<tr>
 				<td><input type="text" class="form-control" name="modelName"
-					value="<%=carmodel.getModelName()%>" placeholder="Enter Car Model"></td>
-					
+					value="<%=carmodel.getModelName()%>" placeholder="Enter Car Model"></td>					
 				<td><input type="text" class="form-control" name="modelCount"
 					value="<%=carmodel.getCount()%>" placeholder="Enter Car Count"></td>
-				<td><button class="btn btn-warning" name="action"
-						value="create">Add</button>
-					<button class="btn btn-success" name="action" value="update">Update</button></td>
+				
+				<td><button class="btn btn-success" name="action" value="create">Add</button>
+					<button class="btn btn-primary" name="action" value="update">Update</button></td>
 			</tr>
-<%System.out.println(carmodel.getModelName());%>
-					<%System.out.println(carmodel.getCount());%>
+ 
 			<%
 				for (CarModel c : lstCarModels) {
 			%>
@@ -96,9 +108,7 @@
 					<a class="btn btn-danger"
 					href="createModel.jsp?action=select&id=<%=c.getModelId()%>">Select</a></td>
 			</tr>
-			<%
-				}
-			%>
+			<%}	%>
 
 		</table>
 	</form>
