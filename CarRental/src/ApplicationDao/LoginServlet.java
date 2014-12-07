@@ -1,6 +1,7 @@
 package ApplicationDao;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,18 +25,32 @@ public class LoginServlet extends HttpServlet {
 		
 		CustomerDao dao = new CustomerDao();
 		
-		Customer customer = dao.getCustomerByEmailandPassword(email, password);
+			Customer customer = dao.getCustomerByEmailandPassword(email, password);
+		
 		
 		if(customer == null)
 		{
-			response.sendRedirect("/CarRental/login.jsp");
+			request.setAttribute("customer", null);
+			request.setAttribute("errorMessage", "Invalid email or password");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+			rd.forward(request, response);
 		}
 		else
 		{
+			if(customer.getRoleId() == 2)
+			{
 			request.setAttribute("customer", customer);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/HomePage.jsp");
 			dispatcher.forward(request, response);
 			response.sendRedirect("/CarRental/HomePage.jsp");
+			}
+			else
+				if(customer.getRoleId() == 1){
+					request.setAttribute("customer", customer);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPage.jsp");
+					dispatcher.forward(request, response);
+					response.sendRedirect("/CarRental/AdminPage.jsp");
+				}
 		}
 	}
 

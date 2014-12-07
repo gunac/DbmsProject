@@ -14,6 +14,17 @@
     <div class="container">
     <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
       <h3><em><u>Login Page</u></em></h3>
+      <%
+    if(null!=request.getAttribute("errorMessage"))
+    {%>
+    	<p style="color:red">
+    	<%
+        out.println(request.getAttribute("errorMessage"));
+    	%>
+    	</p>
+    	<%
+    }
+%>
       <form action="/CarRental/loginAction" method="post">
         <div class="form-group">
           <label for="email">Email:</label>

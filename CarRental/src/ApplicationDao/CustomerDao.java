@@ -1,12 +1,15 @@
 package ApplicationDao;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import model.Customer;
 
@@ -71,19 +74,32 @@ public class CustomerDao {
 		em.getTransaction().commit();
 		return cusObj.getPassword();
 	}
-
-	//Get Customer by email and password
-	public Customer getCustomerByEmailandPassword(String email, String password) {
+	
+	public Customer getCustomerforEmail(String email) {
 		em.getTransaction().begin();
-		Query q = em.createNamedQuery("findCustomerByEmailandPassword")
-				.setParameter("email", email)
-				.setParameter("password", password);
+		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = '" + email + "'");	 
 		Customer cusObj = (Customer) q.getSingleResult();
 		em.getTransaction().commit();
 		return cusObj;
 	}
 
-
+	//Get Customer by email and password
+	public Customer getCustomerByEmailandPassword(String email, String password) {
+		em.getTransaction().begin();
+		Customer cusObj = null;
+		Query q = em.createNamedQuery("findCustomerByEmailandPassword")
+				.setParameter("email", email)
+				.setParameter("password", password);
+		try{
+		cusObj = (Customer) q.getSingleResult();
+		}catch (NoResultException nre){
+			return null;
+		}
+		em.getTransaction().commit();
+		return cusObj;
+	}
+	
+	
 	// Update
 	public boolean updateCustomer(int customerId, Customer customer)
 	{			
