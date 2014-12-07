@@ -1,0 +1,58 @@
+<%@ page import="ApplicationDao.CarModelDao"%>
+<%@ page import="java.util.List"%>
+<%@ page import="model.CarModel"%>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<title>Add Cars</title>
+</head>
+<body>
+	<%
+		CarModelDao carModelDao = new CarModelDao();
+		String modelName = request.getParameter("modelName");
+		String modelCount = request.getParameter("modelCount");
+		String action = request.getParameter("action");		
+		
+		if("create".equals(action)){
+			
+			CarModel carmodel = new CarModel();
+			carmodel.setModelName(modelName);
+			carmodel.setCount(modelCount);
+			
+			carModelDao.insertCarModel(carmodel);
+		}
+		
+	
+		List<CarModel> lstCarModels = carModelDao.getAllCarModel();
+	%>
+
+	<form action="createModel.jsp">
+		<table class="table">
+			<tr>			
+				<td> <input type="text" class="form-control" id="modelName" placeholder="Enter Car Model"></td>
+				<td> <input type="text" class="form-control" id="modelCount" placeholder="Enter Car Count"></td>
+				<td><button class="btn" name="addModel" value="create">Add</button> </td>			
+			</tr>		
+
+			<%
+				for (CarModel c : lstCarModels) {
+			%>
+			<tr>
+				<td><%=c.getModelName()%></td>
+				<td><%=c.getCount()%></td>
+			</tr>
+			<%
+				}
+			%>
+
+		</table>
+	</form>
+</body>
+</html>

@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import model.CarModel;
+import model.Customer;
 
 
 public class CarModelDao {
@@ -70,16 +71,22 @@ public class CarModelDao {
 		return true;
 	}
 	
-	
-
 	//  removes 
-	public boolean removeSite(int modelId){
+	public boolean removeCarModel(int modelId){
 		em.getTransaction().begin();
 		CarModel carmodelObj = em.find(CarModel.class, modelId);		
 		em.remove(carmodelObj);
 		em.getTransaction().commit();
 		return true;
 	}
+	
+	// get by id
+		public CarModel getModelById(int id){
+			em.getTransaction().begin();
+			CarModel modelObj = em.find(CarModel.class, id);
+			em.getTransaction().commit();
+			return modelObj;
+		}
 
 	public static void main(String[] args) {
 

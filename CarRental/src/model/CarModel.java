@@ -15,7 +15,7 @@ public class CarModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	 
 	private int ModelId;
 	private String CarTypeCode;
-	private String ModelName;
+	private String ModelName = "";
 	private int Count;
 	
 	public int getModelId() {

@@ -1,0 +1,90 @@
+<%@ page import="ApplicationDao.CarModelDao"%>
+<%@ page import="ApplicationDao.CarTypeDao"%>
+<%@ page import="java.util.List"%>
+<%@ page import="model.CarType"%>
+<%@ page import="model.CarModel"%>
+
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<title>Add Cars</title>
+</head>
+<body>
+	<%
+		//---------------------Controller 
+		CarModelDao carModelDao = new CarModelDao();
+		String modelName = request.getParameter("modelName");
+		//---------Get values to insert data
+		String modelCount = request.getParameter("modelCount");
+		String carType = request.getParameter("carType");
+		String action = request.getParameter("action");
+		String idStr = request.getParameter("id"); 
+		// CREATE A MODEL
+		if ("create".equals(action) && !carType.equals("0")) {
+			int count = Integer.parseInt(modelCount);
+			CarModel carmodel = new CarModel(carType, modelName, count);
+			carModelDao.insertCarModel(carmodel);
+		}
+		// DELETE A MODEL
+		if ("delete".equals(action) && !idStr.equals("0")  && !idStr.equals("null")) {
+			int id = Integer.parseInt(idStr);
+			carModelDao.removeCarModel(id);
+		}
+		List<CarModel> lstCarModels = carModelDao.getAllCarModel();
+	%>
+	<form action="createModel.jsp">
+		<table class="table">
+			<tr>
+				<td><label> Select a Car Type </label></td>
+				<td><select name="carType">
+						<option value="0" selected>- select -</option>
+						<%
+							CarTypeDao carTypeDao = new CarTypeDao();
+							List<CarType> lstCarType = carTypeDao.getAllCarTypes();
+							for (CarType c : lstCarType) {
+						%>
+						<option value="<%=c.getCarTypeCode()%>"><%=c.getCarTypeName()%></option>
+						<%
+							}
+						%>
+				</select></td>
+				<td><label id="error" style="visibility: hidden;">Please
+						select Car Type</label></td>
+			</tr>
+			<tr>
+				<td><input type="text" class="form-control" name="modelName"
+					placeholder="Enter Car Model"></td>
+				<td><input type="text" class="form-control" name="modelCount"
+					placeholder="Enter Car Count"></td>
+				<td><button class="btn btn-success" name="action"
+						value="create">Add</button></td>
+				<td><button class="btn btn-success" name="action"
+						value="update">Add</button></td>
+			</tr>
+
+			<%
+				for (CarModel c : lstCarModels) {
+			%>
+			<tr>
+				<td><%=c.getModelName()%></td>
+				<td><%=c.getCount()%></td>
+				<td><a class="btn btn-danger"
+					href="createModel.jsp?action=delete&id=<%=c.getModelId()%>">Delete</a></td>
+					<td><a class="btn btn-danger"
+					href="createModel.jsp?action=select&id=<%=c.getModelId()%>">Select</a></td>
+			</tr>
+			<%
+				}
+			%>
+
+		</table>
+	</form>
+</body>
+</html>
