@@ -24,8 +24,8 @@ public class OrdersDao {
 	// Can be used to show in admin page
 	public List<Orders> getAllOrders() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT r FROM Orders r", Orders.class);
-		List<Orders> lstOrderInfo = q.getResultList();
+		Query q = em.createQuery("SELECT r FROM Orders r");
+		List<Orders> lstOrderInfo =(List<Orders>) q.getResultList();
 		em.getTransaction().commit();
 		return lstOrderInfo;
 	}
@@ -33,8 +33,8 @@ public class OrdersDao {
 	// Used to show History for a user
 	public List<Orders> getOrderByCustomerId(int customerId){
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId = : customerId", Orders.class);
-		List<Orders> lstOrderInfo = q.getResultList();
+		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId "+ customerId);
+		List<Orders> lstOrderInfo =(List<Orders>) q.getResultList();
 		em.getTransaction().commit();
 		return lstOrderInfo;
 	}

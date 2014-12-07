@@ -39,7 +39,7 @@ public class RentalDao {
 	
 	public List<Rental> getAllRental() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT r FROM Rental r", Rental.class);
+		Query q = em.createQuery("SELECT r FROM Rental r");
 		List<Rental> lstRentalInfo = q.getResultList();
 		em.getTransaction().commit();
 		return lstRentalInfo;
@@ -48,16 +48,16 @@ public class RentalDao {
 	// 
 	public List<Rental> getRentalInfoForLocationAndDate(String Location, Date dropoffdate) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT r FROM Rental r WHERE r.Location = :Location and r.Dropoffdate = :dropoffdate", Rental.class);
-		List<Rental> lstRentalInfo = q.getResultList();
+		Query q = em.createQuery("SELECT r FROM Rental r WHERE r.Location ='"+ Location +"'and r.Dropoffdate = '"+dropoffdate+ "'");
+		List<Rental> lstRentalInfo = (List<Rental>)q.getResultList();
 		em.getTransaction().commit();
 		return lstRentalInfo;
 	}
 	
 	public List<Rental> getRentalInfoByLocation(String Location) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT r FROM Rental r WHERE r.Location = :Location", Rental.class);
-		List<Rental> lstRentalInfo = q.getResultList();
+		Query q = em.createQuery("SELECT r FROM Rental r WHERE r.Location ='"+ Location +"'");
+		List<Rental> lstRentalInfo = (List<Rental>)q.getResultList();
 		em.getTransaction().commit();
 		return lstRentalInfo;
 	}

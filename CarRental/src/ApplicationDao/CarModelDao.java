@@ -30,8 +30,8 @@ public class CarModelDao {
 	// Read all
 	public List<CarModel> getAllCarModel() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT cm FROM CarModel cm", CarModel.class);
-		List<CarModel> lstCarModelInfo = q.getResultList();
+		Query q = em.createQuery("SELECT cm FROM CarModel cm");
+		List<CarModel> lstCarModelInfo =(List<CarModel>) q.getResultList();
 		em.getTransaction().commit();
 		return lstCarModelInfo;
 	}
@@ -40,7 +40,7 @@ public class CarModelDao {
 	public List<CarModel> getAvailableCarModel() {
 		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT cm FROM CarModel cm WHERE cm.Count > 0", CarModel.class);
-		List<CarModel> lstCarModelInfo = q.getResultList();
+		List<CarModel> lstCarModelInfo =(List<CarModel>) q.getResultList();
 		em.getTransaction().commit();
 		return lstCarModelInfo;
 	}

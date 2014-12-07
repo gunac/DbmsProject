@@ -1,0 +1,121 @@
+package ApplicationDao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import model.Customer;
+
+
+public class CustomerDao {
+
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("CarRental");
+
+	EntityManager em = null;
+
+	public CustomerDao(){
+		em = factory.createEntityManager();
+	}	
+
+	// insert
+	public void insertCustomer(Customer Customer){
+		em.getTransaction().begin();
+		em.persist(Customer);
+		em.getTransaction().commit();
+		em.close();
+	}
+
+	// Read all
+	public List<Customer> getAllCustomer() {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT * FROM Customer c");
+		List<Customer> lstCustomerInfo =(List<Customer>) q.getResultList();
+		em.getTransaction().commit();
+		em.close();
+		return lstCustomerInfo;
+
+	}	
+
+	// get by id
+	public Customer getCustomerById(int id){
+		em.getTransaction().begin();
+		Customer cusObj = em.find(Customer.class, id);
+		em.getTransaction().commit();
+		em.close();
+		return cusObj;
+	}
+
+	// Get Customer by by Email to check duplicates
+	// if list count > 0 => Email exists
+	public List<Customer> getCustomerByEmail(String email) {
+		Query q = em.createQuery("SELECT * FROM Customer c where c.Email ='" + email + "'");
+		List<Customer> lstCustomerInfo =getAllCustomer();
+		Customer cusObj = new Customer();
+		List<Customer> lstCusWithSameEmail = new ArrayList<Customer>();
+		for(Customer c : lstCustomerInfo){			
+			if(c.getEmail().equals(email)){				 
+				lstCusWithSameEmail.add(c);
+			}
+		}		 
+		return lstCusWithSameEmail;
+	}
+
+	// Get Password for given Email 
+	public String getCustomerPassword(String email) {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT * FROM Customer c where c.Email ='" + email + "'");
+		Customer cusObj = (Customer) q.getSingleResult();
+		em.getTransaction().commit();
+		em.close();
+		return cusObj.getPassword();
+	}
+
+	//Get Customer by email and password
+	public Customer getCustomerByEmailandPassword(String email, String password) {
+		em.getTransaction().begin();
+		Query q = em.createQuery("SELECT * FROM Customer c where c.Email ='" + email + "'and c.Password ='"+password + "'");
+		Customer cusObj = (Customer) q.getSingleResult();
+		em.getTransaction().commit();
+		em.close();
+		return cusObj;
+	}
+
+
+	// Update
+	public boolean updateCustomer(int customerId, Customer customer)
+	{			
+		em.getTransaction().begin();
+		Customer CustomerObj = em.find(Customer.class, customerId);	
+		CustomerObj.setName(customer.getName());
+		CustomerObj.setDob(customer.getDob());
+		CustomerObj.setEmail(customer.getEmail());
+		CustomerObj.setEmail(customer.getPassword());
+		CustomerObj.setLicenseNo(customer.getLicenseNo());		
+		em.merge(CustomerObj);
+		em.getTransaction().commit();
+		em.close();
+		return true;
+	}
+
+
+	//  removes 
+	public boolean removeCustomer(int cusId){
+		em.getTransaction().begin();
+		Customer CustomerObj = em.find(Customer.class, cusId);		
+		em.remove(CustomerObj);
+		em.getTransaction().commit();
+		em.close();
+		return true;
+	}
+
+	public static void main(String[] args) {
+		CustomerDao dao = new CustomerDao();
+		String user = dao.getCustomerPassword("divya@gmail.com");
+		System.out.println(user);
+	}
+
+}

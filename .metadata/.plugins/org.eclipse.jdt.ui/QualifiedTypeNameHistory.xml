@@ -27,7 +27,6 @@
 <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
 <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
@@ -49,11 +48,16 @@
 <fullyQualifiedTypeName name="model.ListCarTypes"/>
 <fullyQualifiedTypeName name="model.CarTypeInstances"/>
 <fullyQualifiedTypeName name="model.RentalInstances"/>
-<fullyQualifiedTypeName name="model.Rental"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="Jaxb.RentalInstancesJaxb"/>
-<fullyQualifiedTypeName name="ApplicationDao.RentalDao"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="model.CarModel"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="model.Customer"/>
+<fullyQualifiedTypeName name="ApplicationDao.RentalDao"/>
+<fullyQualifiedTypeName name="model.Rental"/>
+<fullyQualifiedTypeName name="model.Orders"/>
 </qualifiedTypeNameHistroy>

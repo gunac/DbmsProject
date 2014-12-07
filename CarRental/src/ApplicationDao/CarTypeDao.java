@@ -28,6 +28,7 @@ public class CarTypeDao {
 		em.getTransaction().begin();
 		em.persist(cartypeObj);
 		em.getTransaction().commit();
+		em.close();
 	}
 
 	public void insertCarTypeInstances(CarTypeInstances lstcartypeObj){
@@ -38,17 +39,22 @@ public class CarTypeDao {
 		}
 
 		em.getTransaction().commit();
+		em.close();
 	}
 	
 	public List<CarType> getAllCarTypes() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM CarType s", CarType.class);
-		List<CarType> lstCarTypeInfo = q.getResultList();
+		Query q = em.createQuery("SELECT c FROM CarType c");
+		List<CarType> lstCarTypeInfo =(List<CarType>)q.getResultList();
 		em.getTransaction().commit();
+		em.close();
 		return lstCarTypeInfo;
 	}
 
 	public static void main(String[] args) {
+		
+		//CarTypeDao d = new CarTypeDao();
+		//d.getAllCarTypes();
 
 	}
 

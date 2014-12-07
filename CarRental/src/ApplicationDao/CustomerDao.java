@@ -1,5 +1,6 @@
 package ApplicationDao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -30,10 +31,11 @@ public class CustomerDao {
 	// Read all
 	public List<Customer> getAllCustomer() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c", Customer.class);
-		List<Customer> lstCustomerInfo = q.getResultList();
+		Query q = em.createQuery("SELECT c FROM Customer c");
+		List<Customer> lstCustomerInfo =(List<Customer>) q.getResultList();
 		em.getTransaction().commit();
 		return lstCustomerInfo;
+
 	}	
 
 	// get by id
@@ -46,27 +48,34 @@ public class CustomerDao {
 
 	// Get Customer by by Email to check duplicates
 	// if list count > 0 => Email exists
-	public List<Customer> getCustomerByEmail(String email) {
-		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = :email", Customer.class);
-		List<Customer> lstCustomerInfo = q.getResultList();
-		em.getTransaction().commit();
-		return lstCustomerInfo;
+	public boolean getCustomerByEmail(String email) {
+		List<Customer> lstCustomerInfo =getAllCustomer();
+		Customer cusObj = new Customer();
+		List<Customer> lstCusWithSameEmail = new ArrayList<Customer>();
+		for(Customer c : lstCustomerInfo){			
+			if(c.getEmail().equals(email)){				 
+				lstCusWithSameEmail.add(c);
+			}
+		}	
+		if(lstCusWithSameEmail.isEmpty())
+			return true;
+		else
+			return false;
 	}
 
 	// Get Password for given Email 
 	public String getCustomerPassword(String email) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = :email", Customer.class);
+		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = '" + email + "'");	 
 		Customer cusObj = (Customer) q.getSingleResult();
 		em.getTransaction().commit();
 		return cusObj.getPassword();
 	}
-	
+
 	//Get Customer by email and password
 	public Customer getCustomerByEmailandPassword(String email, String password) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = :email and c.Password = :password", Customer.class);
+		Query q = em.createQuery("SELECT * FROM Customer c where c.Email ='" + email + "' and c.Password = '" + password + "'");
 		Customer cusObj = (Customer) q.getSingleResult();
 		em.getTransaction().commit();
 		return cusObj;
@@ -95,7 +104,15 @@ public class CustomerDao {
 		Customer CustomerObj = em.find(Customer.class, cusId);		
 		em.remove(CustomerObj);
 		em.getTransaction().commit();
+		 
 		return true;
 	}
-	
+
+	public static void main(String[] args) {
+		CustomerDao dao = new CustomerDao();
+		String user = dao.getCustomerPassword("divya@gmail.com");
+		System.out.println(user);
+		System.out.println(dao.getAllCustomer());
+	}
+
 }
