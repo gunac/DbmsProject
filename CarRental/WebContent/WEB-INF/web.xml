@@ -18,6 +18,14 @@
   	<url-pattern>/loginAction</url-pattern>
   </servlet-mapping>
    <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>ApplicationDao.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logoutAction</url-pattern>
+  </servlet-mapping>
+   <servlet>
     <servlet-name>Jersey REST Service</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
     <init-param>

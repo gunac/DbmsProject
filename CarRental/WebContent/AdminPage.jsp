@@ -11,9 +11,40 @@
 </head>
 <body>
 
+<%
+//allow access only if session exists
+String customerId= null;
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}else customerId = (String) session.getAttribute("customerId");
+int userId = 0;
+String userEmail = null;
+String sessionID = null;
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
+
+
+
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Admin's Page</u></em></h3>
+  	<p class="text-right">
+  	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
+	
+  	
+  	<h3>Hi <%=customerId %>, Login successful. Your Session ID=<%=sessionID %></h3>
+<br>
+User=<%=userEmail %>
+<br>
+  	
 		<br>
 		<p>
 	<a href="SignUp.jsp" id="createnewcustomer" class="btn btn-warning" type="button"> Create account for Customer</a>

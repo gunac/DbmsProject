@@ -1,0 +1,14 @@
+package api;
+
+import javax.ws.rs.Path;
+
+
+@Path ("/CarModel")
+public class CarModelWebService {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

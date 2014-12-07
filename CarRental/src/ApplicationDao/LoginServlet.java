@@ -1,7 +1,6 @@
 package ApplicationDao;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,6 +23,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("pwd");
 		int userId = 0 ;
 		String useremail = null;
+		String customerId = null;
 		
 		System.out.println("Hello from Login Servlet " + email + " "  + password);
 		
@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 			Customer customer = dao.getCustomerByEmailandPassword(email, password);
 			if(customer != null){
 				userId = customer.getCustomerId();
+				customerId = String.valueOf(userId);
 				useremail = customer.getEmail();
 			}
 		
@@ -48,28 +49,36 @@ public class LoginServlet extends HttpServlet {
 			if(customer.getRoleId() == 2)
 			{
 				HttpSession session = request.getSession();
-				session.setAttribute("userId", userId);
-				session.setAttribute("useremail", useremail);
+				session.setAttribute("customerId", customerId);
+				//session.setAttribute("useremail", useremail);
 				//setting session to expiry in 30 mins
 				session.setMaxInactiveInterval(30*60);
-				Cookie userNameEmail = new Cookie("useremail", useremail);
-				userNameEmail.setMaxAge(30*60);
-				response.addCookie(userNameEmail);
-			request.setAttribute("customer", customer);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/HomePage.jsp");
-			dispatcher.forward(request, response);
+				Cookie customercookie = new Cookie("customerId", customerId);
+				customercookie.setMaxAge(30*60);
+				response.addCookie(customercookie);
+				
+				request.setAttribute("customer", customer);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/HomePage.jsp");
+				dispatcher.forward(request, response);
 			//response.sendRedirect("/CarRental/HomePage.jsp");
 			}
 			else
 				if(customer.getRoleId() == 1){
 					HttpSession session = request.getSession();
-					session.setAttribute("userId", userId);
-					session.setAttribute("useremail", useremail);
+					session.setAttribute("customerId", customerId);
+					//session.setAttribute("userId", userId);
+					//session.setAttribute("useremail", useremail);
 					//setting session to expiry in 30 mins
+//					session.setMaxInactiveInterval(30*60);
+//					Cookie userNameEmail = new Cookie("useremail", useremail);
+//					userNameEmail.setMaxAge(30*60);
+//					response.addCookie(userNameEmail);
+					
 					session.setMaxInactiveInterval(30*60);
-					Cookie userNameEmail = new Cookie("useremail", useremail);
-					userNameEmail.setMaxAge(30*60);
-					response.addCookie(userNameEmail);
+					Cookie customercookie = new Cookie("customerId", customerId);
+					customercookie.setMaxAge(30*60);
+					response.addCookie(customercookie);
+					
 					request.setAttribute("customer", customer);
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPage.jsp");
 					dispatcher.forward(request, response);

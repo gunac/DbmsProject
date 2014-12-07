@@ -14,11 +14,22 @@
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>My Account Page</u></em></h3>
-		<br>
-			<p>
-			<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
-			</p>
-	</div>
+  	
+  	<br>
+		<p>
+		<a href="ViewOrderHistory.jsp" id="viewOrderHistory" class="btn btn-warning" type="button"> View My Order History</a>
+		</p>
+  	
+  	<br>
+		<p>
+		<a href="UpdateUserAccountDetails.jsp" id="updateUserDetails" class="btn btn-warning" type="button"> Update My details</a>
+		</p>
+		
+	<br>
+		<p>
+		<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
+		</p>
+</div>
 
 </body>
 </html>

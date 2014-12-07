@@ -15,8 +15,82 @@
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <title>Add Cars</title>
+
+<script src="js/jquery.js"></script>
 </head>
 <body>
+	<script>
+		$(function() {
+			
+			
+			
+			$("#addModel").click(insertHandler);
+			$("#displayCarModel").click(displayHandler);
+			$("#selectModel").click(selectHandler);
+			$("#deleteModel").click(deleteHandler);
+			$("#updateModel").click(updateHandler);
+			
+			
+			alert("hello bum!");
+		});
+		
+		function insertHandler(){
+			var newmodel = {
+					
+					"count" : $("#modelCount").val(),
+					"carTypeCode" : $("#carTypeCode").val(),
+					"modelName" : $("#modelName").val(),
+					"modelId" : $("#id").val()
+				};
+			
+			insertNewModel(newmodel);
+		}
+
+		function insertNewModel(model) {
+			$.ajax({
+				url : "http://localhost:8080/CarRental/api/CarModel",
+				type : "post",
+				data : JSON.stringify(model),
+				dataType : "json",
+				contentType : "application/json",
+				success : function(response) {
+					console.log(response);
+				}
+
+			})
+
+		}
+		
+		function updateHandler(){
+			var newmodel = {
+					
+					"count" : $("#modelCount").val(),
+					"carTypeCode" : $("#carTypeCode").val(),
+					"modelName" : $("#modelName").val(),
+					"modelId" : $("#id").val()
+				};
+			
+			updateModel($("#id").val(),newmodel);
+		}
+
+		
+		function updateModel(id , model) {
+			$.ajax({
+				url : "http://localhost:8080/CarRental/api/CarModel/" + id,
+				type : "post",
+				data : JSON.stringify(model),
+				dataType : "json",
+				contentType : "application/json",
+				success : function(response) {
+					console.log(response);
+				}
+
+			})
+
+		}
+		
+		
+	</script>
 	<%
 		//---------------------Controller 
 		CarModelDao carModelDao = new CarModelDao();
@@ -50,7 +124,7 @@
 			int id = Integer.parseInt(idStr);
 			carmodel = carModelDao.getModelById(id);
 			request.setAttribute("carType", carmodel.getCarTypeCode());
-			
+
 		}
 		// Update A Model
 		if ("update".equals(action) && !idStr.equals("0")
@@ -58,16 +132,16 @@
 			int id = Integer.parseInt(idStr);
 			int count = Integer.parseInt(modelCount);
 			carmodel = new CarModel(carType, modelName, count);
-			carModelDao.updateCarModel(id, carmodel);			
+			carModelDao.updateCarModel(id, carmodel);
 			request.setAttribute("carType", carmodel.getCarTypeCode());
-			
+
 		}
 
 		List<CarModel> lstCarModels = carModelDao.getAllCarModel();
 	%>
 	<form action="createModel.jsp">
 		<table class="table">
-		<!--  CAR TYPE DROP DOWN -->
+			<!--  CAR TYPE DROP DOWN -->
 			<tr>
 				<td><label> Select a Car Type </label></td>
 				<td><select name="carType">
@@ -85,18 +159,19 @@
 				<td><label id="error" style="visibility: hidden;">Please
 						select Car Type</label></td>
 			</tr>
-		<!-- CAR MODEL NAME AND COUNT FIELDS -->
-		<input type="hidden" name="id" value="<%=carmodel.getModelId()%>">
+			<!-- CAR MODELNAME, ID AND COUNT FIELDS -->
+			<input type="hidden" id="id" name="id" value="<%=carmodel.getModelId()%>">
+			<input type="hidden" id="carTypeCode" name="carTypeCode" value="<%=carmodel.getCarTypeCode()%>">
 			<tr>
-				<td><input type="text" class="form-control" name="modelName"
-					value="<%=carmodel.getModelName()%>" placeholder="Enter Car Model"></td>					
-				<td><input type="text" class="form-control" name="modelCount"
+				<td><input type="text" class="form-control" id="modelName" name="modelName"
+					value="<%=carmodel.getModelName()%>" placeholder="Enter Car Model"></td>
+				<td><input type="text" class="form-control" id="modelCount" name="modelCount"
 					value="<%=carmodel.getCount()%>" placeholder="Enter Car Count"></td>
-				
-				<td><button class="btn btn-success" name="action" value="create">Add</button>
-					<button class="btn btn-primary" name="action" value="update">Update</button></td>
+				<td><button id="addModel" class="btn btn-success" name="action"
+						value="create">Add</button>
+					<button class="btn btn-primary" id="updateModel" name="action" value="update">Update</button></td>
 			</tr>
- 
+
 			<%
 				for (CarModel c : lstCarModels) {
 			%>
@@ -105,10 +180,12 @@
 				<td><%=c.getCount()%></td>
 				<td><a class="btn btn-danger"
 					href="createModel.jsp?action=delete&id=<%=c.getModelId()%>">Delete</a>
-					<a class="btn btn-danger"
+					<a class="btn btn-warning"
 					href="createModel.jsp?action=select&id=<%=c.getModelId()%>">Select</a></td>
 			</tr>
-			<%}	%>
+			<%
+				}
+			%>
 
 		</table>
 	</form>

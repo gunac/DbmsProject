@@ -1,0 +1,42 @@
+package api;
+
+import java.util.List;
+
+import javax.persistence.Query;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import ApplicationDao.CarModelDao;
+import model.CarModel;
+
+
+@Path ("/CarModel")
+public class CarModelWebService {
+	
+	CarModelDao dao = new CarModelDao();
+	
+	@GET
+	@Produces("application/json")
+	@Path("/")
+	public List<CarModel> getAllCarModel() {
+		 return dao.getAllCarModel();
+	}
+	
+	
+	@GET
+	@Produces("application/json")
+	@Path("/id")
+	public CarModel getCarModelById(@PathParam("id") int id) {
+		 return dao.getAllCarModel();
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

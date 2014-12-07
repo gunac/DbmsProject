@@ -1,0 +1,63 @@
+package api;
+
+import java.util.List;
+
+import javax.persistence.Query;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import ApplicationDao.CarModelDao;
+import model.CarModel;
+import model.Customer;
+
+
+@Path ("/CarModel")
+public class CarModelWebService {
+	
+	CarModelDao dao = new CarModelDao();
+	
+	@GET
+	@Produces("application/json")
+	@Path("/")
+	public List<CarModel> getAllCarModel() {
+		 return dao.getAllCarModel();
+	}
+	
+	
+	@POST
+	@Path("/")
+	@Consumes("application/json")
+	public void CreateNewModel(CarModel newmodel){
+		dao.insertCarModel(newmodel);
+		
+	}
+	
+	
+	@GET
+	@Produces("application/json")
+	@Path("/id")
+	public CarModel getCarModelById(@PathParam("id") int id) {
+		 return dao.getModelById(id);
+	}
+	
+	
+	@DELETE
+	@Produces("application/json")
+	@Path("/id")
+	public void deleteCarModelById(@PathParam("id") int id) {
+		 dao.removeCarModel(id);
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

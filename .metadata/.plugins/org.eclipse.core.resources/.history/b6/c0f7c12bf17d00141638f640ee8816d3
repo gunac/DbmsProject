@@ -1,0 +1,69 @@
+<%@ page import="ApplicationDao.CarTypeDao"%>
+<%@ page import="java.util.List"%>
+<%@ page import="model.CarType"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<title>List Of Car Rental</title>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<script>
+function getImage(str) {
+
+    var xmlhttp;
+    var fileName = str + ".jsp";
+    if (str == "test") {
+        document.getElementById(str).src = "images/" + str + "-change.jpg";
+        document.getElementById("t20").src = "images/T20.jpg";
+        document.getElementById("odi").src = "images/ODI.jpg";
+    }
+}
+</script>
+
+
+<style>
+ #slide-images{
+height: 142px;
+margin-bottom: 5px;
+display: block;}
+
+ #resultDetails{
+ border: 1px solid #e1e1e1;
+display: block;
+font-size: 12px;
+height: 114px;
+margin: 0;
+padding: 7px 0 14px 18px;
+ }
+</style>
+
+
+
+</head>
+<body>
+	<%
+		CarTypeDao carTypeDao = new CarTypeDao();
+		List<CarType> lstCarType = carTypeDao.getAllCarTypes();
+	%>
+	<table class="table">
+		<%
+			for (CarType c : lstCarType) {  %>
+		<tr class="resultWrapper">
+		<div class="resultDetails">
+			<td> <%= c.getCarTypeName() %></td> 
+			<td> <%= c.getSeatingInfo() %></td>
+			</div>
+		</tr>
+		<% }
+		%>
+
+	</table>
+
+</body>
+</html>
