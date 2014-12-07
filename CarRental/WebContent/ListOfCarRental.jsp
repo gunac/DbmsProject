@@ -1,9 +1,11 @@
 <%@ page import="ApplicationDao.CarTypeDao"%>
 <%@ page import="ApplicationDao.CarModelDao"%>
-
+<%@ page import="ApplicationDao.RentalDao"%>
+<%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 <%@ page import="model.CarType"%>
 <%@ page import="model.CarModel"%>
+<%@ page import="model.Rental"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -31,13 +33,12 @@ padding: 7px 0 14px 18px;
  }
 </style>
 
-
-
 </head>
 <body>
 	<%
 		CarTypeDao carTypeDao = new CarTypeDao();
 		List<CarType> lstCarType = carTypeDao.getAllCarTypes();
+		RentalDao rentalDao = new RentalDao();
 	%>
 	<table class="table">
 		<%
@@ -47,22 +48,49 @@ padding: 7px 0 14px 18px;
 		
 			<td><ul> <%= c.getCarTypeName() %></ul>
 				<ul> <img id ="test" src="images/<%= c.getCarTypeName()%>.png"> </ul></td> 
+				
+			<td>
+			<ul><label> Lowest fare </label>	</ul>									
+						<%
+							List<Rental> lstrental = new ArrayList<Rental>();
+							lstrental=(List<Rental>)rentalDao.getAllRental();
+							List<Rental> lstselectedrentals = new ArrayList<Rental>();
+							for (Rental r : lstrental) {
+								if(r.getCarTypeCode().equals(c.getCarTypeCode())){
+									lstselectedrentals.add(r);									
+								}								
+							}		
+							%>
+																		 
+					<ul>	<%= lstselectedrentals.get(0).getSubTotal()%> </ul>
+					<ul>	<%=lstselectedrentals.get(0).getTotalPrice()%></ul>
+						
+				</td>
 			
-			<td><label> Select a Car Type </label></td>
-				<td><select name="carType">
+			<td><ul><label> Select a Model </label></ul>
+			<ul><select name="carType">
 						<option value="0" selected>- select -</option>
 						<%
 							CarModelDao modelDao = new CarModelDao();
 							List<CarModel> lstCarModel = modelDao.getAllCarModel();
-							
+							List<CarModel> lstselectedModels = new ArrayList<CarModel>();
 							for (CarModel cm : lstCarModel) {
+								if(cm.getCarTypeCode().equals(c.getCarTypeCode())){
+									lstselectedModels.add(cm);									
+								}								
+							}							
+							
+							for (CarModel scm : lstselectedModels) {
 						%>
-						<option value="<%=cm.getModelId()%>"><%=cm.getModelName()%></option>
+						<option value="<%=scm.getModelId()%>"><%=scm.getModelName()%></option>
 						<%
 							}
 						%>
-				</select></td>
-			<td> <%= c.getSeatingInfo() %></td>
+				</select></ul></td>
+			<td><ul> <%= c.getSeatingInfo() %></ul>
+			<ul><button id="continue" class="btn btn-success" name="action"
+						value="continue">Continue</button></ul></td>
+			
 			</div>
 		</tr>
 		<% }
