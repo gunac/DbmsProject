@@ -38,8 +38,9 @@ CustomerDao dao = new CustomerDao();
 	@POST
 	@Path("/")
 	@Consumes("application/json")
-	public void CreateNewCustomer(Customer newCustomer){
+	public String CreateNewCustomer(Customer newCustomer){
 		dao.insertCustomer(newCustomer);
+		return "hello";
 	}
 
 }

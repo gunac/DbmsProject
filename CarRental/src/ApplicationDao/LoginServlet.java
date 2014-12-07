@@ -15,10 +15,10 @@ import model.Customer;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String email = request.getParameter("#email");
-		String password = request.getParameter("#pwd");
+		String email = request.getParameter("email");
+		String password = request.getParameter("pwd");
 		
 		System.out.println("Hello from Login Servlet " + email + " "  + password);
 		

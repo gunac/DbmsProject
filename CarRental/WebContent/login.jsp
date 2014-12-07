@@ -7,32 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="js/jquery.js"></script>
-<title>Login</title>
-<script>
-function getExistingUserJSONObj(){
+<title>Login Page</title>
 
-	alert("inside get function");
-				var email= $("#email").val();
-				var password = $("#pwd").val();
-		
-		getCustomer(email,password);
-		alert("got Existing Customer");
-	}
-
-	function getCustomer(email,password){
-		alert("inside ajax");
-		$.ajax({
-			url: "http://localhost:8080/CarRental/api/Customer",
-			type:"post",
-			data: JSON.stringify(customer),
-			dataType: "json",
-			contentType: "application/json",
-			success: function(response){
-				console.log(response);
-			}
-		})
-	}
-</script>
 </head>
 <body>
     <div class="container">
@@ -41,19 +17,19 @@ function getExistingUserJSONObj(){
       <form action="/CarRental/loginAction" method="post">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="text" class="form-control" id="email" placeholder="Enter email">
+          <input type="text" class="form-control" name="email" placeholder="Enter email">
         </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+          <input type="password" class="form-control" name="pwd" placeholder="Enter password">
         </div>
-        <button id="submitexistinguser" class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" type="submit">Login</button>
       </form>
       <br>
         <p><b> Not a Member?</b>
         <a href="SignUp.jsp"  class="btn btn-link" role="button">Sign Up</a>
         </p>
-        <!--  <img src="\images\login page scenary.jpg" class="img-responsive" alt="image"> -->
+         <img src="images/Login page scenary.jpg" class="img-responsive" alt="image">
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

@@ -75,7 +75,9 @@ public class CustomerDao {
 	//Get Customer by email and password
 	public Customer getCustomerByEmailandPassword(String email, String password) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT * FROM Customer c where c.Email ='" + email + "' and c.Password = '" + password + "'");
+		Query q = em.createNamedQuery("findCustomerByEmailandPassword")
+				.setParameter("email", email)
+				.setParameter("password", password);
 		Customer cusObj = (Customer) q.getSingleResult();
 		em.getTransaction().commit();
 		return cusObj;
@@ -110,9 +112,9 @@ public class CustomerDao {
 
 	public static void main(String[] args) {
 		CustomerDao dao = new CustomerDao();
-		String user = dao.getCustomerPassword("divya@gmail.com");
+		Customer user = dao.getCustomerByEmailandPassword("danica@gmail.com", "danica");
 		System.out.println(user);
-		System.out.println(dao.getAllCustomer());
+		System.out.println(user.getName());
 	}
 
 }
