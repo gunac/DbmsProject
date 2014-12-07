@@ -20,6 +20,7 @@ if(session.getAttribute("customerId") == null){
 int userId = 0;
 String userEmail = null;
 String sessionID = null;
+String username = (String) session.getAttribute("username");
 Cookie[] cookies = request.getCookies();
 if(cookies !=null){
 for(Cookie cookie : cookies){
@@ -40,10 +41,7 @@ for(Cookie cookie : cookies){
 	</form>
 	
   	
-  	<h3>Hi <%=customerId %>, Login successful. Your Session ID=<%=sessionID %></h3>
-<br>
-User=<%=userEmail %>
-<br>
+  	<h3>Hi <%=username %></h3>
   	
 		<br>
 		<p>
@@ -71,7 +69,7 @@ User=<%=userEmail %>
 	
 		<br>
 		<p>
-	<a href="AddNewLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add New Location</a>
+	<a href="AddLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add New Location</a>
 </div>
 
 </body>
