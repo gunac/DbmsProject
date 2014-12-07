@@ -1,6 +1,9 @@
 <%@ page import="ApplicationDao.CarTypeDao"%>
+<%@ page import="ApplicationDao.CarModelDao"%>
+
 <%@ page import="java.util.List"%>
 <%@ page import="model.CarType"%>
+<%@ page import="model.CarModel"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -10,6 +13,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <title>List Of Car Rental</title>
+  
+
+<style>
+ #slide-images{
+height: 142px;
+margin-bottom: 5px;
+display: block;}
+
+ #resultDetails{
+ border: 1px solid #e1e1e1;
+display: block;
+font-size: 12px;
+height: 114px;
+margin: 0;
+padding: 7px 0 14px 18px;
+ }
+</style>
+
+
+
 </head>
 <body>
 	<%
@@ -19,9 +42,28 @@
 	<table class="table">
 		<%
 			for (CarType c : lstCarType) {  %>
-		<tr>
-			<td> <%= c.getCarTypeName() %></td> 
+		<tr class="resultWrapper">
+		<div class="resultDetails">
+		
+			<td><ul> <%= c.getCarTypeName() %></ul>
+				<ul> <img id ="test" src="images/<%= c.getCarTypeName()%>.png"> </ul></td> 
+			
+			<td><label> Select a Car Type </label></td>
+				<td><select name="carType">
+						<option value="0" selected>- select -</option>
+						<%
+							CarModelDao modelDao = new CarModelDao();
+							List<CarModel> lstCarModel = modelDao.getAllCarModel();
+							
+							for (CarModel cm : lstCarModel) {
+						%>
+						<option value="<%=cm.getModelId()%>"><%=cm.getModelName()%></option>
+						<%
+							}
+						%>
+				</select></td>
 			<td> <%= c.getSeatingInfo() %></td>
+			</div>
 		</tr>
 		<% }
 		%>

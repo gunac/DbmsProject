@@ -1,0 +1,41 @@
+<%@ page import="ApplicationDao.CarTypeDao"%>
+<%@ page import="java.util.List"%>
+<%@ page import="model.CarType"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<title>List Of Car Rental</title>
+<style>
+height: 142px;
+margin-bottom: 5px;
+display: block;
+
+</style>
+
+
+
+</head>
+<body>
+	<%
+		CarTypeDao carTypeDao = new CarTypeDao();
+		List<CarType> lstCarType = carTypeDao.getAllCarTypes();
+	%>
+	<table class="table">
+		<%
+			for (CarType c : lstCarType) {  %>
+		<tr class="resultWrapper">
+			<td> <%= c.getCarTypeName() %></td> 
+			<td> <%= c.getSeatingInfo() %></td>
+		</tr>
+		<% }
+		%>
+
+	</table>
+
+</body>
+</html>
