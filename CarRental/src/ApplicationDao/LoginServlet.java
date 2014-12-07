@@ -23,6 +23,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("pwd");
 		int userId = 0 ;
 		String useremail = null;
+		String username = null;
 		String customerId = null;
 		
 		System.out.println("Hello from Login Servlet " + email + " "  + password);
@@ -34,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 				userId = customer.getCustomerId();
 				customerId = String.valueOf(userId);
 				useremail = customer.getEmail();
+				username = customer.getName();
 			}
 		
 		
@@ -49,8 +51,9 @@ public class LoginServlet extends HttpServlet {
 			if(customer.getRoleId() == 2)
 			{
 				HttpSession session = request.getSession();
-				session.setAttribute("customerId", customerId);
-				//session.setAttribute("useremail", useremail);
+				session.setAttribute("userId", userId);
+				session.setAttribute("useremail", useremail);
+				session.setAttribute("username", username);
 				//setting session to expiry in 30 mins
 				session.setMaxInactiveInterval(30*60);
 				Cookie customercookie = new Cookie("customerId", customerId);
@@ -66,13 +69,9 @@ public class LoginServlet extends HttpServlet {
 				if(customer.getRoleId() == 1){
 					HttpSession session = request.getSession();
 					session.setAttribute("customerId", customerId);
-					//session.setAttribute("userId", userId);
-					//session.setAttribute("useremail", useremail);
+					session.setAttribute("useremail", useremail);
+					session.setAttribute("username", username);
 					//setting session to expiry in 30 mins
-//					session.setMaxInactiveInterval(30*60);
-//					Cookie userNameEmail = new Cookie("useremail", useremail);
-//					userNameEmail.setMaxAge(30*60);
-//					response.addCookie(userNameEmail);
 					
 					session.setMaxInactiveInterval(30*60);
 					Cookie customercookie = new Cookie("customerId", customerId);
