@@ -1,5 +1,7 @@
 package ApplicationDao;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -8,11 +10,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import model.CarType;
-import model.CarTypeInstances;
-import model.Customer;
+import Jaxb.RentalInstancesJaxb;
+import carrental.CarRentalWebServiceClient;
 import model.Rental;
 import model.RentalInstances;
+import model.Location;
 
 public class RentalDao {
 
@@ -36,7 +38,7 @@ public class RentalDao {
 		em.getTransaction().commit();
 
 	}
-	
+
 	public List<Rental> getAllRental() {
 		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT r FROM Rental r");
@@ -53,7 +55,7 @@ public class RentalDao {
 		em.getTransaction().commit();
 		return lstRentalInfo;
 	}
-	
+
 	public List<Rental> getRentalInfoByLocation(String Location) {
 		em.getTransaction().begin();
 		Query q = em.createQuery("SELECT r FROM Rental r WHERE r.Location ='"+ Location +"'");
@@ -61,7 +63,7 @@ public class RentalDao {
 		em.getTransaction().commit();
 		return lstRentalInfo;
 	}
-	
+
 	public Rental getRentalById(int id){
 		em.getTransaction().begin();
 		Rental rentalObj = em.find(Rental.class, id);
@@ -69,4 +71,42 @@ public class RentalDao {
 		return rentalObj;
 	}
 
+
+	public void insertRentalInfoForAllLocation(){
+		LocationDao dao = new LocationDao();
+		CarRentalWebServiceClient carApi = new CarRentalWebServiceClient();
+		RentalInstancesJaxb rentalJaxb = new RentalInstancesJaxb();
+
+
+		Date dNow = new Date( );
+		SimpleDateFormat ft = new SimpleDateFormat ("MM/dd/yyyy");
+
+		/// Add one day
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(dNow);
+		cal.add(Calendar.DATE, 1);
+		Date tomo = cal.getTime();
+		cal.setTime(tomo);
+		cal.add(Calendar.DATE, 1);
+		Date dayafter = cal.getTime();
+		
+		String startdate = ft.format(tomo).toString();
+		String enddate = ft.format(dayafter).toString();
+		String pickuptime ="10:00";
+		String dropofftime = "10:30";
+		List<Location> lstLoc = dao.getAllLocation();
+		for(Location l : lstLoc){
+			// Fetch data from api for given location and store it in output XML
+			carApi.getDataFromApiAndWriteToXML(startdate,enddate,pickuptime,dropofftime,l.getName());
+			// Generate Rental XML data from output.xml and write it to rentalInformation-out
+			carApi.getRentalInformationFromApi();
+			// Write from XML to DATABASE by calling JAXB
+			rentalJaxb.createRentalInstancesFromXML();
+		}
+	}
+	
+	public static void main(String[] args) {
+		RentalDao rentalDao = new RentalDao();
+		rentalDao.insertRentalInfoForAllLocation();
+	}
 }

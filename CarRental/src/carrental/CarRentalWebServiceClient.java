@@ -32,15 +32,15 @@ public class CarRentalWebServiceClient {
 	
 	// http://api.hotwire.com/v1/search/car?apikey=a72bv5sr5g7vukdffta6v3z2&dest=LAX&startdate=12/03/2014&enddate=12/04/2014&pickuptime=10:00&dropofftime=23:30
 
-	public CarType getCarTypeInformation ()
+	public CarType getDataFromApiAndWriteToXML (String startdate,String enddate,String pickuptime,String dropofftime,String dest)
 	{
-		String startdate, enddate, pickuptime, dropofftime , dest;
+		//String startdate, enddate, pickuptime, dropofftime , dest;
 		
-		dest = "LAX";
+		/*dest = "LAX";
 		startdate = "12/09/2014";
 		enddate = "12/10/2014";
 		pickuptime = "10:00";
-		dropofftime = "23:30";
+		dropofftime = "23:30";*/
 		
 		/*
 		Map<String,String> tokens = new HashMap<String,String>();
@@ -69,7 +69,8 @@ public class CarRentalWebServiceClient {
 		while((line = buffer.readLine()) != null) {
 			xml += line;
 		}
-		File file = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File file = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
+		//File file = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
 		 // if file doesn't exists, then create it 
 	    if ( ! file.exists( ) )
 	    {
@@ -96,9 +97,9 @@ public class CarRentalWebServiceClient {
 	
 	public void writeCarTypetoXml()
 	{
-		File inputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
-		File xsltFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/extractAllCarTypes.xsl");
-		File outputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/allCarTypes-out.xml");
+		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/extractAllCarTypes.xsl");
+		File outputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/allCarTypes-out.xml");
 	
 	
 		StreamSource inputXml = new  StreamSource(inputXmlFile);
@@ -122,9 +123,9 @@ public class CarRentalWebServiceClient {
 	
 	public void getRentalInformationFromApi()
 	{
-		File inputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
-		File xsltFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/getRentalInformation.xsl");
-		File outputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/rentalInformation-out.xml");
+		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/getRentalInformation.xsl");
+		File outputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/rentalInformation-out.xml");
 	
 	
 		StreamSource inputXml = new  StreamSource(inputXmlFile);
@@ -148,9 +149,9 @@ public class CarRentalWebServiceClient {
 	
 	public static void main(String[] args) {
 		CarRentalWebServiceClient o = new CarRentalWebServiceClient();
-		System.out.println(o.getCarTypeInformation());
-		o.writeCarTypetoXml();
-        o.getRentalInformationFromApi();
+	//	System.out.println(o.getDataFromApiAndWriteToXML());
+	//	o.writeCarTypetoXml();
+     //   o.getRentalInformationFromApi();
 		String cars = "Santro, Verna, Maruthi, Swift";
 		String[] carss = cars.split(",");
 		for(String v : carss){
