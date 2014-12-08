@@ -40,16 +40,17 @@ public class CarModelWebService {
 	
 	@GET
 	@Produces("application/json")
-	@Path("/id")
+	@Path("/{id}")
 	public CarModel GetCarModelById(@PathParam("id") int id) {
+		System.out.println("inside webservice");
 		 return dao.getModelById(id);
 	}
 	
 	
 	@DELETE
-	@Produces("application/json")
-	@Path("/id")
+	@Path("/{id}")
 	public void DeleteCarModelById(@PathParam("id") int id) {
+		System.out.println("inside webservice");
 		 dao.removeCarModel(id);
 	}
 	
@@ -58,6 +59,7 @@ public class CarModelWebService {
 	@Path("/{id}")
 	@Consumes("application/json")
 	public void UpdateCarModel(@PathParam("id") int id,CarModel newmodel){
+		System.out.println("inside webservice put");
 		dao.updateCarModel(id, newmodel);	
 	}
 	

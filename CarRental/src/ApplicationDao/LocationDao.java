@@ -45,7 +45,7 @@ public class LocationDao {
 	public static void main(String[] args) {
 		
 		 
-		System.out.println("Current Date: " + ft.format(dNow));
+		//System.out.println("Current Date: " + ft.format(dNow));
 
 	}
 

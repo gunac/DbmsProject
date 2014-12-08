@@ -48,23 +48,16 @@ for(Cookie cookie : cookies){
 	
 		<br>
 		<p>
-	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
-	
-		<br>
-		<p>
-	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-warning" type="button"> Add new car model</a>
-	
-		<br>
-		<p>
-	<a href="EditCarModel.jsp" id="editcarmodel" class="btn btn-primary" type="button"> Edit car model</a>
-	
-		<br>
-		<p>
-	<a href="DeleteCarModel.jsp" id="deletecarmodel" class="btn btn-danger" type="button"> Delete car model</a>
+	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-primary" type="button"> Edit car model</a>
 	
 		<br>
 		<p>
 	<a href="AddLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add New Location</a>
+	
+	<br>
+		<p>
+	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
+	
 	<p>
 	<form action="/CarRental/logoutAction" method="post">
 	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
