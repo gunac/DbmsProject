@@ -108,7 +108,7 @@ public class CustomerDao {
 		CustomerObj.setName(customer.getName());
 		CustomerObj.setDob(customer.getDob());
 		CustomerObj.setEmail(customer.getEmail());
-		CustomerObj.setEmail(customer.getPassword());
+		CustomerObj.setPassword(customer.getPassword());
 		CustomerObj.setLicenseNo(customer.getLicenseNo());		
 		em.merge(CustomerObj);
 		em.getTransaction().commit();
@@ -127,10 +127,12 @@ public class CustomerDao {
 	}
 
 	public static void main(String[] args) {
-		CustomerDao dao = new CustomerDao();
-		Customer user = dao.getCustomerByEmailandPassword("danica@gmail.com", "danica");
-		System.out.println(user);
-		System.out.println(user.getName());
+//		CustomerDao dao = new CustomerDao();
+//		Customer user = dao.getCustomerById(4);
+//		if(dao.updateCustomer(8, user)){
+//			System.out.println(dao.getCustomerById(8).getPassword());
+//		}
+//		System.out.println(user.getPassword());
 	}
 
 }

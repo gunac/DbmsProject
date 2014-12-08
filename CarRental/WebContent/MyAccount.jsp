@@ -29,13 +29,13 @@ $(function(){
 
 
 function customerprefillResponseHandler(response){
-
+	
  document.getElementById('name').value = response.name;
  document.getElementById('licenseno').value = response.licenseNo;
  document.getElementById('dateofbirth').value = response.dob;
  //$("#dateofbirth").datepicker('setDate', response.dob);
- document.getElementById('email').value = response.name;
- document.getElementById('pwd').value = response.pwd;
+ document.getElementById('email').value = response.email;
+ document.getElementById('pwd').value = response.password;
 
 }
 
@@ -43,6 +43,8 @@ function updateUserdetails(){
 	
 	var userid = document.cookie.split('=');
 	var id= parseInt(userid[1]);
+	
+	alert($("#pwd").val());
 	
 	var newCustomer = {
 			"customerId": id, 
@@ -118,6 +120,7 @@ for(Cookie cookie : cookies){
           <input type="hidden" class="form-control" id="pwd">
         </div>
         <button id="updateUserDetails" class="btn btn-warning" onClick="updateUserdetails()"> Update My details</button>
+        </form>
 		<br>
 		<p>
 		<p>
@@ -126,7 +129,6 @@ for(Cookie cookie : cookies){
 		</p>
 		<br>	
 		<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
-		</p>
 		<p>
 	<form action="/CarRental/logoutAction" method="post">
 	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
