@@ -72,12 +72,12 @@ public class CarModelDao {
 	}
 	
 	//  removes 
-	public void removeCarModel(int modelId){
+	public boolean removeCarModel(int modelId){
 		em.getTransaction().begin();
 		CarModel carmodelObj = em.find(CarModel.class, modelId);		
 		em.remove(carmodelObj);
 		em.getTransaction().commit();
-		//return true;
+		return true;
 	}
 	
 	// get by id
@@ -89,10 +89,6 @@ public class CarModelDao {
 		}
 
 	public static void main(String[] args) {
-		CarModelDao cmd = new CarModelDao();
-		cmd.removeCarModel(3);
-		
-		System.out.println("deleted model");
 
 	}
 
