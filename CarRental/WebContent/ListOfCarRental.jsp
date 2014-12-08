@@ -13,24 +13,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <title>List Of Car Rental</title>
-  
+
 
 <style>
- #slide-images{
-height: 142px;
-margin-bottom: 5px;
-display: block;}
+#slide-images {
+	height: 142px;
+	margin-bottom: 5px;
+	display: block;
+}
 
- #resultDetails{
- border: 1px solid #e1e1e1;
-display: block;
-font-size: 12px;
-height: 114px;
-margin: 0;
-padding: 7px 0 14px 18px;
- }
+#resultDetails {
+	border: 1px solid #e1e1e1;
+	display: block;
+	font-size: 12px;
+	height: 114px;
+	margin: 0;
+	padding: 7px 0 14px 18px;
+}
 </style>
 
 </head>
@@ -39,64 +41,66 @@ padding: 7px 0 14px 18px;
 		CarTypeDao carTypeDao = new CarTypeDao();
 		List<CarType> lstCarType = carTypeDao.getAllCarTypes();
 		RentalDao rentalDao = new RentalDao();
+		List<Rental> lstrental = new ArrayList<Rental>();
+		// get rental info based on location
+ 		lstrental = (List<Rental>) rentalDao.getRentalInfoByLocation("SEA");
+ 
 	%>
+	 
+
 	<table class="table">
 		<%
-			for (CarType c : lstCarType) {  %>
-		<tr class="resultWrapper">
-		<div class="resultDetails">
-		
-			<td><ul> <%= c.getCarTypeName() %></ul>
-				<ul> <img id ="test" src="images/<%= c.getCarTypeName()%>.png"> </ul></td> 
+			for(Rental r: lstrental){ 
 				
-			<td>
-			<ul><label> Lowest fare </label>	</ul>									
-						<%
-							List<Rental> lstrental = new ArrayList<Rental>();
-							lstrental=(List<Rental>)rentalDao.getAllRental();
-							List<Rental> lstselectedrentals = new ArrayList<Rental>();
-							for (Rental r : lstrental) {
-								if(r.getCarTypeCode().equals(c.getCarTypeCode())){
-									lstselectedrentals.add(r);									
-								}								
-							}		
-							%>
-																		 
-					<ul>	<%= lstselectedrentals.get(0).getSubTotal()%> </ul>
-					<ul>	<%=lstselectedrentals.get(0).getTotalPrice()%></ul>
-						
-				</td>
-			
-			<td><ul><label> Select a Model </label></ul>
-			<ul><select name="carType">
-						<option value="0" selected>- select -</option>
+			// USed to set Name and Image
+			CarType carTypeObj = new CarType();
+			for(CarType c: lstCarType){
+				if(c.getCarTypeCode().equals(r.getCarTypeCode()))
+				{
+					carTypeObj = c;
+				}
+
+			}			
+			%>
+		<tr>
+			<div>
+			<td><ul><%=carTypeObj.getCarTypeName()%></ul>
+				<ul>
+					<img id="test" src="images/<%=carTypeObj.getCarTypeName()%>.png">
+				</ul></td>
+
+			<td><ul><label> Select a Model </label>	</ul>
+				<ul><select name="carType">
+					<option value="0" selected>- select -</option>
 						<%
 							CarModelDao modelDao = new CarModelDao();
-							List<CarModel> lstCarModel = modelDao.getAllCarModel();
-							List<CarModel> lstselectedModels = new ArrayList<CarModel>();
-							for (CarModel cm : lstCarModel) {
-								if(cm.getCarTypeCode().equals(c.getCarTypeCode())){
-									lstselectedModels.add(cm);									
-								}								
-							}							
-							
-							for (CarModel scm : lstselectedModels) {
-						%>
+								List<CarModel> lstCarModel = modelDao.getAllCarModel();
+								List<CarModel> lstselectedModels = new ArrayList<CarModel>();
+								for (CarModel cm : lstCarModel) {
+									if (cm.getCarTypeCode().equals(r.getCarTypeCode())) {
+										lstselectedModels.add(cm);
+									}
+								}
+
+									for (CarModel scm : lstselectedModels) {
+							%>
 						<option value="<%=scm.getModelId()%>"><%=scm.getModelName()%></option>
 						<%
-							}
-						%>
-				</select></ul></td>
-			<td><ul> <%= c.getSeatingInfo() %></ul>
-			<ul><button id="continue" class="btn btn-success" name="action"
-						value="continue">Continue</button></ul></td>
-			
+								}
+							%>
+					</select>
+				</ul></td>
+			<td><ul><%=carTypeObj.getSeatingInfo()%></ul>
+				<ul>
+					<button id="continue" class="btn btn-success" name="action"
+						value="continue">Continue</button>
+				</ul></td>
 			</div>
 		</tr>
-		<% }
-		%>
 
+
+
+		<%}%>
 	</table>
-
 </body>
 </html>

@@ -94,7 +94,7 @@ for(Cookie cookie : cookies){
 		<form role="HomePage-form">
 			<p>Choose the location and dates</p>
 
-			<div class="form-group col-lg-4">
+			<div class="form-group col-lg-2">
 				<label for="Location">Location</label>
 				 <select id="carType">				
 					<option value="0" selected>- select -</option>
