@@ -12,6 +12,88 @@
 <title>Add New Model Page</title>
 <script>
 
+function updateHandler(){
+	var newmodel = {
+			
+			"count" : $("#modelCount").val(),
+			"carTypeCode" : $("#carType").val(),
+			"modelName" : $("#modelName").val(),
+			"modelId" : $("#selectedmodelId").val()
+		};
+	
+	updateModel($("#selectedmodelId").val(),newmodel);
+}
+
+
+function updateModel(id , model) {
+	alert(id);
+	$.ajax({
+		url : "http://localhost:8080/CarRental/api/CarModel/" + id,
+		type : "put",
+		data : JSON.stringify(model),
+		dataType : "json",
+		contentType : "application/json",
+		success : function(response) {
+			console.log(response);
+		}
+
+	})
+
+}
+
+function SelectModelforId(id){
+	
+		$.ajax({
+			url: "http://localhost:8080/CarRental/api/CarModel/" + id ,
+			type:"get",
+			dataType: "json",
+			contentType: "application/json",
+			success: function(response){
+				modelselectResponseHandler(response)
+			}
+		})
+}
+
+function modelselectResponseHandler(response){
+	
+	var name = response.modelName
+	var count = response.count;
+	var type = response.carTypeCode;
+	var id = response.modelId;
+	 document.getElementById('modelName').value = name;
+	document.getElementById('modelCount').value = count;
+	document.getElementById('selectedmodelId').value = id;
+	
+	//Get selectedobject
+	var objSelect = document.getElementById("carType");
+
+	//Set selected
+	setSelectedValue(objSelect, type);
+}
+
+function setSelectedValue(selectObj, valueToSet) {
+    for (var i = 0; i < selectObj.options.length; i++) {
+        if (selectObj.options[i].value == valueToSet) {
+            selectObj.options[i].selected = true;
+        } else {selectObj.options[i].selected = false};
+    }
+}
+
+function deleteModelwithId(id){
+	
+	deleteModel(id);
+}
+
+function deleteModel(Id){
+	$.ajax({
+		url : "http://localhost:8080/CarRental/api/CarModel/" + Id,
+		type : "delete",
+			success: function(html){
+                location.reload();
+            }
+	})
+}
+
 function createNewModelJSONObj(){
 	var newmodel = {
 			
@@ -24,8 +106,7 @@ function createNewModelJSONObj(){
 	insertNewModel(newmodel);
 }
 
-function insertNewModel(model) {
-	alert("inside ajax call");
+function insertNewModel(model){
 	$.ajax({
 		url : "http://localhost:8080/CarRental/api/CarModel",
 		type : "post",
@@ -35,11 +116,33 @@ function insertNewModel(model) {
 		success : function(response) {
 			console.log(response);
 		}
-
 	})
 }
 
 function buildHTMLTable(){
+	
+	$(function() {
+		
+		$.ajax({
+			url: "http://localhost:8080/CarRental/api/CarModel",
+			type:"get",
+			dataType: "json",
+			contentType: "application/json",
+			success: function(response){
+				modelResponseHandler(response);
+			}
+		})
+	});
+
+	function modelResponseHandler(response){
+		
+	    var tr = '';
+	     $.each(response, function (i, item) {
+	         tr += '<tr><td>'+ item.modelName +'</td><td> <button id="delete" class="btn btn-danger" onClick=deleteModelwithId('+ item.modelId +')> Delete </button></td> <td> <button id="update" class="btn btn-success" onClick=SelectModelforId('+ item.modelId +')> Select </button></td></tr>';
+	     });
+	     $('#recordtable').append(tr);
+	}
+
 
 $(function() {
 	
@@ -61,13 +164,6 @@ function responseHandler(response){
 	 option.attr('value', this.CarTypeCode).text(this.CarTypeName); 
 	 $('#carType').append(option); 
     })
-    
-    
-    var tr = '';
-     $.each(response, function (i, item) {
-         tr += '<tr><td>'+ item.CarTypeName +'</td></tr>';
-     });
-     $('#recordtable').append(tr);
 }
 }
 
@@ -111,10 +207,14 @@ for(Cookie cookie : cookies){
 			<option value="0" selected>- select -</option>
 			</select>
 			</div>
-			 <button id="addmodel" class="btn btn-primary" onClick="createNewModelJSONObj()">Add Model</button>
+			 <button id="addmodel" class="btn btn-primary" onClick="createNewModelJSONObj()">Add Model</button>&nbsp;
+			 <input type="hidden" id = "selectedmodelId">
+			 <button id="updatemodel" class="btn btn-warning" onClick="updateHandler()">Update Model</button>
 	</form>
-	
-	<table id="recordtable">
+	<p>
+	<br>
+	<table id="recordtable" class="table">
+	<tr><b> Models Available</b></tr>
 	</table>
 	
 	<br>
