@@ -35,11 +35,6 @@ for(Cookie cookie : cookies){
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Admin's Page</u></em></h3>
-  	<p class="text-right">
-  	<form action="/CarRental/logoutAction" method="post">
-	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
-	</form>
-	
   	
   	<h3>Hi <%=username %></h3>
   	
@@ -70,6 +65,10 @@ for(Cookie cookie : cookies){
 		<br>
 		<p>
 	<a href="AddLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add New Location</a>
+	<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
 </div>
 
 </body>

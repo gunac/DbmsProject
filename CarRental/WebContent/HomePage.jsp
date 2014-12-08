@@ -22,13 +22,34 @@ $(function() {
 });
 </script>
 <title>HomePage - Best Car Rentals</title>
+
 </head>
 
 
 <body>
+<%
+//allow access only if session exists
+String customerId= null;
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}else customerId = session.getAttribute("customerId").toString();
+int userId = 0;
+String userEmail = null;
+String sessionID = null;
+String username = (String) session.getAttribute("username");
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Home Page</u></em></h3>
+  	
+  	<h4><b>Hi <%=username %>,</b></h4>
 		<form role="HomePage-form">
         <p>Choose the location and dates</p>
         <div class="form-group col-lg-4">
@@ -51,6 +72,10 @@ $(function() {
    </form>
    <p>
 		<a href="MyAccount.jsp"  class="btn btn-warning" role="button">My Account</a>
+		<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
    </div>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

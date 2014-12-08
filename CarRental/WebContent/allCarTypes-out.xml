@@ -15,11 +15,6 @@
 <TypicalSeating>5 adults</TypicalSeating>
 </CarType>
 <CarType>
-<CarTypeCode>FFAR</CarTypeCode>
-<CarTypeName>Full Size SUV</CarTypeName>
-<TypicalSeating>7 adults</TypicalSeating>
-</CarType>
-<CarType>
 <CarTypeCode>ICAR</CarTypeCode>
 <CarTypeName>Midsize</CarTypeName>
 <TypicalSeating>4 adults</TypicalSeating>
@@ -28,11 +23,6 @@
 <CarTypeCode>IFAR</CarTypeCode>
 <CarTypeName>Midsize SUV</CarTypeName>
 <TypicalSeating>4 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>LCAR</CarTypeCode>
-<CarTypeName>Luxury</CarTypeName>
-<TypicalSeating>5 adults</TypicalSeating>
 </CarType>
 <CarType>
 <CarTypeCode>MVAR</CarTypeCode>
@@ -47,11 +37,6 @@
 <CarType>
 <CarTypeCode>SPAR</CarTypeCode>
 <CarTypeName>Standard Pickup truck</CarTypeName>
-<TypicalSeating>4 adults</TypicalSeating>
-</CarType>
-<CarType>
-<CarTypeCode>STAR</CarTypeCode>
-<CarTypeName>Convertible</CarTypeName>
 <TypicalSeating>4 adults</TypicalSeating>
 </CarType>
 <CarType>

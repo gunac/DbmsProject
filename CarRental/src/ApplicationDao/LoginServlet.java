@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 			if(customer.getRoleId() == 2)
 			{
 				HttpSession session = request.getSession();
-				session.setAttribute("userId", userId);
+				session.setAttribute("customerId", userId);
 				session.setAttribute("useremail", useremail);
 				session.setAttribute("username", username);
 				//setting session to expiry in 30 mins
@@ -62,8 +62,8 @@ public class LoginServlet extends HttpServlet {
 				
 				request.setAttribute("customer", customer);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/HomePage.jsp");
-				dispatcher.forward(request, response);
-			//response.sendRedirect("/CarRental/HomePage.jsp");
+				//dispatcher.forward(request, response);
+			   response.sendRedirect("/CarRental/HomePage.jsp");
 			}
 			else
 				if(customer.getRoleId() == 1){
@@ -80,8 +80,8 @@ public class LoginServlet extends HttpServlet {
 					
 					request.setAttribute("customer", customer);
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPage.jsp");
-					dispatcher.forward(request, response);
-					//response.sendRedirect("/CarRental/AdminPage.jsp");
+					//dispatcher.forward(request, response);
+					response.sendRedirect("/CarRental/AdminPage.jsp");
 				}
 		}
 	}

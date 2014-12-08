@@ -11,6 +11,23 @@
 </head>
 <body>
 
+<%
+//allow access only if session exists
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}
+String userEmail = null;
+String sessionID = null;
+String username = (String) session.getAttribute("username");
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
+
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>My Account Page</u></em></h3>
@@ -29,6 +46,10 @@
 		<p>
 		<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
 		</p>
+		<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
 </div>
 
 </body>

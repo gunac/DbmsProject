@@ -8,12 +8,13 @@
 	 	<class>model.CarModel</class>
 	 	<class>model.Orders</class>
 	 	<class>model.Customer</class>
+	 	<class>model.Location</class>
 		<properties>
 			<property name="eclipselink.jdbc.password" value="anush"/>
 			<property name="eclipselink.jdbc.user" value="root"/>
 			<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost/carrental"/>
-			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>   -->
+<!-- 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>   -->
 			<property name="eclipselink.logging.level" value="INFO"/>
 		</properties>
 		</persistence-unit>

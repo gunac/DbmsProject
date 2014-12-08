@@ -37,8 +37,8 @@ public class CarRentalWebServiceClient {
 		String startdate, enddate, pickuptime, dropofftime , dest;
 		
 		dest = "LAX";
-		startdate = "12/07/2014";
-		enddate = "12/08/2014";
+		startdate = "12/09/2014";
+		enddate = "12/10/2014";
 		pickuptime = "10:00";
 		dropofftime = "23:30";
 		
@@ -69,7 +69,7 @@ public class CarRentalWebServiceClient {
 		while((line = buffer.readLine()) != null) {
 			xml += line;
 		}
-		File file = new File("C:/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File file = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
 		 // if file doesn't exists, then create it 
 	    if ( ! file.exists( ) )
 	    {
@@ -96,9 +96,9 @@ public class CarRentalWebServiceClient {
 	
 	public void writeCarTypetoXml()
 	{
-		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
-		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/extractAllCarTypes.xsl");
-		File outputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/allCarTypes-out.xml");
+		File inputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File xsltFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/extractAllCarTypes.xsl");
+		File outputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/allCarTypes-out.xml");
 	
 	
 		StreamSource inputXml = new  StreamSource(inputXmlFile);
@@ -122,9 +122,9 @@ public class CarRentalWebServiceClient {
 	
 	public void getRentalInformationFromApi()
 	{
-		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
-		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/getRentalInformation.xsl");
-		File outputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/rentalInformation-out.xml");
+		File inputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/output.xml");
+		File xsltFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/getRentalInformation.xsl");
+		File outputXmlFile = new File("/Divya/DBMS/CarRentalWorkspace/DbmsProject/CarRental/WebContent/rentalInformation-out.xml");
 	
 	
 		StreamSource inputXml = new  StreamSource(inputXmlFile);

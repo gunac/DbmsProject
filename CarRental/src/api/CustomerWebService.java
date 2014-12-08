@@ -30,7 +30,7 @@ CustomerDao dao = new CustomerDao();
 	
 	@GET
 	@Path("/{email}/{password}")
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Customer findCustomerByEmailAndPassword(@PathParam("email") String email,
 												   @PathParam("password") String password){
 		return dao.getCustomerByEmailandPassword(email, password);
@@ -38,7 +38,7 @@ CustomerDao dao = new CustomerDao();
 	
 	@GET
 	@Path("/{email}")
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Customer findCustomerByEmail(@PathParam("email") String email){
 		return dao.getCustomerforEmail(email);
 	}

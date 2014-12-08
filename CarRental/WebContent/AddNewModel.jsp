@@ -4,9 +4,131 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<title>Add New Model Page</title>
+<script>
 
+function createNewModelJSONObj(){
+	var newmodel = {
+			
+			"count" : $("#modelCount").val(),
+			"carTypeCode" : $("#carType").val(),
+			"modelName" : $("#modelName").val(),
+			"modelId" : 2
+		};
+	
+	insertNewModel(newmodel);
+}
+
+function insertNewModel(model) {
+	alert("inside ajax call");
+	$.ajax({
+		url : "http://localhost:8080/CarRental/api/CarModel",
+		type : "post",
+		data : JSON.stringify(model),
+		dataType : "json",
+		contentType : "application/json",
+		success : function(response) {
+			console.log(response);
+		}
+
+	})
+}
+
+function buildHTMLTable(){
+
+$(function() {
+	
+	$.ajax({
+		url: "http://localhost:8080/CarRental/api/CarType",
+		type:"get",
+		dataType: "json",
+		contentType: "application/json",
+		success: function(response){
+			responseHandler(response);
+		}
+	})
+});
+
+function responseHandler(response){
+	
+	 $(response).each(function(){ 
+	 var option = $('<option />'); 
+	 option.attr('value', this.CarTypeCode).text(this.CarTypeName); 
+	 $('#carType').append(option); 
+    })
+    
+    
+    var tr = '';
+     $.each(response, function (i, item) {
+         tr += '<tr><td>'+ item.CarTypeName +'</td></tr>';
+     });
+     $('#recordtable').append(tr);
+}
+}
+
+</script>
+</head>
+<body onLoad="buildHTMLTable()">
+
+<%
+//allow access only if session exists
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}
+String userEmail = null;
+String sessionID = null;
+String username = (String) session.getAttribute("username");
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
+
+
+<div class="container">
+<h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
+  	<h3><em><u>Add New Model Page</u></em></h3>
+		<form role="AddNewModelform">
+		 <div class="form-group">
+          <label for="name">Model Name:</label>
+          <input type="text" class="form-control" id="modelName" placeholder="Enter Model Name">
+        </div>
+         <div class="form-group">
+          <label for="name">Model Count:</label>
+          <input type="text" class="form-control" id="modelCount" placeholder="Enter Model Count">
+        </div>
+        <div class="form-group">
+          <label for="name">Choose the Car Type of the Model</label>
+		 	<select id="carType">
+			<option value="0" selected>- select -</option>
+			</select>
+			</div>
+			 <button id="addmodel" class="btn btn-primary" onClick="createNewModelJSONObj()">Add Model</button>
+	</form>
+	
+	<table id="recordtable">
+	</table>
+	
+	<br>
+	<p>
+	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
+	<p>
+	<a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a>
+	<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
+	
+   </div>
+	
+</div>
 </body>
 </html>

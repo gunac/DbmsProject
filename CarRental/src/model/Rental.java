@@ -87,7 +87,7 @@ public class Rental implements Serializable {
 		return DropoffDay;
 	}
 	public void setDropoffDay(Date dropoffDay) {
-		if(dropoffDay == null)
+		if(dropoffDay == null || dropoffDay.toString() == "")
 		{
 			Date date = new Date();
 			dropoffDay = date;
@@ -118,8 +118,8 @@ public class Rental implements Serializable {
 	public String getLocation() {
 		return Location;
 	}
-	public void setLocation(String Location) {
-		Location = Location;
+	public void setLocation(String location) {
+		Location = location;
 	}
 	
 	@XmlElement(name = "RentalDays") 
