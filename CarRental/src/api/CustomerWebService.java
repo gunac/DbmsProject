@@ -29,6 +29,13 @@ CustomerDao dao = new CustomerDao();
 	}
 	
 	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Customer getallCustomers(@PathParam("id") int customerId){
+		return dao.getCustomerById(customerId);
+	}
+	
+	@GET
 	@Path("/{email}/{password}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Customer findCustomerByEmailAndPassword(@PathParam("email") String email,
@@ -36,12 +43,6 @@ CustomerDao dao = new CustomerDao();
 		return dao.getCustomerByEmailandPassword(email, password);
 	}
 	
-	@GET
-	@Path("/{email}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Customer findCustomerByEmail(@PathParam("email") String email){
-		return dao.getCustomerforEmail(email);
-	}
 	
 	@GET
 	@Path("/{email}/{password}")
