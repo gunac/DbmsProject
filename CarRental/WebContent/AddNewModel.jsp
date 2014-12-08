@@ -138,7 +138,7 @@ function buildHTMLTable(){
 		
 	    var tr = '';
 	     $.each(response, function (i, item) {
-	         tr += '<tr><td>'+ item.modelName +'</td><td> <button id="delete" class="btn btn-danger" onClick=deleteModelwithId('+ item.modelId +')> Delete </button></td> <td> <button id="update" class="btn btn-success" onClick=SelectModelforId('+ item.modelId +')> Select </button></td></tr>';
+	         tr += '<tr><td>'+ item.modelName +'</td><td>'+ item.count +'</td><td> <button id="delete" class="btn btn-danger" onClick=deleteModelwithId('+ item.modelId +')> Delete </button></td> <td> <button id="update" class="btn btn-success" onClick=SelectModelforId('+ item.modelId +')> Select </button></td></tr>';
 	     });
 	     $('#recordtable').append(tr);
 	}
