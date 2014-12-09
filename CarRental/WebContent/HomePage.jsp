@@ -28,7 +28,7 @@ function buildHTMLTable(){
 	$(function() {
 		
 		$.ajax({
-			url: "http://localhost:8080/CarRental/api/CarType",
+			url: "http://localhost:8080/CarRental/api/Location",
 			type:"get",
 			dataType: "json",
 			contentType: "application/json",
@@ -42,8 +42,8 @@ function buildHTMLTable(){
 		
 		 $(response).each(function(){ 
 		 var option = $('<option />'); 
-		 option.attr('value', this.CarTypeCode).text(this.CarTypeName); 
-		 $('#carType').append(option); 
+		 option.attr('value', this.name).text(this.name); 
+		 $('#location').append(option); 
 	    })
 	    
 	    
@@ -97,7 +97,7 @@ for(Cookie cookie : cookies){
 
 			<div class="form-group col-lg-2">
 				<label for="Location">Location</label>
-				 <select id="carType" name="carType">				
+				 <select id="location" name="location">				
 					<option value="0" selected>- select -</option>
 				</select>
 			</div>
