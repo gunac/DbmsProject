@@ -35,7 +35,7 @@ public class OrdersDao {
 	// Used to show History for a user
 	public List<Orders> getOrderByCustomerId(int customerId){
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId "+ customerId);
+		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId = "+ customerId);
 		List<Orders> lstOrderInfo =(List<Orders>) q.getResultList();
 		em.getTransaction().commit();
 		return lstOrderInfo;
