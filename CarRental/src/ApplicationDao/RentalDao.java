@@ -106,7 +106,7 @@ public class RentalDao {
 	}
 	
 	public static void main(String[] args) {
-		RentalDao rentalDao = new RentalDao();
-		rentalDao.insertRentalInfoForAllLocation();
+		//RentalDao rentalDao = new RentalDao();
+		//rentalDao.insertRentalInfoForAllLocation();
 	}
 }

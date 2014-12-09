@@ -11,7 +11,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.xml.transform.Transformer;
@@ -24,6 +27,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import model.CarType;
+import model.Location;
 
 public class CarRentalWebServiceClient {
 	
@@ -151,12 +155,28 @@ public class CarRentalWebServiceClient {
 		CarRentalWebServiceClient o = new CarRentalWebServiceClient();
 	//	System.out.println(o.getDataFromApiAndWriteToXML());
 	//	o.writeCarTypetoXml();
-     //   o.getRentalInformationFromApi();
-		String cars = "Santro, Verna, Maruthi, Swift";
-		String[] carss = cars.split(",");
-		for(String v : carss){
-		System.out.println(v);}	
+        // o.getRentalInformationFromApi();
+		Date dNow = new Date( );
+		SimpleDateFormat ft = new SimpleDateFormat ("MM/dd/yyyy");
+
+		/// Add one day
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(dNow);
+		cal.add(Calendar.DATE, 1);
+		Date tomo = cal.getTime();
+		cal.setTime(tomo);
+		cal.add(Calendar.DATE, 1);
+		Date dayafter = cal.getTime();
 		
+		String startdate = ft.format(tomo).toString();
+		String enddate = ft.format(dayafter).toString();
+		String pickuptime ="10:00";
+		String dropofftime = "10:30";
+		// Fetch data from api for given location and store it in output XML
+		//o.getDataFromApiAndWriteToXML(startdate,enddate,pickuptime,dropofftime,"Bellevue");
+	//	o.writeCarTypetoXml();
+		//o.getRentalInformationFromApi();
+
 	}
 
 }

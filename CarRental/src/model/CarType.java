@@ -22,6 +22,7 @@ public class CarType implements Serializable {
 	private String CarTypeCode;
 	private String CarTypeName;	
 	private String SeatingInfo;
+	private String Features;
 	
 	@XmlElement(name = "CarTypeCode")
 	public String getCarTypeCode() {
@@ -45,21 +46,23 @@ public class CarType implements Serializable {
 	public void setSeatingInfo(String seatingInfo) {
 		SeatingInfo = seatingInfo;
 	}	
-	
+	@XmlElement(name = "PossibleFeatures")		
+	public String getFeatures() {
+		return Features;
+	}
+	public void setFeatures(String features) {
+		Features = features;
+	}
 	public CarType() {
 		super();
 	}
 	
-	public CarType(String carTypeCode, String carTypeName, String seatingInfo) {
+	public CarType(String carTypeCode, String carTypeName, String seatingInfo, String features) {
 		super();
 		CarTypeCode = carTypeCode;
 		CarTypeName = carTypeName;
 		SeatingInfo = seatingInfo;
+		Features = features;
 	}
-	
-	 
-	 
-	
-	
-	 
+		 
 }

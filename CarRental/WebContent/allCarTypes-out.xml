@@ -3,45 +3,78 @@
 <CarTypeCode>CCAR</CarTypeCode>
 <CarTypeName>Compact</CarTypeName>
 <TypicalSeating>2 adults, 2 children</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, AM/FM Stereo</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>ECAR</CarTypeCode>
 <CarTypeName>Economy</CarTypeName>
 <TypicalSeating>2 adults, 2 children</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Air Conditioning, Air Bags, AM/FM Stereo</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>FCAR</CarTypeCode>
 <CarTypeName>Full Size</CarTypeName>
 <TypicalSeating>5 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo</PossibleFeatures>
+</CarType>
+<CarType>
+<CarTypeCode>FFAR</CarTypeCode>
+<CarTypeName>Full Size SUV</CarTypeName>
+<TypicalSeating>7 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Cruise Control, AM/FM Stereo, CD Player</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>ICAR</CarTypeCode>
 <CarTypeName>Midsize</CarTypeName>
 <TypicalSeating>4 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, AM/FM Stereo</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>IFAR</CarTypeCode>
 <CarTypeName>Midsize SUV</CarTypeName>
 <TypicalSeating>4 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Air Conditioning</PossibleFeatures>
+</CarType>
+<CarType>
+<CarTypeCode>LCAR</CarTypeCode>
+<CarTypeName>Luxury</CarTypeName>
+<TypicalSeating>5 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo, CD Player</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>MVAR</CarTypeCode>
 <CarTypeName>Minivan</CarTypeName>
 <TypicalSeating>7 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo</PossibleFeatures>
+</CarType>
+<CarType>
+<CarTypeCode>PCAR</CarTypeCode>
+<CarTypeName>Premium</CarTypeName>
+<TypicalSeating>5 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo, CD Player</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>SCAR</CarTypeCode>
 <CarTypeName>Standard</CarTypeName>
 <TypicalSeating>2 adults, 2 children</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, AM/FM Stereo</PossibleFeatures>
+</CarType>
+<CarType>
+<CarTypeCode>SFAR</CarTypeCode>
+<CarTypeName>Standard SUV</CarTypeName>
+<TypicalSeating>5 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Anti-Lock Brakes, Cruise Control, AM/FM Stereo, CD Player</PossibleFeatures>
 </CarType>
 <CarType>
 <CarTypeCode>SPAR</CarTypeCode>
 <CarTypeName>Standard Pickup truck</CarTypeName>
 <TypicalSeating>4 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Cruise Control, Anti-Lock Brakes, AM/FM Stereo</PossibleFeatures>
 </CarType>
 <CarType>
-<CarTypeCode>XXAR</CarTypeCode>
-<CarTypeName>Special car</CarTypeName>
-<TypicalSeating>4 adults or more</TypicalSeating>
+<CarTypeCode>STAR</CarTypeCode>
+<CarTypeName>Convertible</CarTypeName>
+<TypicalSeating>4 adults</TypicalSeating>
+<PossibleFeatures>Automatic Transmission, Power Steering, Air Conditioning, Air Bags, Cruise Control, Anti-Lock Brakes, AM/FM Stereo</PossibleFeatures>
 </CarType>
 </CarTypes>

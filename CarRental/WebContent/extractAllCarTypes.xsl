@@ -20,6 +20,7 @@
 	    <xsl:copy-of select="CarTypeCode"> </xsl:copy-of>
 	  	   <xsl:copy-of select="CarTypeName"> </xsl:copy-of>
 	  	   <xsl:copy-of select="TypicalSeating"> </xsl:copy-of>
+	  	   <xsl:copy-of select="PossibleFeatures"></xsl:copy-of>
 	  	 
        </CarType>      
 	 </xsl:template>
