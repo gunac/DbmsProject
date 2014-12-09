@@ -37,6 +37,21 @@
 
 </head>
 <body>
+
+<ul>
+<li><p><b>Location:</b>
+   <%= request.getParameter("carType")%>
+</p></li>
+<li><p><b>Pick Up Date:</b>
+   <%= request.getParameter("pickupdate")%>
+</p></li>
+<li><p><b>Pick Up Date:</b>
+   <%= request.getParameter("dropoffdate")%>
+</p></li>
+</ul>
+
+
+
 	<%
 		CarTypeDao carTypeDao = new CarTypeDao();
 		List<CarType> lstCarType = carTypeDao.getAllCarTypes();

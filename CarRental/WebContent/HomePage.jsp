@@ -78,6 +78,7 @@ for(Cookie cookie : cookies){
 	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
 }
 }
+
 %>
 	<div class="container">
 		<h1 class="text-center">
@@ -91,22 +92,22 @@ for(Cookie cookie : cookies){
 			<b>Hi <%=username %>,
 			</b>
 		</h4>
-		<form role="HomePage-form">
+		<form method=post action="ListOfCarRental.jsp">
 			<p>Choose the location and dates</p>
 
 			<div class="form-group col-lg-2">
 				<label for="Location">Location</label>
-				 <select id="carType">				
+				 <select id="carType" name="carType">				
 					<option value="0" selected>- select -</option>
 				</select>
 			</div>
 			<div class="form-group col-lg-2">
 				<label for="Pickupdate">Pick Up Date</label> <input type="text"
-					class="form-control" id="pickupdate">
+					class="form-control" id="pickupdate" name="pickupdate">
 			</div>
 			<div class="form-group col-lg-2">
 				<label for="Dropoffdate">Drop Off Date</label> <input type="text"
-					class="form-control" id="dropoffdate">
+					class="form-control" id="dropoffdate" name="dropoffdate">
 			</div>
 			<div class="form-group">
 				<br>
