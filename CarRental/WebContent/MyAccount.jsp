@@ -54,7 +54,6 @@ function updateUserdetails(){
 	var userid = document.cookie.split('=');
 	var id= parseInt(userid[1]);
 	
-	alert($("#dateofbirth").val());
 	
 	var newCustomer = {
 			"customerId": id, 

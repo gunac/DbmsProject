@@ -13,10 +13,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <title>List Of Car Rental</title>
+<Script>
 
+function createorder(){
+	
+	var userid = document.cookie.split('=');
+	var customerId = parseInt(userid[1]);
+	var rentalId = $("#rentalid").val();
+	var modelId = $("#modelid").val();
+	var rentaldays = 2;
+	
+	insertOrder(customerId, rentalId, modelId, rentaldays);
+}
+
+function insertOrder(customerId, rentalId, modelId, rentaldays){
+	$.ajax({
+		url : "http://localhost:8080/CarRental/api/Orders/" + customerId+ "/" + rentalId + "/"+ modelId + "/" + rentaldays ,
+		type : "put",
+		success : function(response) {
+			responseHandler(response);
+		}
+	})
+}
+
+function responseHandler(response){
+	
+	document.getElementById('orderid').value = 2;
+	
+}
+
+</Script>
 
 <style>
 #slide-images {
@@ -38,26 +70,37 @@
 </head>
 <body>
 
-<ul>
-<li><p><b>Location:</b>
-   <%= request.getParameter("location")%>
-</p></li>
-<li><p><b>Pick Up Date:</b>
-   <%= request.getParameter("pickupdate")%>
-</p></li>
-<li><p><b>Pick Up Date:</b>
-   <%= request.getParameter("dropoffdate")%>
-</p></li>
-</ul>
+<%
+//allow access only if session exists
+String customerId= null;
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}else customerId = session.getAttribute("customerId").toString();
+int userId = 0;
+String userEmail = null;
+String sessionID = null;
+String username = (String) session.getAttribute("username");
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
 
+%>
+
+<div class="Container">
+<h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
+  	<h3><em><u>List Of Car Rentals Available Page</u></em></h3>
 	<%
 		CarTypeDao carTypeDao = new CarTypeDao();
 		List<CarType> lstCarType = carTypeDao.getAllCarTypes();
 		RentalDao rentalDao = new RentalDao();
 		List<Rental> lstrental = new ArrayList<Rental>();
 		// get rental info based on location
- 		lstrental = (List<Rental>) rentalDao.getRentalInfoByLocation("SJC");
- 
+ 		lstrental = (List<Rental>) rentalDao.getRentalInfoByLocation(request.getParameter("location"));
+		
 	%>	 
 	
 	<table class="table">
@@ -74,6 +117,7 @@
 
 			}			
 			%>
+			<form method="post" action="OrderCheckout.jsp">
 		<tr>
 			<div>
 			<td><ul><%=carTypeObj.getCarTypeName()%></ul>
@@ -97,6 +141,9 @@
 									for (CarModel scm : lstselectedModels) {
 							%>
 						<option value="<%=scm.getModelId()%>"><%=scm.getModelName()%></option>
+						<input type="hidden" id="modelid" name="modelid" value="<%=scm.getModelId()%>">
+						<input type="hidden" id="rentalid" name="rentalid" value="<%=r.getRentId()%>">
+						<input type="hidden" id="orderid" name="orderid" value="2">
 						<%
 								}
 							%>
@@ -104,14 +151,23 @@
 				</ul></td>
 			<td><ul><%=carTypeObj.getSeatingInfo()%></ul>
 				<ul>
-					<button id="continue" class="btn btn-success" name="action" onclick=""	value="continue">Continue</button>
+					<button id="continue" class="btn btn-success" onclick="createorder()" value="placeorder" type="submit"> Place Order</button>
 				</ul></td>
 			</div>
 		</tr>
-
-
-
+	</form>
 		<%}%>
 	</table>
+	</div>
+	<br>
+	<p>
+	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
+	<p>
+	<a href="MyAccount.jsp"  class="btn btn-warning" role="button">My Account</a>
+	<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
+	
 </body>
 </html>

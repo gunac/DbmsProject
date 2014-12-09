@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="ApplicationDao.OrdersDao"%>
+    <%@ page import="model.Orders"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,51 +48,55 @@ for(Cookie cookie : cookies){
 			<b>Hi <%=username %>,</b>
 		</h4>
 			<p>Your Order has been confirmed. Please find the details below.</p>
+			
+			<% 
+				OrdersDao dao = new OrdersDao();
+				String id = request.getParameter("orderid");
+				int orderid = Integer.parseInt(id);
+				
+				Orders neworder = dao.getOrderByOrderId(orderid);
+			
+			%>
 
 			<table id="orderconfirmation" class="table">
 			<tr>
 			<td> Order Id : </td>
-			<td> <%= request.getParameter("location")%> </td>
+			<td> <%= orderid %> </td>
 			</tr>
 			
 			<tr>
 			<td> Drop Off Day : </td>
-			<td> <%= request.getParameter("location")%> </td>
+			<td> <%= neworder.getDropoffDay() %> </td>
 			</tr>
 			
 			<tr>
 			<td> Location : </td>
-			<td> <%= request.getParameter("location")%> </td>
+			<td> <%= neworder.getLocation()%> </td>
 			</tr>
 			
 			<tr>
 			<td> PickUpDate : </td>
-			<td> <%= request.getParameter("pickupdate")%> </td>
-			</tr>
-				
-			<tr>
-			<td> PickUpDate : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
+			<td> <%= neworder.getPickupDay()%> </td>
 			</tr>
 			
 			<tr>
 			<td> Rental Days : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
+			<td> <%= neworder.getRentalDays()%> </td>
 			</tr>
 			
 			<tr>
 			<td> Sub Total : </td>
-			<td> <%= request.getParameter("pickupdate")%> </td>
+			<td> <%= neworder.getSubTotal()%> </td>
 			</tr>
 				
 			<tr>
 			<td> Taxes and Fees : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
+			<td> <%= neworder.getTaxesAndFees()%> </td>
 			</tr>
 			
 			<tr>
 			<td> Total Price : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
+			<td> <%= neworder.getTotalPrice() * neworder.getRentalDays() %> </td>
 			</tr>	
 			
 			</table>

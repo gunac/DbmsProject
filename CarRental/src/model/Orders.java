@@ -19,7 +19,7 @@ public class Orders {
 	private int OrderId;
 	private int CustomerId;
 	private int ModelId;
-	private String LocationDescription;	
+	private String Location;	
 	private double SubTotal;
 	private double TaxesAndFees;
 	private double TotalPrice;	
@@ -53,10 +53,10 @@ public class Orders {
 		ModelId = modelId;
 	}
 	public String getLocation() {
-		return LocationDescription;
+		return Location;
 	}
 	public void setLocation(String locationDescription) {
-		LocationDescription = locationDescription;
+		Location = locationDescription;
 	}
 	public double getSubTotal() {
 		return SubTotal;
@@ -108,7 +108,7 @@ public class Orders {
 		OrderId = orderId;
 		CustomerId = customerId;
 		ModelId = modelId;
-		LocationDescription = locationDescription;
+		Location = locationDescription;
 		SubTotal = subTotal;
 		TaxesAndFees = taxesAndFees;
 		TotalPrice = totalPrice;
@@ -129,7 +129,7 @@ public class Orders {
 		super();
 		CustomerId = customerId;
 		ModelId = modelId;
-		LocationDescription = locationDescription;
+		Location = locationDescription;
 		SubTotal = subTotal;
 		TaxesAndFees = taxesAndFees;
 		TotalPrice = totalPrice;
