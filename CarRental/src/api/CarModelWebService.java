@@ -2,7 +2,6 @@ package api;
 
 import java.util.List;
 
-import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,7 +13,7 @@ import javax.ws.rs.Produces;
 
 import ApplicationDao.CarModelDao;
 import model.CarModel;
-import model.Customer;
+
 
 
 @Path ("/CarModel")

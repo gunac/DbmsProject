@@ -135,7 +135,7 @@ for(Cookie cookie : cookies){
 		<p>
 		<p>
 		<br>
-		<a href="ViewOrderHistory.jsp" id="viewOrderHistory" class="btn btn-warning" type="button"> View My Order History</a>
+		<a href="OrdersHistory.jsp" id="viewOrderHistory" class="btn btn-warning" type="button"> View My Order History</a>
 		</p>
 		<br>	
 		<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>

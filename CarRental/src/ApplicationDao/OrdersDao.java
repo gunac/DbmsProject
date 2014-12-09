@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
  
 
+
+import model.Customer;
 import model.Orders;
 import model.Rental;
 
@@ -37,6 +39,14 @@ public class OrdersDao {
 		List<Orders> lstOrderInfo =(List<Orders>) q.getResultList();
 		em.getTransaction().commit();
 		return lstOrderInfo;
+	}
+	
+	// get order by orderId
+	public Orders getOrderByOrderId(int orderId){
+		em.getTransaction().begin();
+		Orders neworder =em.find(Orders.class, orderId);
+		em.getTransaction().commit();
+		return neworder;
 	}
 	
 	public void insertOrder(int customerId, int rentalId, int modelId , int NoOfDays)

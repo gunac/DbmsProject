@@ -12,7 +12,6 @@
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
 <script>
 $(function() {
 	$("#pickupdate").datepicker({ 
@@ -117,7 +116,6 @@ for(Cookie cookie : cookies){
 			<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
 		</form>
 	</div>
-	<script
-		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

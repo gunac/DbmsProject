@@ -12,7 +12,37 @@
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<title>Order Checkout Page</title>
+<title>Orders History Page</title>
+
+<script>
+
+$(function() {
+	
+	var userid = document.cookie.split('=');
+	var id= parseInt(userid[1]);
+	
+	$.ajax({
+		url: "http://localhost:8080/CarRental/api/Orders/" + id,
+		type:"get",
+		dataType: "json",
+		contentType: "application/json",
+		success: function(response){
+			modelResponseHandler(response);
+		}
+	})
+});
+
+function modelResponseHandler(response){
+	
+    var tr = '';
+     $.each(response, function (i, item) {
+         tr += '<tr><td>'+ item.orderId +'</td><td>'+ item.locationDescription +'</td><td>'+ item.totalPrice +'</td><td>'+ item.dailyRate +'</td><td>'+ item.dropoffDay +'</td><td>'+ item.pickupDay +'</td><td>'+ item.rentalDays +'</td></tr>';
+     });
+     $('#orderhistory').append(tr);
+}
+
+</script>
+
 </head>
 <body>
 
@@ -33,69 +63,16 @@ for(Cookie cookie : cookies){
 }
 }
 %>
-	
-	<div class="container">
-		<h1 class="text-center">
-			<u>BEST CAR RENTALS</u>
-		</h1>
-		<h3>
-			<em><u>Order Checkout Page</u></em>
-		</h3>
 
-		<h4>
-			<b>Hi <%=username %>,</b>
-		</h4>
-			<p>Your Order has been confirmed. Please find the details below.</p>
+<div class="container">
+<h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
+  	<h3><em><u>My Orders History Page</u></em></h3>
 
-			<table id="orderconfirmation" class="table">
-			<tr>
-			<td> Order Id : </td>
-			<td> <%= request.getParameter("location")%> </td>
-			</tr>
-			
-			<tr>
-			<td> Drop Off Day : </td>
-			<td> <%= request.getParameter("location")%> </td>
-			</tr>
-			
-			<tr>
-			<td> Location : </td>
-			<td> <%= request.getParameter("location")%> </td>
-			</tr>
-			
-			<tr>
-			<td> PickUpDate : </td>
-			<td> <%= request.getParameter("pickupdate")%> </td>
-			</tr>
-				
-			<tr>
-			<td> PickUpDate : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
-			</tr>
-			
-			<tr>
-			<td> Rental Days : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
-			</tr>
-			
-			<tr>
-			<td> Sub Total : </td>
-			<td> <%= request.getParameter("pickupdate")%> </td>
-			</tr>
-				
-			<tr>
-			<td> Taxes and Fees : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
-			</tr>
-			
-			<tr>
-			<td> Total Price : </td>
-			<td> <%= request.getParameter("dropoffdate")%> </td>
-			</tr>	
-			
-			</table>
-			
-		<br>
+	<table id="orderhistory" class="table">
+	<tr><td><b>Order Id</b></td><td><b>Location</b></td><td><b>Total Price</b></td><td><b>Daily Rate</b></td><td><b>Drop Off Day</b></td><td><b>Pick Up Day</b></td><td><b>No.of Days Rented</b></td></tr>
+	</table>
+
+<br>
 	<p>
 	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
 		<p>
@@ -105,7 +82,7 @@ for(Cookie cookie : cookies){
 		<form action="/CarRental/logoutAction" method="post">
 			<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
 		</form>
-	</div>
+		</div>
 
 </body>
 </html>
