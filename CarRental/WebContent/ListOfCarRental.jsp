@@ -35,10 +35,26 @@
 }
 </style>
 
+<script>
+function testFunc(i)
+{
+	
+	//var test = 1;
+	//alert(i);
+	document.getElementById("idField").value = i;
+	//alert(test);
+	//window.location = "OrderCheckout.jsp?id="+i;
+}
+</script>
+
 </head>
 <body>
-
+<form method=post action="OrderCheckout.jsp">
+<input type="hidden" id="idField" name="idField" value = "-1"/>
 <ul>
+<input type="hidden" id="location" name="location" value = "<%= request.getParameter("location")%>"/>
+<input type="hidden" id="pickUpDay" name="pickUpDay" value = "<%= request.getParameter("pickupdate")%>"/>
+<input type="hidden" id="dropDay" name="dropDay" value = "<%= request.getParameter("dropoffdate")%>"/>
 <li><p><b>Location:</b>
    <%= request.getParameter("location")%>
 </p></li>
@@ -62,7 +78,9 @@
 	
 	<table class="table">
 		<%
-			for(Rental r: lstrental){ 
+			for(int i = 0; i<lstrental.size(); i++){
+				//for(Rental r: lstrental)
+			Rental r = lstrental.get(i);
 				
 			// USed to set Name and Image
 			CarType carTypeObj = new CarType();
@@ -74,15 +92,27 @@
 
 			}			
 			%>
+			
 		<tr>
+		
 			<div>
+			<input type="hidden" name="rentalId<%=i %>" value="<%=r.getRentId() %>"/>
 			<td><ul><%=carTypeObj.getCarTypeName()%></ul>
 				<ul>
-					<img id="test" src="images/<%=carTypeObj.getCarTypeName()%>.png">
+					<img id="image<%= i %>" src="images/<%=carTypeObj.getCarTypeName()%>.png">
 				</ul></td>
+				
+				<td>
+				<ul><b>Sub Total :</b><%=r.getSubTotal() %></ul>
+				<ul><b>Daily Rate :</b> <%=r.getDailyRate() %></ul>
+				<ul><b>Taxes & Fees :</b><%=r.getTaxesAndFees() %></ul>
+				<ul><b>Total Price :<b><%=r.getTotalPrice()%></ul>
+				
+				</td>
 
 			<td><ul><label> Select a Model </label>	</ul>
-				<ul><select name="carType">
+				<ul>
+				<select id="modelDropdown<%= i %>" name="modelDropdown<%= i %>">
 					<option value="0" selected>- select -</option>
 						<%
 							CarModelDao modelDao = new CarModelDao();
@@ -104,7 +134,7 @@
 				</ul></td>
 			<td><ul><%=carTypeObj.getSeatingInfo()%></ul>
 				<ul>
-					<button id="continue" class="btn btn-success" name="action" onclick=""	value="continue">Continue</button>
+					<button id="continue<%= i %>" class="btn btn-success" name="action" type="submit" value="continue" onclick="testFunc(<%=i%>)">Continue</button>
 				</ul></td>
 			</div>
 		</tr>
@@ -113,5 +143,6 @@
 
 		<%}%>
 	</table>
+	</form>
 </body>
 </html>

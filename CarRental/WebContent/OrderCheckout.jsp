@@ -18,6 +18,21 @@
 
 <%
 //allow access only if session exists
+String test = request.getParameter("idField");
+String modelId = request.getParameter("modelDropdown"+test);
+String rentalId = request.getParameter("rentalId"+test);
+String location = request.getParameter("location");
+String pickUpDay = request.getParameter("pickUpDay");
+String dropDay = request.getParameter("dropDay");
+
+
+System.out.println("ModelId:"+modelId);
+System.out.println("RentalId:"+rentalId);
+System.out.println("Location:"+location);
+System.out.println("pickUpDay:"+pickUpDay);
+System.out.println("dropDay:"+dropDay);
+
+
 if(session.getAttribute("customerId") == null){
 	response.sendRedirect("login.jsp");
 }

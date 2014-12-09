@@ -59,7 +59,7 @@ public class CarTypesJaxb {
 		}
 	}
 
-	public void createCarTypeObjFromXML()
+	public void insertCarTypeFromXml()
 	{
 		try {
 
@@ -91,7 +91,7 @@ public class CarTypesJaxb {
 		//jb.createCarTpeXml();
 		
 		// Inserts CarType data into XML CALL ONLY ONCE!
-	    jb.createCarTypeObjFromXML();
+	    jb.insertCarTypeFromXml();
 		System.out.println("check xml file");
 
 	}

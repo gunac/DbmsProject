@@ -10,6 +10,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import Jaxb.CarTypesJaxb;
 import Jaxb.RentalInstancesJaxb;
 import carrental.CarRentalWebServiceClient;
 import model.Rental;
@@ -76,6 +77,7 @@ public class RentalDao {
 		LocationDao dao = new LocationDao();
 		CarRentalWebServiceClient carApi = new CarRentalWebServiceClient();
 		RentalInstancesJaxb rentalJaxb = new RentalInstancesJaxb();
+		CarTypesJaxb carTypeJaxb = new CarTypesJaxb();
 
 
 		Date dNow = new Date( );
@@ -89,22 +91,27 @@ public class RentalDao {
 		cal.setTime(tomo);
 		cal.add(Calendar.DATE, 1);
 		Date dayafter = cal.getTime();
-		
+
 		String startdate = ft.format(tomo).toString();
 		String enddate = ft.format(dayafter).toString();
 		String pickuptime ="10:00";
 		String dropofftime = "10:30";
 		List<Location> lstLoc = dao.getAllLocation();
+		/*// Generate CarType XML data from output.xml and write it to allCarType-out.xml
+		carApi.createAllCarTypeXML();
+		// Write cartype information to database
+		carTypeJaxb.insertCarTypeFromXml();*/
 		for(Location l : lstLoc){
 			// Fetch data from api for given location and store it in output XML
 			carApi.getDataFromApiAndWriteToXML(startdate,enddate,pickuptime,dropofftime,l.getName());
-			// Generate Rental XML data from output.xml and write it to rentalInformation-out
+			// Generate Rental XML data from output.xml and write it to rentalInformation-out.xml
 			carApi.getRentalInformationFromApi();
+
 			// Write from XML to DATABASE by calling JAXB
 			rentalJaxb.createRentalInstancesFromXML();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		RentalDao rentalDao = new RentalDao();
 		rentalDao.insertRentalInfoForAllLocation();

@@ -1,5 +1,6 @@
 package ApplicationDao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -7,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
  
+
 
 
 import model.Customer;
@@ -35,7 +37,7 @@ public class OrdersDao {
 	// Used to show History for a user
 	public List<Orders> getOrderByCustomerId(int customerId){
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId "+ customerId);
+		Query q = em.createQuery("SELECT o FROM Orders o WHERE o.CustomerId = "+ customerId);
 		List<Orders> lstOrderInfo =(List<Orders>) q.getResultList();
 		em.getTransaction().commit();
 		return lstOrderInfo;
@@ -49,15 +51,17 @@ public class OrdersDao {
 		return neworder;
 	}
 	
-	public void insertOrder(int customerId, int rentalId, int modelId , int NoOfDays)
+	public void insertOrder(int customerId, int rentalId, int modelId , Date pickupDay, Date dropoffDay)
 	{
+		int difference = (int)Math.abs(pickupDay.getTime() - dropoffDay.getTime());
+		int NoOfDays = (int) Math.ceil(difference / (1000 * 3600 * 24));
+		 
 		
 		RentalDao rentalDao = new RentalDao();
 		Rental rentalObj = new Rental();
 		rentalDao.getRentalById(rentalId);
 		
-		// Create Order Obj
-		
+		// Create Order Obj		
 		Orders orderObj = new Orders();		
 		orderObj.setCustomerId(customerId);
 		orderObj.setModelId(modelId);
@@ -78,6 +82,8 @@ public class OrdersDao {
 	}
 
 	public static void main(String[] args) {
+				
+		  
 		
 	}
 
