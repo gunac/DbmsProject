@@ -40,7 +40,7 @@
 
 <ul>
 <li><p><b>Location:</b>
-   <%= request.getParameter("carType")%>
+   <%= request.getParameter("location")%>
 </p></li>
 <li><p><b>Pick Up Date:</b>
    <%= request.getParameter("pickupdate")%>
@@ -50,19 +50,16 @@
 </p></li>
 </ul>
 
-
-
 	<%
 		CarTypeDao carTypeDao = new CarTypeDao();
 		List<CarType> lstCarType = carTypeDao.getAllCarTypes();
 		RentalDao rentalDao = new RentalDao();
 		List<Rental> lstrental = new ArrayList<Rental>();
 		// get rental info based on location
- 		lstrental = (List<Rental>) rentalDao.getRentalInfoByLocation("SEA");
+ 		lstrental = (List<Rental>) rentalDao.getRentalInfoByLocation("SJC");
  
-	%>
-	 
-
+	%>	 
+	
 	<table class="table">
 		<%
 			for(Rental r: lstrental){ 
@@ -107,8 +104,7 @@
 				</ul></td>
 			<td><ul><%=carTypeObj.getSeatingInfo()%></ul>
 				<ul>
-					<button id="continue" class="btn btn-success" name="action"
-						value="continue">Continue</button>
+					<button id="continue" class="btn btn-success" name="action" onclick=""	value="continue">Continue</button>
 				</ul></td>
 			</div>
 		</tr>
