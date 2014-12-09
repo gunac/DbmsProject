@@ -3,13 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="js/jquery.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <title>My Account Page</title>
 
 <script>
+
+$(function() {
+	$("#dateofbirth").datepicker({ dateFormat: "yy-mm-dd" }).val()
+});
 
 $(function(){
 	
@@ -30,10 +37,13 @@ $(function(){
 
 function customerprefillResponseHandler(response){
 	
+	var birthdate = new Date(response.dob);
+	alert(birthdate);
+	
  document.getElementById('name').value = response.name;
  document.getElementById('licenseno').value = response.licenseNo;
- document.getElementById('dateofbirth').value = response.dob;
- //$("#dateofbirth").datepicker('setDate', response.dob);
+ //document.getElementById('dateofbirth').value = birthdate;
+ $("#dateofbirth").datepicker('setDate', birthdate);
  document.getElementById('email').value = response.email;
  document.getElementById('pwd').value = response.password;
 
@@ -44,7 +54,7 @@ function updateUserdetails(){
 	var userid = document.cookie.split('=');
 	var id= parseInt(userid[1]);
 	
-	alert($("#pwd").val());
+	alert($("#dateofbirth").val());
 	
 	var newCustomer = {
 			"customerId": id, 
@@ -106,8 +116,8 @@ for(Cookie cookie : cookies){
           <input type="text" class="form-control" id="name" placeholder="Enter name">
         </div>
         <div class="form-group">
-<!--         <label for="Pickupdate">Date Of Birth</label> -->
-          <input type="hidden" class="form-control" id="dateofbirth">
+        <label for="dateofbirth">Date Of Birth</label>
+          <input type="text" class="form-control" id="dateofbirth">
         </div>
         <div class="form-group">
           <label for="licenseno">Driver's License No:</label>
