@@ -229,6 +229,5 @@ for(Cookie cookie : cookies){
 	
    </div>
 	
-</div>
 </body>
 </html>

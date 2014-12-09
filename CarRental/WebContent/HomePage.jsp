@@ -43,15 +43,9 @@ function buildHTMLTable(){
 		 $(response).each(function(){ 
 		 var option = $('<option />'); 
 		 option.attr('value', this.name).text(this.name); 
-		 $('#location').append(option); 
+		 $('#Location').append(option); 
 	    })
 	    
-	    
-	    var tr = '';
-	     $.each(response, function (i, item) {
-	         tr += '<tr><td>'+ item.CarTypeName +'</td></tr>';
-	     });
-	     $('#recordtable').append(tr);
 	}
 	}
 </script>
@@ -97,7 +91,7 @@ for(Cookie cookie : cookies){
 
 			<div class="form-group col-lg-2">
 				<label for="Location">Location</label>
-				 <select id="location" name="location">				
+				 <select id="Location" name="location">				
 					<option value="0" selected>- select -</option>
 				</select>
 			</div>
