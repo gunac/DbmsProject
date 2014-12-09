@@ -71,6 +71,15 @@ public class CarModelDao {
 		return true;
 	}
 	
+	public void decreaseCountandUpcateCarModel(int modelId){
+		CarModel cm = new CarModel();
+		cm = getModelById(modelId);
+		cm.setCount(cm.getCount() - 1);
+		updateCarModel(modelId, cm);
+	}
+	
+	
+	
 	//  removes 
 	public void removeCarModel(int modelId){
 		em.getTransaction().begin();

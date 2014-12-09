@@ -73,6 +73,8 @@ public class OrdersDao {
 	RentalDao rentalDao = new RentalDao();
 	Rental rentalObj = new Rental();
 	rentalObj =  rentalDao.getRentalById(rentalId);
+	CarModelDao cmDao = new CarModelDao();
+	cmDao.decreaseCountandUpcateCarModel(modelId);
 
 	// Create Order Obj	
 	Orders orderObj = new Orders();	
@@ -81,7 +83,7 @@ public class OrdersDao {
 	orderObj.setLocation(location);
 	orderObj.setSubTotal(rentalObj.getSubTotal());
 	orderObj.setTaxesAndFees(rentalObj.getTaxesAndFees());
-	// We gave to re write logic to get price for number of days
+	// Calculate total price for 2 days based on number of days
 	orderObj.setTotalPrice(rentalObj.getTotalPrice() * NoOfDays);
 	orderObj.setDailyRate(rentalObj.getDailyRate());
 	orderObj.setDropoffDay(dropoffDay);
@@ -92,7 +94,6 @@ public class OrdersDao {
 	em.persist(orderObj);
 	em.getTransaction().commit();
 	} catch (ParseException e) {
-	// TODO Auto-generated catch block
 	e.printStackTrace();
 	}
 	return getLastInsertedId();
