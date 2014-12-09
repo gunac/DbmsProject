@@ -38,12 +38,11 @@ $(function(){
 function customerprefillResponseHandler(response){
 	
 	var birthdate = new Date(response.dob);
-	alert(birthdate);
 	
  document.getElementById('name').value = response.name;
  document.getElementById('licenseno').value = response.licenseNo;
  //document.getElementById('dateofbirth').value = birthdate;
- $("#dateofbirth").datepicker('setDate', birthdate);
+ //$("#dateofbirth").datepicker('setDate', birthdate);
  document.getElementById('email').value = response.email;
  document.getElementById('pwd').value = response.password;
 
@@ -54,7 +53,6 @@ function updateUserdetails(){
 	var userid = document.cookie.split('=');
 	var id= parseInt(userid[1]);
 	
-	alert($("#dateofbirth").val());
 	
 	var newCustomer = {
 			"customerId": id, 
@@ -116,8 +114,8 @@ for(Cookie cookie : cookies){
           <input type="text" class="form-control" id="name" placeholder="Enter name">
         </div>
         <div class="form-group">
-        <label for="dateofbirth">Date Of Birth</label>
-          <input type="text" class="form-control" id="dateofbirth">
+<!--         <label for="dateofbirth">Date Of Birth</label> -->
+          <input type="hidden" class="form-control" id="dateofbirth">
         </div>
         <div class="form-group">
           <label for="licenseno">Driver's License No:</label>

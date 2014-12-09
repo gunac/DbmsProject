@@ -1,5 +1,8 @@
 package ApplicationDao;
 
+import java.math.BigInteger;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +11,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
  
+
+
 
 
 
@@ -51,39 +56,60 @@ public class OrdersDao {
 		return neworder;
 	}
 	
-	public void insertOrder(int customerId, int rentalId, int modelId , Date pickupDay, Date dropoffDay)
+	public int insertOrder(int customerId, int rentalId, int modelId , String pickupday, String dropoffday, String location)
 	{
-		int difference = (int)Math.abs(pickupDay.getTime() - dropoffDay.getTime());
-		int NoOfDays = (int) Math.ceil(difference / (1000 * 3600 * 24));
-		 
-		
-		RentalDao rentalDao = new RentalDao();
-		Rental rentalObj = new Rental();
-		rentalDao.getRentalById(rentalId);
-		
-		// Create Order Obj		
-		Orders orderObj = new Orders();		
-		orderObj.setCustomerId(customerId);
-		orderObj.setModelId(modelId);
-		orderObj.setLocation(rentalObj.getLocation());
-		orderObj.setSubTotal(rentalObj.getSubTotal());
-		orderObj.setTaxesAndFees(rentalObj.getTaxesAndFees());
-		// We gave to re write logic to get price for number of days
-		orderObj.setTotalPrice(rentalObj.getTotalPrice() * NoOfDays);
-		orderObj.setDailyRate(rentalObj.getDailyRate());
-		orderObj.setDropoffDay(rentalObj.getDropoffDay());
-		orderObj.setPickupDay(rentalObj.getPickupDay());
-		orderObj.setRentalDays(NoOfDays);
-		
-		em.getTransaction().begin();
-		em.persist(orderObj);
-		em.getTransaction().commit();
-		
+	SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+
+	Date pickupDay, dropoffDay;
+	try {
+	pickupDay = formatter.parse(pickupday);
+	dropoffDay  = formatter.parse(dropoffday);
+
+
+	int difference = (int)Math.abs(pickupDay.getTime() - dropoffDay.getTime());
+	int NoOfDays = (int) Math.ceil(difference / (1000 * 3600 * 24));
+
+	
+	RentalDao rentalDao = new RentalDao();
+	Rental rentalObj = new Rental();
+	rentalObj =  rentalDao.getRentalById(rentalId);
+
+	// Create Order Obj	
+	Orders orderObj = new Orders();	
+	orderObj.setCustomerId(customerId);
+	orderObj.setModelId(modelId);
+	orderObj.setLocation(location);
+	orderObj.setSubTotal(rentalObj.getSubTotal());
+	orderObj.setTaxesAndFees(rentalObj.getTaxesAndFees());
+	// We gave to re write logic to get price for number of days
+	orderObj.setTotalPrice(rentalObj.getTotalPrice() * NoOfDays);
+	orderObj.setDailyRate(rentalObj.getDailyRate());
+	orderObj.setDropoffDay(dropoffDay);
+	orderObj.setPickupDay(pickupDay);
+	orderObj.setRentalDays(NoOfDays);
+
+	em.getTransaction().begin();
+	em.persist(orderObj);
+	em.getTransaction().commit();
+	} catch (ParseException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+	}
+	return getLastInsertedId();
+
+	}
+
+	public int getLastInsertedId()
+	{
+	em.getTransaction().begin();
+	Query q = em.createNativeQuery("select last_insert_id();");
+
+	BigInteger lastInsertedId = (BigInteger) q.getSingleResult();
+	System.out.println(lastInsertedId);
+	return lastInsertedId.intValue();
 	}
 
 	public static void main(String[] args) {
-				
-		  
 		
 	}
 

@@ -95,7 +95,7 @@ public class CarRentalWebServiceClient {
 	}
 
 	
-	public void createAllCarTypeXML()
+	public void writeCarTypetoXml()
 	{
 		File inputXmlFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/output.xml");
 		File xsltFile = new File("/Users/Guna/eclipseworkspace/DbmsProject/CarRental/WebContent/extractAllCarTypes.xsl");

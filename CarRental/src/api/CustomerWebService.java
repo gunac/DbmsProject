@@ -11,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import ApplicationDao.CustomerDao;
 import model.Customer;
@@ -55,6 +56,7 @@ CustomerDao dao = new CustomerDao();
 	@Path("/")
 	@Consumes("application/json")
 	public void CreateNewCustomer(Customer newCustomer){
+		newCustomer.setPassword(DigestUtils.sha256Hex(newCustomer.getPassword()));
 		dao.insertCustomer(newCustomer);
 	}
 	

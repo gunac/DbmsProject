@@ -8,6 +8,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import ApplicationDao.OrdersDao;
 import model.CarModel;
@@ -34,11 +35,11 @@ public class OrderWebService {
 		 return dao.getOrderByCustomerId(id);
 	}
 	
-	@PUT
-	@Path("/{id}/{rentid}/{modelid}/{rentdays}")
-	public void UpdateCarModel(@PathParam("id") int id,@PathParam("rentid") int rentid,@PathParam("modelid") int modelid,@PathParam("rentdays") int rentdays){
-		dao.insertOrder(id, rentid, modelid, rentdays);	
-		System.out.println("inserted data");
-	}
+//	@PUT
+//	@Path("/{id}/{rentid}/{modelid}/{pickday}/{dropday}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public int insertOrderintoorders(@PathParam("id") int id,@PathParam("rentid") int rentid,@PathParam("modelid") int modelid, @PathParam("pickday") String pickupday,@PathParam("dropday") String dropoffday){
+//		return dao.insertOrder(id, rentid, modelid,pickupday,dropoffday);	
+//	}
 
 }

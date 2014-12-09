@@ -20,21 +20,6 @@
 
 <%
 //allow access only if session exists
-String test = request.getParameter("idField");
-String modelId = request.getParameter("modelDropdown"+test);
-String rentalId = request.getParameter("rentalId"+test);
-String location = request.getParameter("location");
-String pickUpDay = request.getParameter("pickUpDay");
-String dropDay = request.getParameter("dropDay");
-
-
-System.out.println("ModelId:"+modelId);
-System.out.println("RentalId:"+rentalId);
-System.out.println("Location:"+location);
-System.out.println("pickUpDay:"+pickUpDay);
-System.out.println("dropDay:"+dropDay);
-
-
 if(session.getAttribute("customerId") == null){
 	response.sendRedirect("login.jsp");
 }
@@ -66,10 +51,19 @@ for(Cookie cookie : cookies){
 			
 			<% 
 				OrdersDao dao = new OrdersDao();
-				String id = request.getParameter("orderid");
-				int orderid = Integer.parseInt(id);
+			int id = Integer.parseInt(userId);
+			String rentalid = request.getParameter("rentalid");
+			int rentid = Integer.parseInt(rentalid);
+			String modellid = request.getParameter("modelid");
+			int modelid = Integer.parseInt(modellid);
+			String pickupday = request.getParameter("pickupday");
+			String dropoffday = request.getParameter("dropoffday");
+			String loc = request.getParameter("location");
+			
+				int orderid = dao.insertOrder(id, rentid, modelid,pickupday,dropoffday,loc);
 				
-				Orders neworder = dao.getOrderByOrderId(orderid);
+				OrdersDao dao1 = new OrdersDao();
+				Orders neworder = dao1.getOrderByOrderId(orderid);
 			
 			%>
 
@@ -78,7 +72,7 @@ for(Cookie cookie : cookies){
 			<td> Order Id : </td>
 			<td> <%= orderid %> </td>
 			</tr>
-			
+			<%= request.getParameter("") %>
 			<tr>
 			<td> Drop Off Day : </td>
 			<td> <%= neworder.getDropoffDay() %> </td>
@@ -111,7 +105,7 @@ for(Cookie cookie : cookies){
 			
 			<tr>
 			<td> Total Price : </td>
-			<td> <%= neworder.getTotalPrice() * neworder.getRentalDays() %> </td>
+			<td> <%= neworder.getTotalPrice() %> </td>
 			</tr>	
 			
 			</table>

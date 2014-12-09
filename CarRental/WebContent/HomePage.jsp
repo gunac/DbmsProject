@@ -16,10 +16,10 @@
 $(function() {
 	$("#pickupdate").datepicker({ 
 		minDate: 0, 
-		dateFormat: "mm/dd/yy" }).val()
+		dateFormat: "mm-dd-yy" }).val()
     $("#dropoffdate").datepicker({ 
     	maxDate: "+1M",
-    	dateFormat: "mm/dd/yy" }).val()
+    	dateFormat: "mm-dd-yy" }).val()
 });
 
 function buildHTMLTable(){

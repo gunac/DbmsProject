@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
 <script>
 $(function() {
 	$("#dateofbirth").datepicker({ 
@@ -34,7 +33,6 @@ $(function() {
 			"roleId": 2};
 	
 	createCustomer(newCustomer);
-	alert("Created New Customer");
 });
 }
 
@@ -61,7 +59,7 @@ function createCustomer(customer){
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Sign Up Page</u></em></h3>
-		<form role="SignUpPage-form">
+		<form action="/CarRental/SignUpAction" method="post">
         <p>Enter your personal information</p>
         <div class="form-group">
           <label for="name">Name:</label>
@@ -83,7 +81,7 @@ function createCustomer(customer){
           <label for="pwd">Password:</label>
           <input type="password" class="form-control" id="pwd" placeholder="Enter password">
         </div>
-        <button id="submitnewuser" class="btn btn-primary" onClick="createNewUserJSONObj()">Submit</button>
+        <button id="submitnewuser" class="btn btn-primary">Submit</button>
    </form>
    </div>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

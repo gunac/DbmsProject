@@ -11,6 +11,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import model.Customer;
 
 
@@ -86,10 +88,11 @@ public class CustomerDao {
 	//Get Customer by email and password
 	public Customer getCustomerByEmailandPassword(String email, String password) {
 		em.getTransaction().begin();
+		
 		Customer cusObj = null;
 		Query q = em.createNamedQuery("findCustomerByEmailandPassword")
 				.setParameter("email", email)
-				.setParameter("password", password);
+				.setParameter("password", (DigestUtils.sha256Hex(password)));
 		try{
 		cusObj = (Customer) q.getSingleResult();
 		}catch (NoResultException nre){
