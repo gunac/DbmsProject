@@ -34,12 +34,11 @@ public class LocationDao {
 	// Read all
 	public List<Location> getAllLocation() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT l FROM Location l");
+		Query q = em.createNamedQuery("GetAllLocation");
 		List<Location> lstLocationInfo =(List<Location>) q.getResultList();
 		em.getTransaction().commit();
 		return lstLocationInfo;
-	}
-
+	} 
 //  removes 
 	public void removeLocation(String loc){
 		em.getTransaction().begin();

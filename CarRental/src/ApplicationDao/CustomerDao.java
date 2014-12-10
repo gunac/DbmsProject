@@ -35,14 +35,15 @@ public class CustomerDao {
 	}
 
 	// Read all
+	 
 	public List<Customer> getAllCustomer() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c");
+		Query q = em.createNamedQuery("GetAllCustomers");		
 		List<Customer> lstCustomerInfo =(List<Customer>) q.getResultList();
 		em.getTransaction().commit();
 		return lstCustomerInfo;
-
-	}	
+	}
+	
 
 	// get by id
 	public Customer getCustomerById(int id){
@@ -70,20 +71,19 @@ public class CustomerDao {
 	}
 
 	// Get Password for given Email 
+	// Get Password for given Email
 	public String getCustomerPassword(String email) {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = '" + email + "'");	 
+		Query q = em.createNamedQuery("GetPasswordForEmail").setParameter("email", email);		
 		Customer cusObj = (Customer) q.getSingleResult();
 		em.getTransaction().commit();
 		return cusObj.getPassword();
 	}
-	
-	 
+			 
 
 	//Get Customer by email and password
 	public Customer getCustomerByEmailandPassword(String email, String password) {
-		em.getTransaction().begin();
-		
+		em.getTransaction().begin();		
 		Customer cusObj = null;
 		Query q = em.createNamedQuery("findCustomerByEmailandPassword")
 				.setParameter("email", email)
@@ -119,8 +119,7 @@ public class CustomerDao {
 		em.getTransaction().begin();
 		Customer CustomerObj = em.find(Customer.class, cusId);		
 		em.remove(CustomerObj);
-		em.getTransaction().commit();
-		 
+		em.getTransaction().commit();		 
 		return true;
 	}
 
