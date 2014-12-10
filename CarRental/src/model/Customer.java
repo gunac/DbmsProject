@@ -13,11 +13,15 @@ import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
-	  @NamedQuery(name="findCustomerByEmailandPassword",
-	              query="SELECT c " +
-	                    "FROM  Customer c " +
-	                    "WHERE c.Email = :email AND " +
-	                    "      c.Password = :password")
+	@NamedQuery(name="findCustomerByEmailandPassword",
+			query="SELECT c " +
+					"FROM  Customer c " +
+					"WHERE c.Email = :email AND " +
+			"      c.Password = :password"),
+			@NamedQuery(name = "GetAllCustomers",
+			query= "SELECT c FROM Customer c"),   
+			@NamedQuery(name = "GetPasswordForEmail",
+			query = "SELECT c FROM Customer c where c.Email = :email"),
 	})
 public class Customer {
 	

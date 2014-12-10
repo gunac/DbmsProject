@@ -42,14 +42,16 @@ public class CarTypeDao {
 		em.close();
 	}
 	
-	public List<CarType> getAllCarTypes() {
+
+public List<CarType> getAllCarTypes() {
 		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM CarType c");
+		Query q = em.createNamedQuery("GetAllCarType");
 		List<CarType> lstCarTypeInfo =(List<CarType>)q.getResultList();
 		em.getTransaction().commit();
 		em.close();
 		return lstCarTypeInfo;
 	}
+	 
 
 	public static void main(String[] args) {
 		

@@ -27,25 +27,25 @@ public class CarModelDao {
 		em.persist(carmodel);
 		em.getTransaction().commit();
 	}
+	
 
 	// Read all
-	public List<CarModel> getAllCarModel() {
-		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT cm FROM CarModel cm");
-		List<CarModel> lstCarModelInfo =(List<CarModel>) q.getResultList();
-		em.getTransaction().commit();
-		return lstCarModelInfo;
-	}
-	
-	// Availabe CarModel
-	public List<CarModel> getAvailableCarModel() {
-		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT cm FROM CarModel cm WHERE cm.Count > 0", CarModel.class);
-		List<CarModel> lstCarModelInfo =(List<CarModel>) q.getResultList();
-		em.getTransaction().commit();
-		return lstCarModelInfo;
-	}
-	
+		public List<CarModel> getAllCarModel() {
+			em.getTransaction().begin();
+			Query q = em.createNamedQuery("GetAllCarModel");
+			List<CarModel> lstCarModelInfo =(List<CarModel>) q.getResultList();
+			em.getTransaction().commit();
+			return lstCarModelInfo;
+		} 
+		
+		// Availabe CarModel
+			public List<CarModel> getAvailableCarModel() {
+				em.getTransaction().begin();
+				Query q = em.createNamedQuery("GetAvailableModels");
+				List<CarModel> lstCarModelInfo =(List<CarModel>) q.getResultList();
+				em.getTransaction().commit();
+				return lstCarModelInfo;
+			} 
 
 	// Update
 	public void updateCarModel(int modelId, CarModel carmodel)
