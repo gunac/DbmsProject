@@ -11,6 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import model.CarModel;
 import model.Location;
 
 public class LocationDao {
@@ -39,6 +40,14 @@ public class LocationDao {
 		return lstLocationInfo;
 	}
 
+//  removes 
+	public void removeLocation(String loc){
+		em.getTransaction().begin();
+		Location locObj = em.find(Location.class, loc);		
+		em.remove(locObj);
+		em.getTransaction().commit();
+		//return true;
+	}
 
 
 

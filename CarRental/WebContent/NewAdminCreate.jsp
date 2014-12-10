@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
 <script>
 $(function() {
 	$("#dateofbirth").datepicker({ 
@@ -76,6 +75,15 @@ for(Cookie cookie : cookies){
 %>
 
 <div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
+<table>
+<tr width="100%">
+<td width="100%"> <a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a></td>
+<td width="20%"><a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a></td>
+<td width="20%"><form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form></td>
+</tr>
+</table>
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Create New Admin Page</u></em></h3>
 		<form role="SignUpPage-form">
@@ -96,13 +104,7 @@ for(Cookie cookie : cookies){
    </form>
    
    <br>
-	<p>
-	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
-	<p>
-	<a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a>
-	<p>
-	<form action="/CarRental/logoutAction" method="post">
-	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	
 	</div>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

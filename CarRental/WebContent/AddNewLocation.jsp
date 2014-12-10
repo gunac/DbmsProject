@@ -5,13 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <title>Add New Location</title>
 <script>
+
+function deleteLocation(name){
+	
+	$.ajax({
+		url : "http://localhost:8080/CarRental/api/Location/" + name,
+		type : "delete",
+			success: function(html){
+                location.reload();
+            }
+	})
+}
 
 function createNewLocationJSONObj(){
 	var newloc =  $("#newlocation").val();
@@ -49,7 +57,7 @@ function responseHandler(response){
 	
 	var tr = '';
     $.each(response, function (i, item) {
-        tr += '<tr><td>'+ item.name +'</td></tr>';
+        tr += '<tr><td>'+ item.name +'</td><td><button id="delete" class="btn btn-danger" onClick="deleteLocation(\''+ item.name +'\')"> Delete </button></td></tr>';
     });
     $('#recordtable').append(tr);
 	
@@ -91,7 +99,7 @@ for(Cookie cookie : cookies){
 
 
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
-  	<h3><em><u>Add New Location Page</u></em></h3>
+  	<h3><em><u>Add/Delete Location Page</u></em></h3>
   	
   	 <div class="form-group">
           <label for="name">New Location :</label>

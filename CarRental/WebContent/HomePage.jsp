@@ -16,8 +16,10 @@
 $(function() {
 	$("#pickupdate").datepicker({ 
 		minDate: 0, 
+		maxDate: "+1M",
 		dateFormat: "mm-dd-yy" }).val()
     $("#dropoffdate").datepicker({ 
+    	minDate: 0, 
     	maxDate: "+1M",
     	dateFormat: "mm-dd-yy" }).val()
 });
@@ -52,21 +54,9 @@ function buildHTMLTable(){
 
 </head>
 
-<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
-<table>
-<tr width="100%">
-<td width="100%"> <a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a></td>
-<td width="20%"><a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a></td>
-<td width="20%"><form action="/CarRental/logoutAction" method="post">
-	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
-	</form></td>
-</tr>
-</table>
-
-
 
 <body  onLoad="buildHTMLTable()">
-	<%
+<%
 //allow access only if session exists
 String customerId= null;
 if(session.getAttribute("customerId") == null){
@@ -86,6 +76,26 @@ for(Cookie cookie : cookies){
 }
 
 %>
+
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
+<table>
+<tr width="100%">
+<td width="100%">
+<td width="20%"> <% 
+		 if (idrole == 2) { %>
+			<a href="MyAccount.jsp" class="btn btn-warning" role="button">My
+				Account</a>
+		<% } else { %>
+			<a href="AdminPage.jsp" class="btn btn-warning" role="button">My
+				Account</a>
+		<% } %></td>
+<td width="20%"><form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form></td>
+</tr>
+</table>
+</div>
+
 	<div class="container">
 		<h1 class="text-center">
 			<u>BEST CAR RENTALS</u>
@@ -104,7 +114,7 @@ for(Cookie cookie : cookies){
 			
 			<div class="form-group col-lg-2">
 				<label for="Location">Location</label>
-				 <select id="Location" name="location">				
+				 <select id="Location" name="location" class="form-control">				
 					<option value="0" selected>- select -</option>
 				</select>
 			</div>
@@ -122,23 +132,8 @@ for(Cookie cookie : cookies){
 					<input type="submit" class="btn btn-primary" value="Search">
 			</div>
 		</form>
-		 <% 
-		 if (idrole == 2) { %>
-		<p>
-			<a href="MyAccount.jsp" class="btn btn-warning" role="button">My
-				Account</a>
-		<p>
-		<% } else { %>
-		<p>
-			<a href="AdminPage.jsp" class="btn btn-warning" role="button">My
-				Account</a>
-		<p>
-		<% } %>
-		<form action="/CarRental/logoutAction" method="post">
-			<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
-		</form>
+		
 	</div>
 
 </body>
-</div>
 </html>

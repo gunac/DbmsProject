@@ -80,7 +80,7 @@ for(Cookie cookie : cookies){
 	
 		<br>
 		<p>
-	<a href="AddNewLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add New Location</a>
+	<a href="AddNewLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add/Delete Location</a>
 	
 	<form action="AdminPage.jsp">
 		<p>
