@@ -90,6 +90,18 @@ function setId(i)
 {
 	document.getElementById("idField").value = i;
 }
+
+function onSubmitCheck()
+{
+	var currentId = document.getElementById("idField").value;
+	var dropdownCurrentVal = document.getElementById("modelDropdown"+currentId).value;
+	if(dropdownCurrentVal==0)
+	{
+		alert("Please select a Model");
+		return false;
+	}
+	return true;
+}
 </Script>
 
 <style>
@@ -109,12 +121,10 @@ function setId(i)
 }
 </style>
 
-<script>
 
-</script>
 </head>
 <body onload="updateValues()">
-<form method="post" action="OrderCheckout.jsp">
+<form method="post" action="OrderCheckout.jsp" onsubmit="return onSubmitCheck()">
 <input type="hidden" id="idField" name="idField" value = "-1"/>
 <input type="hidden" id="location" name="location" value = "<%= request.getParameter("location")%>"/>
 <input type="hidden" id="pickUpDay" name="pickUpDay" value = "<%= request.getParameter("pickupdate")%>"/>
