@@ -23,6 +23,15 @@ function updatedatafromapi(){
 </script>
 
 </head>
+
+<style>
+body {
+    background-image: url("images/background.jpeg");
+    background-size: 1400px 700px;
+    background-repeat: no-repeat;
+}
+</style>
+
 <body>
 
 <%
@@ -72,19 +81,19 @@ for(Cookie cookie : cookies){
 	
 	<br>
 	<p>
-		<a href="OrdersHistory.jsp" id="viewOrderHistory" class="btn btn-primary" type="button"> View / Cancel Orders</a>
+		<a href="OrdersHistory.jsp" id="viewOrderHistory" class="btn btn-warning" type="button"> View / Cancel Orders</a>
 	
 		<br>
 		<p>
-	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-warning" type="button"> Edit car model</a>
+	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-success" type="button"> Edit car model</a>
 	
 		<br>
 		<p>
-	<a href="AddNewLocation.jsp" id="addnewlocation" class="btn btn-success" type="button"> Add/Delete Location</a>
+	<a href="AddNewLocation.jsp" id="addnewlocation" class="btn btn-danger" type="button"> Add/Delete Location</a>
 	
 	<form action="AdminPage.jsp">
 		<p>
-	<button name="action" value="update" class="btn btn-primary"> Refresh Data from API</button>
+	<button name="action" value="update" class="btn btn-warning"> Refresh Data from API</button>
 	</form>
 	
 	<%

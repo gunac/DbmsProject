@@ -53,7 +53,13 @@ function buildHTMLTable(){
 <title>HomePage - Best Car Rentals</title>
 
 </head>
-
+<style>
+body {
+    background-image: url("images/background.jpeg");
+    background-size: 1400px 700px;
+    background-repeat: no-repeat;
+}
+</style>
 
 <body  onLoad="buildHTMLTable()">
 <%
@@ -129,7 +135,7 @@ for(Cookie cookie : cookies){
 			<div class="form-group">
 				<br>
 				<p>
-					<input type="submit" class="btn btn-primary" value="Search">
+					<input type="submit" class="btn btn-success" value="Search">
 			</div>
 		</form>
 		

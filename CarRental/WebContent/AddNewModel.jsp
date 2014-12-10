@@ -193,6 +193,8 @@ function responseHandler(response){
 
 </script>
 </head>
+
+
 <body onLoad="buildHTMLTable()">
 
 <%

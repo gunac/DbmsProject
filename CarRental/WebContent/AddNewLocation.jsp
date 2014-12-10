@@ -64,6 +64,7 @@ function responseHandler(response){
 }
 </script>
 </head>
+
 <body>
 <%
 //allow access only if session exists

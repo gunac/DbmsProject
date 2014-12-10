@@ -54,6 +54,14 @@ function createCustomer(customer){
 <title>Create a New Customer Account</title>
 </head>
 
+<style>
+body {
+    background-image: url("images/p1background.jpg");
+    background-size: 1400px 700px;
+    background-repeat: no-repeat;
+}
+</style>
+
 <body>
 <div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>

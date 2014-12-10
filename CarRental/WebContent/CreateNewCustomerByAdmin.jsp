@@ -111,7 +111,7 @@ for(Cookie cookie : cookies){
           <label for="pwd">Password:</label>
           <input type="password" class="form-control" id="pwd" placeholder="Enter password">
         </div>
-        <button id="submitnewuser" class="btn btn-primary" onClick="createNewUserJSONObj()">Create Account</button>
+        <button id="submitnewuser" class="btn btn-success" onClick="createNewUserJSONObj()">Create Account</button>
    </form>
    
    <br>	
