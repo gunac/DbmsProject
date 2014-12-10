@@ -159,9 +159,7 @@ function buildHTMLTable(){
 		})
 	});
 
-	function modelResponseHandler(response){
-		alert(JSON.stringify(response));
-		alert(response);
+	function modelResponseHandler(response){		
 	    var tr = '';
 	     $.each(response, function (i, item) {
 	         tr += '<tr><td>'+ item.modelName +'</td><td>'+ item.count +'</td><td> <button id="delete" class="btn btn-danger" onClick=deleteModelwithId('+ item.modelId +')> Delete </button></td> <td> <button id="update" class="btn btn-success" onClick=SelectModelforId('+ item.modelId +')> Select </button></td></tr>';
@@ -241,6 +239,9 @@ for(Cookie cookie : cookies){
 	<br>
 	<table id="recordtable" class="table">
 	<tr><b> Models Available</b></tr>
+	<tr><td><b>Model Name</b></td>
+	<td><td><b>Model Count</b></td>
+	<td></td><td></td>
 	</table>
 	
 	<br>
