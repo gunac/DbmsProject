@@ -59,6 +59,10 @@ for(Cookie cookie : cookies){
 		<p>
 	<a href="NewAdminCreate.jsp" id="createnewadmin" class="btn btn-danger" type="button"> Create new admin</a>
 	
+	<br>
+	<p>
+		<a href="OrdersHistory.jsp" id="viewOrderHistory" class="btn btn-warning" type="button"> View All Orders</a>
+	
 		<br>
 		<p>
 	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-primary" type="button"> Edit car model</a>

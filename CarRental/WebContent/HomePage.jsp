@@ -63,6 +63,7 @@ if(session.getAttribute("customerId") == null){
 int userId = 0;
 String userEmail = null;
 String sessionID = null;
+int idrole = (Integer) session.getAttribute("roleid");
 String username = (String) session.getAttribute("username");
 Cookie[] cookies = request.getCookies();
 if(cookies !=null){
@@ -108,10 +109,18 @@ for(Cookie cookie : cookies){
 					<input type="submit" class="btn btn-primary" value="Search">
 			</div>
 		</form>
+		 <% 
+		 if (idrole == 2) { %>
 		<p>
 			<a href="MyAccount.jsp" class="btn btn-warning" role="button">My
 				Account</a>
 		<p>
+		<% } else { %>
+		<p>
+			<a href="AdminPage.jsp" class="btn btn-warning" role="button">My
+				Account</a>
+		<p>
+		<% } %>
 		<form action="/CarRental/logoutAction" method="post">
 			<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
 		</form>

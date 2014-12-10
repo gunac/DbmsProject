@@ -34,7 +34,6 @@ $(function() {
 			"roleId": 1};
 	
 	createCustomer(newCustomer);
-	alert("Created New Admin");
 });
 }
 
@@ -58,6 +57,24 @@ function createCustomer(customer){
 
 
 <body>
+
+<%
+//allow access only if session exists
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}
+String userEmail = null;
+String sessionID = null;
+String username = (String) session.getAttribute("username");
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
+
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Create New Admin Page</u></em></h3>
@@ -77,7 +94,16 @@ function createCustomer(customer){
         </div>
         <button id="submitnewadmin" class="btn btn-primary" onClick="createNewAdminJSONObj()">Submit</button>
    </form>
-   </div>
+   
+   <br>
+	<p>
+	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
+	<p>
+	<a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a>
+	<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</div>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
