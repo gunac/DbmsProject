@@ -13,6 +13,19 @@
 <script>
 
 function updateHandler(){
+	
+	var currentDropdownVal = $("#carType").val();
+	var modelName = $("#modelName").val();
+	if(modelName=="")
+	{
+		alert("Please enter Model Name");
+		return;
+	}
+	if(currentDropdownVal==0)
+	{
+		alert("Please choose the Car Type for the Model");
+		return;
+	}
 	var newmodel = {
 			
 			"count" : $("#modelCount").val(),
@@ -26,7 +39,6 @@ function updateHandler(){
 
 
 function updateModel(id , model) {
-	alert(id);
 	$.ajax({
 		url : "http://localhost:8080/CarRental/api/CarModel/" + id,
 		type : "put",
@@ -95,11 +107,24 @@ function deleteModel(Id){
 }
 
 function createNewModelJSONObj(){
+	var currentDropdownVal = $("#carType").val();
+	var modelName = $("#modelName").val();
+	if(modelName=="")
+	{
+		alert("Please enter Model Name");
+		return;
+	}
+	if(currentDropdownVal==0)
+	{
+		alert("Please choose the Car Type for the Model");
+		return;
+	}
+	
 	var newmodel = {
 			
 			"count" : $("#modelCount").val(),
-			"carTypeCode" : $("#carType").val(),
-			"modelName" : $("#modelName").val(),
+			"carTypeCode" :currentDropdownVal,
+			"modelName" : modelName,
 			"modelId" : 2
 		};
 	
@@ -135,7 +160,8 @@ function buildHTMLTable(){
 	});
 
 	function modelResponseHandler(response){
-		
+		alert(JSON.stringify(response));
+		alert(response);
 	    var tr = '';
 	     $.each(response, function (i, item) {
 	         tr += '<tr><td>'+ item.modelName +'</td><td>'+ item.count +'</td><td> <button id="delete" class="btn btn-danger" onClick=deleteModelwithId('+ item.modelId +')> Delete </button></td> <td> <button id="update" class="btn btn-success" onClick=SelectModelforId('+ item.modelId +')> Select </button></td></tr>';
