@@ -5,15 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/login.css">
+
 <script src="js/jquery.js"></script>
 <title>Login Page</title>
 
 </head>
 <body>
-    <div class="container">
-    <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
-      <h3><em><u>Login Page</u></em></h3>
+    <img class="headerimg" src="images/CarRentalHeader.jpg"/>
       <%
     if(null!=request.getAttribute("errorMessage"))
     {%>
@@ -25,23 +24,20 @@
     	<%
     }
 %>
-      <form action="/CarRental/loginAction" method="post">
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="text" class="form-control" name="email" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" name="pwd" placeholder="Enter password">
-        </div>
-        <button class="btn btn-primary" type="submit">Login</button>
-      </form>
-      <br>
-        <p><b> Not a Member?</b>
-        <a href="SignUp.jsp"  class="btn btn-link" role="button">Sign Up</a>
-        </p>
-         <img src="images/Login page scenary.jpg" class="img-responsive" alt="image">
-    </div>
+
+<div class="container" id="container">
+  <div class="login">
+    <h1 align="center"> Login</h1>
+    <form action="/CarRental/loginAction" method="post">
+      <p><input type="text" name="email" value="" placeholder="Email"></p>
+      <p><input type="password" name="pwd" value="" placeholder="Password"></p>
+      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+	  <p align="center"> Not a Member? <a href="SignUp.jsp" role="button">Sign Up</a></p>
+    </form>
+  </div>
+ 
+ 
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
