@@ -103,7 +103,7 @@ for(Cookie cookie : cookies){
 }
 %>
 
-<div class="container">
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>My Orders History Page</u></em></h3>
 	<input type="hidden" name="idrole" id="idrole" value="<%= idrole %>">

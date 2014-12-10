@@ -6,7 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/login.css">
-
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="js/jquery.js"></script>
 <title>Login Page</title>
 
@@ -31,7 +34,7 @@
     <form action="/CarRental/loginAction" method="post">
       <p><input type="text" name="email" value="" placeholder="Email"></p>
       <p><input type="password" name="pwd" value="" placeholder="Password"></p>
-      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+      <p class="submit"><input class="btn btn-primary" type="submit" name="commit" value="Login"></p>
 	  <p align="center"> Not a Member? <a href="SignUp.jsp" role="button">Sign Up</a></p>
     </form>
   </div>

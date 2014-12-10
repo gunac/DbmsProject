@@ -52,7 +52,7 @@ function buildHTMLTable(){
 
 </head>
 
-
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 <body  onLoad="buildHTMLTable()">
 	<%
 //allow access only if session exists
@@ -128,4 +128,5 @@ for(Cookie cookie : cookies){
 	</div>
 
 </body>
+</div>
 </html>

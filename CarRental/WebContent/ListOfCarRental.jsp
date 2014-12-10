@@ -151,7 +151,7 @@ for(Cookie cookie : cookies){
 
 %>
 
-<div class="Container">
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>List Of Car Rentals Available Page</u></em></h3>
 
@@ -173,7 +173,8 @@ for(Cookie cookie : cookies){
  		String loc = request.getParameter("location");
 		 		
 	%>	 
-	<table class="table">
+	<div class="table-responsive">	
+	<table class="table table-hover">
 	<tr>
 		<td></td>
 		<td align="center"><input type ="button" id="sort" name="sort" value ="Sort High-To-Low"  
@@ -238,6 +239,9 @@ for(Cookie cookie : cookies){
 		</tr>
 		<%}%>
 	</table>
+	</div>
+	
+</div>
 	</div>
 	</form>
 	<br>

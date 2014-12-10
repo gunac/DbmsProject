@@ -213,7 +213,7 @@ for(Cookie cookie : cookies){
 %>
 
 
-<div class="container">
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Add New Model Page</u></em></h3>
 		<form role="AddNewModelform">
@@ -237,12 +237,15 @@ for(Cookie cookie : cookies){
 	</form>
 	<p>
 	<br>
-	<table id="recordtable" class="table">
-	<tr><b> Models Available</b></tr>
+	<div class="table-responsive">
+	<table id="recordtable" class="table table-hover">
+	<tr><b>Models Available</b></tr>
+	</br>
 	<tr><td><b>Model Name</b></td>
-	<td><td><b>Model Count</b></td>
-	<td></td><td></td>
+	<td><b>Model Count</b></td>
+	<td></td><td></td></tr>
 	</table>
+	</div>
 	
 	<br>
 	<p>

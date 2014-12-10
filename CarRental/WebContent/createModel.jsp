@@ -19,6 +19,7 @@
 <script src="js/jquery.js"></script>
 </head>
 <body>
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 	<script>
 		$(function() {
 			
@@ -140,7 +141,8 @@
 		List<CarModel> lstCarModels = carModelDao.getAllCarModel();
 	%>
 	<form action="createModel.jsp">
-		<table class="table">
+	<div class="table-responsive">
+		<table class="table table-hover">
 			<!--  CAR TYPE DROP DOWN -->
 			<tr>
 				<td><label> Select a Car Type </label></td>
@@ -188,6 +190,8 @@
 			%>
 
 		</table>
+	</div>
 	</form>
+	</div>
 </body>
 </html>

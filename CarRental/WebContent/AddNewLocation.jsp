@@ -75,7 +75,7 @@ for(Cookie cookie : cookies){
 %>
 
 
-<div class="container">
+<div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Add New Location Page</u></em></h3>
   	
@@ -88,9 +88,11 @@ for(Cookie cookie : cookies){
   	
   	<p>
 	<br>
-  	<table id="recordtable" class="table">
+	<div class="table-responsive">
+  	<table id="recordtable" class="table table-hover">
 	<tr><b> Locations Available</b></tr>
 	</table>
+	</div>
 	
 	<form action="AdminPage.jsp">
 		<p>
