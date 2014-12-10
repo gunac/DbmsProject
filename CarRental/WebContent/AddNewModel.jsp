@@ -214,6 +214,15 @@ for(Cookie cookie : cookies){
 
 
 <div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
+<table>
+<tr width="100%">
+<td width="100%"> <a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a></td>
+<td width="20%"><a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a></td>
+<td width="20%"><form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form></td>
+</tr>
+</table>
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Add New Model Page</u></em></h3>
 		<form role="AddNewModelform">
@@ -226,7 +235,7 @@ for(Cookie cookie : cookies){
           <input type="text" class="form-control" id="modelCount" placeholder="Enter Model Count">
         </div>
         <div class="form-group">
-          <label for="name">Choose the Car Type of the Model</label>
+          <label for="name">Choose the Car Type of the Model </label>
 		 	<select id="carType">
 			<option value="0" selected>- select -</option>
 			</select>
@@ -248,14 +257,6 @@ for(Cookie cookie : cookies){
 	</div>
 	
 	<br>
-	<p>
-	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
-	<p>
-	<a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a>
-	<p>
-	<form action="/CarRental/logoutAction" method="post">
-	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
-	</form>
 	
    </div>
 	

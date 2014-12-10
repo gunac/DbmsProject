@@ -53,6 +53,18 @@ function buildHTMLTable(){
 </head>
 
 <div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
+<table>
+<tr width="100%">
+<td width="100%"> <a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a></td>
+<td width="20%"><a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a></td>
+<td width="20%"><form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form></td>
+</tr>
+</table>
+
+
+
 <body  onLoad="buildHTMLTable()">
 	<%
 //allow access only if session exists

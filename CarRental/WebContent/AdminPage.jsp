@@ -46,6 +46,17 @@ for(Cookie cookie : cookies){
 
 
 <div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
+<table>
+<tr width="100%">
+<td width="100%"> <a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a></td>
+<td width="20%"><form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form></td>
+</tr>
+</table>
+ 
+	
+
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Admin's Page</u></em></h3>
   	
@@ -86,13 +97,7 @@ for(Cookie cookie : cookies){
   	%>
 	
 	<br>
-		<p>
-	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button"> Go to HomePage</a>
 	
-	<p>
-	<form action="/CarRental/logoutAction" method="post">
-	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
-	</form>
 </div>
 
 </body>

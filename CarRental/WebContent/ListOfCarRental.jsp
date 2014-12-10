@@ -177,7 +177,7 @@ for(Cookie cookie : cookies){
 	<table class="table table-hover">
 	<tr>
 		<td></td>
-		<td align="center"><input type ="button" id="sort" name="sort" value ="Sort High-To-Low"  
+		<td align="center"><input type ="button" class="btn btn-primary" id="sort" name="sort" value ="Sort High-To-Low"  
 		onclick="refreshListJS()"/></td>
 		<td></td>
 		<td></td>
@@ -199,18 +199,18 @@ for(Cookie cookie : cookies){
 		
 		<tr>
 			<input type="hidden" name="rentalId<%=i %>" value="<%=r.getRentId() %>"/>
-			<td><ul><%=carTypeObj.getCarTypeName()%></ul>
+			<td width="20%" ><ul><b><%=carTypeObj.getCarTypeName()%></b></ul>
 				<ul>
 					<img id="test" src="images/<%=carTypeObj.getCarTypeName()%>.png">
 				</ul></td>
-				<td>
+				<td width="20%">
 					<ul><b>Sub Total :</b><%=r.getSubTotal() %></ul>
 					<ul><b>Daily Rate :</b> <%=r.getDailyRate() %></ul>
 					<ul><b>Taxes & Fees :</b><%=r.getTaxesAndFees() %></ul>
 					<ul><b>Total Price :<b><%=r.getTotalPrice()%></ul>
 					
 					</td>
-			<td><ul><label> Select a Model </label>	</ul>
+			<td width="20%"><ul><label> Select a Model </label>	</ul>
 				<ul>
 				<select id="modelDropdown<%= i %>" name="modelDropdown<%= i %>">
 					<option value="0" selected>- select -</option>
@@ -230,8 +230,9 @@ for(Cookie cookie : cookies){
 									<%}%>
 					</select>
 				</ul></td>
-			<td>
-			<ul><%=carTypeObj.getSeatingInfo()%></ul>
+			<td width="40%">
+			<ul><b>Seating : </b><%=carTypeObj.getSeatingInfo()%></ul>
+			<ul><b>Features : </b><%=carTypeObj.getFeatures()%></ul>
 				<ul>
 					<button id="continue" class="btn btn-success" value="placeorder" type="submit" onclick="setId(<%=i%>)"> Place Order</button>
 				</ul>
