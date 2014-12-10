@@ -16,6 +16,17 @@
 
 <script>
 
+function deleteOrder(id){
+	
+	$.ajax({
+		url : "http://localhost:8080/CarRental/api/Orders/" + id,
+		type : "delete",
+			success: function(html){
+                location.reload();
+            }
+	})
+}
+
 $(function() {
 	
 	var userid = document.cookie.split('=');
@@ -63,7 +74,7 @@ function modelResponseHandler(response){
      $.each(response, function (i, item) {
     	 var dday = new Date(item.dropoffDay);
     	 var pday = new Date(item.pickupDay);
-         tr += '<tr><td>'+ item.orderId +'</td><td>'+ item.location +'</td><td>'+ item.totalPrice +'</td><td>'+ item.dailyRate +'</td><td>'+ dday +'</td><td>'+ pday +'</td><td>'+ item.rentalDays +'</td></tr>';
+         tr += '<tr><td>'+ item.orderId +'</td><td>'+ item.location +'</td><td>'+ item.totalPrice +'</td><td>'+ item.dailyRate +'</td><td>'+ dday +'</td><td>'+ pday +'</td><td>'+ item.rentalDays +'</td><td><button id="delete" class="btn btn-danger" onClick=deleteOrder('+ item.orderId +')> Cancel </button></td></td></tr>';
      });
      $('#orderhistory').append(tr);
 }

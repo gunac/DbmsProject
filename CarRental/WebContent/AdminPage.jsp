@@ -61,11 +61,11 @@ for(Cookie cookie : cookies){
 	
 	<br>
 	<p>
-		<a href="OrdersHistory.jsp" id="viewOrderHistory" class="btn btn-warning" type="button"> View All Orders</a>
+		<a href="OrdersHistory.jsp" id="viewOrderHistory" class="btn btn-primary" type="button"> View / Cancel Orders</a>
 	
 		<br>
 		<p>
-	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-primary" type="button"> Edit car model</a>
+	<a href="AddNewModel.jsp" id="addnewmodel" class="btn btn-warning" type="button"> Edit car model</a>
 	
 		<br>
 		<p>
@@ -73,7 +73,7 @@ for(Cookie cookie : cookies){
 	
 	<form action="AdminPage.jsp">
 		<p>
-	<button name="action" value="update" class="btn btn-warning"> Refresh Data from API</button>
+	<button name="action" value="update" class="btn btn-primary"> Refresh Data from API</button>
 	</form>
 	
 	<%

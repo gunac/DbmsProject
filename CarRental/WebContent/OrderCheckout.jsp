@@ -51,7 +51,7 @@ for(Cookie cookie : cookies){
 			<p>Your Order has been confirmed. Please find the details below.</p>
 			
 			<% 
-				OrdersDao dao = new OrdersDao();
+			OrdersDao dao = new OrdersDao();
 			int id = Integer.parseInt(userId);
 			String rentalid = request.getParameter("rentalid");
 			int rentid = Integer.parseInt(rentalid);

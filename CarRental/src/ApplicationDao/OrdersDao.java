@@ -16,6 +16,8 @@ import javax.persistence.Query;
 
 
 
+
+import model.CarModel;
 import model.Customer;
 import model.Orders;
 import model.Rental;
@@ -46,6 +48,15 @@ public class OrdersDao {
 		List<Orders> lstOrderInfo =(List<Orders>) q.getResultList();
 		em.getTransaction().commit();
 		return lstOrderInfo;
+	}
+	
+	// deletes
+	public void removeOrder(int orderId){
+		em.getTransaction().begin();
+		Orders orderObj = em.find(Orders.class, orderId);		
+		em.remove(orderObj);
+		em.getTransaction().commit();
+		//return true;
 	}
 	
 	// get order by orderId
