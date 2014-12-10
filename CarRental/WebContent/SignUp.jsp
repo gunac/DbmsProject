@@ -58,6 +58,17 @@ function createCustomer(customer){
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
   	<h3><em><u>Create a New Customer Account</u></em></h3>
+  	 <%
+    if(null!=request.getAttribute("errorMessage"))
+    {%>
+    	<p style="color:red">
+    	<%
+        out.println(request.getAttribute("errorMessage"));
+    	%>
+    	</p>
+    	<%
+    }
+%>
   	
 		<form action="/CarRental/SignUpAction" method="post">
         <p>Enter your personal information</p>
@@ -83,6 +94,11 @@ function createCustomer(customer){
         </div>
         <button id="submitnewuser" class="btn btn-primary">Create Account</button>
    </form>
+   		<br>
+   		<p>
+			<a href="login.jsp" class="btn btn-warning" role="button">Go to Login Page</a>
+		<p>
+   
    </div>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

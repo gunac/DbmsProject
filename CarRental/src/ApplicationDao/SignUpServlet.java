@@ -64,6 +64,15 @@ public class SignUpServlet extends HttpServlet {
 				roleid = customer.getRoleId();
 			}
 			
+			if(customer == null)
+			{
+				request.setAttribute("customer", null);
+				request.setAttribute("errorMessage", "Email account already exists! ");
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+				rd.forward(request, response);
+			}
+			else
+			{
 		
 				HttpSession session = request.getSession();
 				session.setAttribute("customerId", userId);
@@ -77,7 +86,7 @@ public class SignUpServlet extends HttpServlet {
 				response.addCookie(customercookie);
 				request.setAttribute("customer", customer);
 			   response.sendRedirect("/CarRental/HomePage.jsp");
-			
+			}
 		}
 	}
 
