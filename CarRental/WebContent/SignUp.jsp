@@ -57,7 +57,7 @@ function createCustomer(customer){
 <style>
 body {
     background-image: url("images/p1background.jpg");
-    background-size: 1400px 700px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 </style>

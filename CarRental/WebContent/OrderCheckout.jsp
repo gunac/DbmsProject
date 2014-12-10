@@ -22,8 +22,8 @@
 <style>
 body {
     background-image: url("images/p1background.jpg");
-    background-size: 1400px 700px;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-repeat: repeat;
 }
 </style>
 
@@ -161,24 +161,7 @@ for(Cookie cookie : cookies){
 			
 			</table>
 			
-		<br>
-	<p>
-	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
-		 <% 
-		 if (idrole == 2) { %>
-		<p>
-			<a href="MyAccount.jsp" class="btn btn-warning" role="button">My
-				Account</a>
-		<p>
-		<% } else { %>
-		<p>
-			<a href="AdminPage.jsp" class="btn btn-warning" role="button">My
-				Account</a>
-		<p>
-		<% } %>
-		<form action="/CarRental/logoutAction" method="post">
-			<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
-		</form>
+		
 	</div>
 
 </body>

@@ -193,7 +193,13 @@ function responseHandler(response){
 
 </script>
 </head>
-
+<style>
+body {
+    background-image: url("images/p1background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+</style>
 
 <body onLoad="buildHTMLTable()">
 
