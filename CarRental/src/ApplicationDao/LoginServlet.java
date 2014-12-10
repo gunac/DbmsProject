@@ -43,7 +43,8 @@ public class LoginServlet extends HttpServlet {
 		{
 			request.setAttribute("customer", null);
 			request.setAttribute("errorMessage", "Invalid email or password");
-			response.sendRedirect("/login.jsp");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+			rd.forward(request, response);
 		}
 		else
 		{

@@ -73,7 +73,6 @@ for(Cookie cookie : cookies){
 			<td> Order Id : </td>
 			<td> <%= orderid %> </td>
 			</tr>
-			<%= request.getParameter("") %>
 			<tr>
 			<td> Drop Off Day : </td>
 			<td> <%= neworder.getDropoffDay() %> </td>
