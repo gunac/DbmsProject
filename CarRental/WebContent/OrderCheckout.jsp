@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="ApplicationDao.OrdersDao"%>
     <%@ page import="model.Orders"%>
+    <%@ page import="ApplicationDao.CarModelDao"%>
+    <%@ page import="model.CarModel"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,6 +21,25 @@
 <body>
 
 <%
+
+String test = request.getParameter("idField");
+System.out.println(test);
+int modelId = Integer.parseInt(request.getParameter("modelDropdown"+test));
+int rentalId = Integer.parseInt(request.getParameter("rentalId"+test));
+String location = request.getParameter("location");
+String pickUpDay = request.getParameter("pickUpDay");
+String dropDay = request.getParameter("dropDay");
+CarModelDao modelDao = new CarModelDao();
+CarModel c = modelDao.getModelById(modelId);
+String modelName = c.getModelName();
+System.out.println("ModelId:"+modelId);
+System.out.println("RentalId:"+rentalId);
+System.out.println("Location:"+location);
+System.out.println("pickUpDay:"+pickUpDay);
+System.out.println("dropDay:"+dropDay);
+System.out.println("Model Name:"+modelName);
+
+
 //allow access only if session exists
 if(session.getAttribute("customerId") == null){
 	response.sendRedirect("login.jsp");
@@ -51,17 +72,10 @@ for(Cookie cookie : cookies){
 			<p>Your Order has been confirmed. Please find the details below.</p>
 			
 			<% 
-			OrdersDao dao = new OrdersDao();
-			int id = Integer.parseInt(userId);
-			String rentalid = request.getParameter("rentalid");
-			int rentid = Integer.parseInt(rentalid);
-			String modellid = request.getParameter("modelid");
-			int modelid = Integer.parseInt(modellid);
-			String pickupday = request.getParameter("pickupday");
-			String dropoffday = request.getParameter("dropoffday");
-			String loc = request.getParameter("location");
+				OrdersDao dao = new OrdersDao();
+				int id = Integer.parseInt(userId);
 			
-				int orderid = dao.insertOrder(id, rentid, modelid,pickupday,dropoffday,loc);
+				int orderid = dao.insertOrder(id, rentalId, modelId,pickUpDay,dropDay,location);
 				
 				OrdersDao dao1 = new OrdersDao();
 				Orders neworder = dao1.getOrderByOrderId(orderid);
@@ -73,10 +87,6 @@ for(Cookie cookie : cookies){
 			<td> Order Id : </td>
 			<td> <%= orderid %> </td>
 			</tr>
-			<tr>
-			<td> Drop Off Day : </td>
-			<td> <%= neworder.getDropoffDay() %> </td>
-			</tr>
 			
 			<tr>
 			<td> Location : </td>
@@ -84,8 +94,23 @@ for(Cookie cookie : cookies){
 			</tr>
 			
 			<tr>
-			<td> PickUpDate : </td>
+			<td> Drop Off Date : </td>
+			<td> <%= neworder.getDropoffDay() %> </td>
+			</tr>
+			
+			<tr>
+			<td> Pick Up Date : </td>
 			<td> <%= neworder.getPickupDay()%> </td>
+			</tr>
+			
+			<tr>
+			<td> Model Name : </td>
+			<td> <%= modelName%> </td>
+			</tr>
+			
+			<tr>
+			<td> Rent Per Day : </td>
+			<td> <%= neworder.getDailyRate()%> </td>
 			</tr>
 			
 			<tr>

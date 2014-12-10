@@ -85,6 +85,11 @@ function updateValues()
 		document.getElementById("sort").value = "Sort Low-To-High";
 	}
 }
+
+function setId(i)
+{
+	document.getElementById("idField").value = i;
+}
 </Script>
 
 <style>
@@ -104,8 +109,16 @@ function updateValues()
 }
 </style>
 
+<script>
+
+</script>
 </head>
 <body onload="updateValues()">
+<form method="post" action="OrderCheckout.jsp">
+<input type="hidden" id="idField" name="idField" value = "-1"/>
+<input type="hidden" id="location" name="location" value = "<%= request.getParameter("location")%>"/>
+<input type="hidden" id="pickUpDay" name="pickUpDay" value = "<%= request.getParameter("pickupdate")%>"/>
+<input type="hidden" id="dropDay" name="dropDay" value = "<%= request.getParameter("dropoffdate")%>"/>
 
 <%
 //allow access only if session exists
@@ -159,9 +172,9 @@ for(Cookie cookie : cookies){
 		<td></td>
 	</tr>
 		<%
-			for(Rental r: lstrental){ 
-				
+		for(int i = 0; i<lstrental.size(); i++){				
 			// USed to set Name and Image
+			Rental r = lstrental.get(i);
 			CarType carTypeObj = new CarType();
 			for(CarType c: lstCarType){
 				if(c.getCarTypeCode().equals(r.getCarTypeCode()))
@@ -171,9 +184,10 @@ for(Cookie cookie : cookies){
 
 			}			
 			%>
-			<form method="post" action="OrderCheckout.jsp">
+		
+		
 		<tr>
-			<div>
+			<input type="hidden" name="rentalId<%=i %>" value="<%=r.getRentId() %>"/>
 			<td><ul><%=carTypeObj.getCarTypeName()%></ul>
 				<ul>
 					<img id="test" src="images/<%=carTypeObj.getCarTypeName()%>.png">
@@ -186,7 +200,8 @@ for(Cookie cookie : cookies){
 					
 					</td>
 			<td><ul><label> Select a Model </label>	</ul>
-				<ul><select name="carType">
+				<ul>
+				<select id="modelDropdown<%= i %>" name="modelDropdown<%= i %>">
 					<option value="0" selected>- select -</option>
 						<%
 							CarModelDao modelDao = new CarModelDao();
@@ -198,29 +213,23 @@ for(Cookie cookie : cookies){
 									}
 								}
 
-									for (CarModel scm : lstselectedModels) {
-							%>
-						<option value="<%=scm.getModelId()%>"><%=scm.getModelName()%></option>
-						<input type="hidden" id="modelid" name="modelid" value="<%=scm.getModelId()%>">
-						<input type="hidden" id="rentalid" name="rentalid" value="<%=r.getRentId()%>">
-						<input type="hidden" id="pickupday" name="pickupday" value="<%= pickUpDay%>">
-						<input type="hidden" id="dropoffday" name="dropoffday" value="<%= dropDay %>">
-						<input type="hidden" id="location" name="location" value="<%= loc %>">
-						<%
-								}
-							%>
+									for (CarModel scm : lstselectedModels) 
+									{%>
+										<option value="<%=scm.getModelId()%>"><%=scm.getModelName()%></option>
+									<%}%>
 					</select>
 				</ul></td>
-			<td><ul><%=carTypeObj.getSeatingInfo()%></ul>
+			<td>
+			<ul><%=carTypeObj.getSeatingInfo()%></ul>
 				<ul>
-					<button id="continue" class="btn btn-success" value="placeorder" type="submit"> Place Order</button>
-				</ul></td>
-			</div>
+					<button id="continue" class="btn btn-success" value="placeorder" type="submit" onclick="setId(<%=i%>)"> Place Order</button>
+				</ul>
+			</td>
 		</tr>
-	</form>
 		<%}%>
 	</table>
-	
+	</div>
+	</form>
 	<br>
 	<p>
 	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
@@ -239,6 +248,5 @@ for(Cookie cookie : cookies){
 	<form action="/CarRental/logoutAction" method="post">
 	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
 	</form>
-	</div>
 </body>
 </html>
