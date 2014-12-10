@@ -153,7 +153,7 @@ for(Cookie cookie : cookies){
 	<table class="table">
 	<tr>
 		<td></td>
-		<td align="center"><input type ="button" id="sort" name="sort" value ="Sort High-To-Low"  
+		<td align="center"><input type ="button" id="sort" name="sort" value ="Sort High-To-Low" sortType="true" 
 		onclick="refreshListJS()"/></td>
 		<td></td>
 		<td></td>

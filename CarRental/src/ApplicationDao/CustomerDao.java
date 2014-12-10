@@ -77,13 +77,7 @@ public class CustomerDao {
 		return cusObj.getPassword();
 	}
 	
-	public Customer getCustomerforEmail(String email) {
-		em.getTransaction().begin();
-		Query q = em.createQuery("SELECT c FROM Customer c where c.Email = '" + email + "'");	 
-		Customer cusObj = (Customer) q.getSingleResult();
-		em.getTransaction().commit();
-		return cusObj;
-	}
+	 
 
 	//Get Customer by email and password
 	public Customer getCustomerByEmailandPassword(String email, String password) {
@@ -136,6 +130,7 @@ public class CustomerDao {
 //			System.out.println(dao.getCustomerById(8).getPassword());
 //		}
 //		System.out.println(user.getPassword());
+		//System.out.println(DigestUtils.sha256Hex("admin"));
 	}
 
 }

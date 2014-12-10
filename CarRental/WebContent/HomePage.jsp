@@ -87,8 +87,9 @@ for(Cookie cookie : cookies){
 			</b>
 		</h4>
 		<form method=post action="ListOfCarRental.jsp">
+			<input type="hidden" name="sortType" value="true"/>
 			<p>Choose the location and dates</p>
-
+			
 			<div class="form-group col-lg-2">
 				<label for="Location">Location</label>
 				 <select id="Location" name="location">				

@@ -13,7 +13,8 @@ import javax.persistence.Query;
 import Jaxb.RentalInstancesJaxb;
 import carrental.CarRentalWebServiceClient;
 import model.Rental;
- 
+import model.RentalComparatorHighToLow;
+import model.RentalComparatorLowToHigh;
 import model.RentalInstances;
 import model.Location;
 
