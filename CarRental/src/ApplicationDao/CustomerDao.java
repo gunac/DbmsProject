@@ -28,6 +28,7 @@ public class CustomerDao {
 
 	// insert
 	public void insertCustomer(Customer Customer){
+		Customer.setPassword(DigestUtils.sha256Hex(Customer.getPassword()));
 		em.getTransaction().begin();
 		em.persist(Customer);
 		em.getTransaction().commit();

@@ -22,7 +22,6 @@ $(function() {
 	var id= parseInt(userid[1]);
 	var roleid = $("#idrole").val();
 	
-	alert(id);
 	
 	if (roleid == "2"){
 	getorderforcustomer(id);

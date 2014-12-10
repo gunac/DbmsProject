@@ -56,7 +56,6 @@ CustomerDao dao = new CustomerDao();
 	@Path("/")
 	@Consumes("application/json")
 	public void CreateNewCustomer(Customer newCustomer){
-		newCustomer.setPassword(DigestUtils.sha256Hex(newCustomer.getPassword()));
 		dao.insertCustomer(newCustomer);
 	}
 	

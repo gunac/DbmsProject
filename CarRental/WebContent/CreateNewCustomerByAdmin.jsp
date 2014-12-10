@@ -51,38 +51,67 @@ function createCustomer(customer){
 }
 
 </script>
-<title>Create a New Customer Account</title>
+<title>SignUp Page - Customer</title>
 </head>
 
+
 <body>
+
+<%
+//allow access only if session exists
+if(session.getAttribute("customerId") == null){
+	response.sendRedirect("login.jsp");
+}
+String userEmail = null;
+String sessionID = null;
+String username = (String) session.getAttribute("username");
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("customerId")) userEmail = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
+%>
+
 <div class="container">
 <h1 class="text-center"><u>BEST CAR RENTALS</u></h1>
-  	<h3><em><u>Create a New Customer Account</u></em></h3>
-  	
-		<form action="/CarRental/SignUpAction" method="post">
-        <p>Enter your personal information</p>
+  	<h3><em><u>Create a New Customer</u></em></h3>
+		<form name="signupform">
+        <p>Enter Customer information</p>
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+          <input type="text" class="form-control" id="name" placeholder="Enter name">
         </div>
         <div class="form-group">
         <label for="Pickupdate">Date Of Birth</label>
-          <input type="text" class="form-control" id="dateofbirth" name="dateofbirth">
+          <input type="text" class="form-control" id="dateofbirth">
         </div>
         <div class="form-group">
           <label for="licenseno">Driver's License No:</label>
-          <input type="text" class="form-control" id="licenseno" name="licenseno" placeholder="Enter Driver's License No">
+          <input type="text" class="form-control" id="licenseno" placeholder="Enter Driver's License No">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
+          <input type="text" class="form-control" id="email" placeholder="Enter email">
         </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password">
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
         </div>
-        <button id="submitnewuser" class="btn btn-primary">Create Account</button>
+        <button id="submitnewuser" class="btn btn-primary" onClick="createNewUserJSONObj()">Create Account</button>
    </form>
+   
+   <br>
+	<p>
+	<a href="HomePage.jsp" id="homepage" class="btn btn-success" type="button">HomePage</a>
+	<p>
+	<a href="AdminPage.jsp"  class="btn btn-warning" role="button">My Account</a>
+	<p>
+	<form action="/CarRental/logoutAction" method="post">
+	<button class="btn btn-danger" type="submit" value="Logout">Logout</button>
+	</form>
+   
    </div>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

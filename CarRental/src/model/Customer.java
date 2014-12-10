@@ -101,6 +101,17 @@ public class Customer {
 		Password = password;
 		LicenseNo = licenseNo;
 	}
+
+	public Customer(String name, Date dob, String email, String password,
+			String licenseNo, int roleId) {
+		super();
+		Name = name;
+		Dob = dob;
+		Email = email;
+		Password = password;
+		LicenseNo = licenseNo;
+		RoleId = roleId;
+	}
 	public int getRoleId() {
 		return RoleId;
 	}

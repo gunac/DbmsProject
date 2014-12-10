@@ -53,11 +53,11 @@ for(Cookie cookie : cookies){
   	
 		<br>
 		<p>
-	<a href="SignUp.jsp" id="createnewcustomer" class="btn btn-warning" type="button"> Create account for Customer</a>
+	<a href="CreateNewCustomerByAdmin.jsp" id="createnewcustomer" class="btn btn-warning" type="button"> Create account for Customer</a>
 	
 		<br>
 		<p>
-	<a href="NewAdminCreate.jsp" id="createnewadmin" class="btn btn-danger" type="button"> Create new admin</a>
+	<a href="NewAdminCreate.jsp" id="createnewadmin" class="btn btn-danger" type="button"> Create new Admin user</a>
 	
 	<br>
 	<p>

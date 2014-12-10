@@ -17,6 +17,14 @@
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/loginAction</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<servlet-class>ApplicationDao.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignUpServlet</servlet-name>
+  	<url-pattern>/SignUpAction</url-pattern>
+  </servlet-mapping>
    <servlet>
   	<servlet-name>LogoutServlet</servlet-name>
   	<servlet-class>ApplicationDao.LogoutServlet</servlet-class>
