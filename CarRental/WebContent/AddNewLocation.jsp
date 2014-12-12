@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <title>Add New Location</title>
+
+
+<style>
+
+body {
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: repeat;
+}
+</style>
 <script>
 
 function deleteLocation(name){
@@ -64,13 +74,7 @@ function responseHandler(response){
 }
 </script>
 </head>
-<style>
-body {
-    background-image: url("images/p1background.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-</style>
+
 
 <body>
 <%
@@ -115,6 +119,15 @@ for(Cookie cookie : cookies){
         </div>
         <p>
         <button id="addmodel" class="btn btn-primary" onClick="createNewLocationJSONObj()">Add Location</button>
+        
+	<%
+  	String action = request.getParameter("action");
+  	
+  	if("update".equals(action)) {
+  		RentalDao dao = new RentalDao();
+  		dao.insertRentalInfoForAllLocation();
+	}
+  	%>
   	
   	<p>
 	<br>
@@ -124,19 +137,7 @@ for(Cookie cookie : cookies){
 	</table>
 	</div>
 	
-	<form action="AdminPage.jsp">
-		<p>
-	<button name="action" value="update" class="btn btn-warning"> Refresh Data from API</button>
-	</form>
 	
-	<%
-  	String action = request.getParameter("action");
-  	
-  	if("update".equals(action)) {
-  		RentalDao dao = new RentalDao();
-  		dao.insertRentalInfoForAllLocation();
-	}
-  	%>
   	
 <br>
 		

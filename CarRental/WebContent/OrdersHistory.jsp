@@ -83,14 +83,15 @@ function modelResponseHandler(response){
 
 </head>
 
+
 <style>
+
 body {
-    background-image: url("images/p1background.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
 }
 </style>
-
 <body>
 
 <%

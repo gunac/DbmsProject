@@ -31,10 +31,7 @@ public class Rental implements Serializable {
 	private double TaxesAndFees;
 	private double TotalPrice;	
 	private double DailyRate;
-	@Temporal(TemporalType.DATE)
-	private Date DropoffDay;
-	@Temporal(TemporalType.DATE)	 
-	private Date PickupDay;	 
+	 
 	private int RentalDays;
 	
 	public int getRentId() {
@@ -82,37 +79,7 @@ public class Rental implements Serializable {
 		DailyRate = dailyRate;
 	}
 	
-	@XmlElement(name = "DropoffDay")
-	public Date getDropoffDay() {
-		return DropoffDay;
-	}
-	public void setDropoffDay(Date dropoffDay) {
-		if(dropoffDay == null || dropoffDay.toString() == "")
-		{
-			Date date = new Date();
-			dropoffDay = date;
-		}
-		else
-		{
-		DropoffDay = dropoffDay;
-		}
-	}
-	 
-	@XmlElement(name = "PickupDay")
-	public Date getPickupDay() {
-		return PickupDay;
-	}
-	public void setPickupDay(Date pickupDay) {
-		if(pickupDay == null)
-		{
-			Date date = new Date();
-			PickupDay = date;
-		}
-		else
-		{
-		PickupDay = pickupDay;
-		}
-	}
+	  
 		
 	@XmlElement(name = "PickupAirport") 
 	public String getLocation() {
@@ -131,7 +98,7 @@ public class Rental implements Serializable {
 	}
 	public Rental(int rentId, String carTypeCode, String location,
 			double subTotal, double taxesAndFees, double totalPrice,
-			double dailyRate, Date dropoffDay, Date pickupDay, int rentalDays) {
+			double dailyRate,  int rentalDays) {
 		super();
 		RentId = rentId;
 		CarTypeCode = carTypeCode;
@@ -140,8 +107,7 @@ public class Rental implements Serializable {
 		TaxesAndFees = taxesAndFees;
 		TotalPrice = totalPrice;
 		DailyRate = dailyRate;
-		DropoffDay = dropoffDay;
-		PickupDay = pickupDay;
+		 
 		RentalDays = rentalDays;
 	}
 	public Rental() {
@@ -149,7 +115,7 @@ public class Rental implements Serializable {
 	}
 	public Rental(String carTypeCode, String location,
 			double subTotal, double taxesAndFees, double totalPrice,
-			double dailyRate, Date dropoffDay, Date pickupDay, int rentalDays) {
+			double dailyRate, int rentalDays) {
 		super();
 		CarTypeCode = carTypeCode;
 		Location = location;
@@ -157,8 +123,7 @@ public class Rental implements Serializable {
 		TaxesAndFees = taxesAndFees;
 		TotalPrice = totalPrice;
 		DailyRate = dailyRate;
-		DropoffDay = dropoffDay;
-		PickupDay = pickupDay;
+		 
 		RentalDays = rentalDays;
 	}
 	

@@ -12,6 +12,7 @@ import javax.persistence.Query;
 
 import Jaxb.RentalInstancesJaxb;
 import carrental.CarRentalWebServiceClient;
+import model.CarModel;
 import model.Rental;
  
 import model.RentalInstances;
@@ -26,7 +27,26 @@ public class RentalDao {
 
 	public RentalDao(){
 		em = factory.createEntityManager();
-	}	
+	}
+	
+	public void deleteRentalInstances(){
+		 	
+		List<Rental> lstrental =  getAllRental();
+		for(Rental rental : lstrental)
+		{
+			removeRental(rental.getRentId());
+		}
+		 
+	}
+	
+//  removes 
+	public void removeRental(int rentId){
+		em.getTransaction().begin();
+		Rental rentalObj = em.find(Rental.class, rentId);		
+		em.remove(rentalObj);
+		em.getTransaction().commit();
+		//return true;
+	}
 
 	public void insertRentalInstances(RentalInstances lstrentalInstances){
 		em.getTransaction().begin();
@@ -84,6 +104,7 @@ public class RentalDao {
 		CarRentalWebServiceClient carApi = new CarRentalWebServiceClient();
 		RentalInstancesJaxb rentalJaxb = new RentalInstancesJaxb();
 
+		deleteRentalInstances();
 
 		Date dNow = new Date( );
 		SimpleDateFormat ft = new SimpleDateFormat ("MM/dd/yyyy");
@@ -113,7 +134,8 @@ public class RentalDao {
 	}
 	
 	public static void main(String[] args) {
+
 		RentalDao rentalDao = new RentalDao();
-		rentalDao.insertRentalInfoForAllLocation();
+		rentalDao.deleteRentalInstances();
 	}
 }

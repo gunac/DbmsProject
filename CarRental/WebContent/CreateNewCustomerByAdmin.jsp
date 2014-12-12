@@ -11,6 +11,7 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <script>
 $(function() {
 	$("#dateofbirth").datepicker({ 
@@ -56,12 +57,14 @@ function createCustomer(customer){
 </head>
 
 <style>
+
 body {
-    background-image: url("images/p1background.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: repeat;
 }
 </style>
+
 <body>
 
 <%

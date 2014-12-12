@@ -45,6 +45,10 @@ public class SignUpServlet extends HttpServlet {
 		String customerId = null;
 		int roleid = 2;
 		
+		CustomerDao checkdao = new CustomerDao();
+		Boolean chk = checkdao.getCustomerByEmail(email);
+		
+		if (chk){
 		Customer newcustomer = new Customer(name, dob, email, password,licenseno, 2);
 		CustomerDao dao = new CustomerDao();
 		
@@ -61,30 +65,30 @@ public class SignUpServlet extends HttpServlet {
 				roleid = customer.getRoleId();
 			}
 			
-			if(customer == null)
+			HttpSession session = request.getSession();
+			session.setAttribute("customerId", userId);
+			session.setAttribute("useremail", useremail);
+			session.setAttribute("username", username);
+			session.setAttribute("roleid", roleid);
+			//setting session to expiry in 30 mins
+			session.setMaxInactiveInterval(30*60);
+			Cookie customercookie = new Cookie("customerId", customerId);
+			customercookie.setMaxAge(30*60);
+			response.addCookie(customercookie);
+			request.setAttribute("customer", customer);
+		   response.sendRedirect("/CarRental/HomePage.jsp");
+			
+			
+		}
+			
+			else
 			{
 				request.setAttribute("customer", null);
 				request.setAttribute("errorMessage", "Email account already exists! ");
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+				RequestDispatcher rd = getServletContext().getRequestDispatcher("/SignUp.jsp");
 				rd.forward(request, response);
 			}
-			else
-			{
 		
-				HttpSession session = request.getSession();
-				session.setAttribute("customerId", userId);
-				session.setAttribute("useremail", useremail);
-				session.setAttribute("username", username);
-				session.setAttribute("roleid", roleid);
-				//setting session to expiry in 30 mins
-				session.setMaxInactiveInterval(30*60);
-				Cookie customercookie = new Cookie("customerId", customerId);
-				customercookie.setMaxAge(30*60);
-				response.addCookie(customercookie);
-				request.setAttribute("customer", customer);
-			   response.sendRedirect("/CarRental/HomePage.jsp");
+				
 			}
 		}
-	}
-
-

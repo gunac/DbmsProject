@@ -19,14 +19,15 @@
 <title>Order Checkout Page</title>
 </head>
 
+
 <style>
+
 body {
-    background-image: url("images/p1background.jpg");
-    background-size: 100% 100%;
-    background-repeat: repeat;
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
 }
 </style>
-
 
 <body>
 
@@ -110,58 +111,59 @@ for(Cookie cookie : cookies){
 
 			<table id="orderconfirmation" class="table">
 			<tr>
-			<td> Order Id : </td>
+			<td><b> Order Id :</b> </td>
 			<td> <%= orderid %> </td>
 			</tr>
 			
 			<tr>
-			<td> Location : </td>
+			<td><b> Location :</b> </td>
 			<td> <%= neworder.getLocation()%> </td>
 			</tr>
 			
 			<tr>
-			<td> Drop Off Date : </td>
+			<td><b> Drop Off Date :</b> </td>
 			<td> <%= neworder.getDropoffDay() %> </td>
 			</tr>
 			
 			<tr>
-			<td> Pick Up Date : </td>
+			<td><b> Pick Up Date :</b> </td>
 			<td> <%= neworder.getPickupDay()%> </td>
 			</tr>
 			
 			<tr>
-			<td> Model Name : </td>
+			<td><b> Model Name :</b> </td>
 			<td> <%= modelName%> </td>
 			</tr>
 			
 			<tr>
-			<td> Rent Per Day : </td>
+			<td><b> Rent Per Day :</b> </td>
 			<td> <%= neworder.getDailyRate()%> </td>
 			</tr>
 			
 			<tr>
-			<td> Rental Days : </td>
+			<td><b> Rental Days :</b> </td>
 			<td> <%= neworder.getRentalDays()%> </td>
 			</tr>
 			
 			<tr>
-			<td> Sub Total : </td>
+			<td><b> Sub Total :</b> </td>
 			<td> <%= neworder.getSubTotal()%> </td>
 			</tr>
 				
 			<tr>
-			<td> Taxes and Fees : </td>
+			<td><b> Taxes and Fees :</b> </td>
 			<td> <%= neworder.getTaxesAndFees()%> </td>
 			</tr>
 			
 			<tr>
-			<td> Total Price : </td>
+			<td> <b>Total Price :</b> </td>
 			<td> <%= neworder.getTotalPrice() %> </td>
 			</tr>	
 			
 			</table>
 			
-		
+		<br>
+	 
 	</div>
 
 </body>

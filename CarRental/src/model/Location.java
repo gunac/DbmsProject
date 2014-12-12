@@ -7,7 +7,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "GetAllLocation" , query = "SELECT l FROM Location l")})
+	@NamedQuery(name = "GetAllLocation", query = "SELECT l FROM Location l")})
 
 public class Location {
 @Id

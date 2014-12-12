@@ -18,6 +18,16 @@
 
 <script src="js/jquery.js"></script>
 </head>
+
+<style>
+
+body {
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+</style>
+
 <body>
 <div style="margin-left: 5%;margin-right: 5%; margin-top:2%; margin-bottom: 2%" class="Container">
 	<script>

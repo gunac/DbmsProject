@@ -14,9 +14,15 @@
 <title>Login Page</title>
 
 </head>
+ 
+
 <body>
     <img class="headerimg" src="images/CarRentalHeader.jpg"/>
-      <%
+     
+<div class="container" id="container">
+  <div class="login">
+    <h1 align="center"> Login</h1>
+     <%
     if(null!=request.getAttribute("errorMessage"))
     {%>
     	<p style="color:red">
@@ -27,10 +33,6 @@
     	<%
     }
 %>
-
-<div class="container" id="container">
-  <div class="login">
-    <h1 align="center"> Login</h1>
     <form action="/CarRental/loginAction" method="post">
       <p><input type="text" name="email" value="" placeholder="Email"></p>
       <p><input type="password" name="pwd" value="" placeholder="Password"></p>

@@ -54,13 +54,16 @@ function createCustomer(customer){
 <title>Create New Admin - Page</title>
 </head>
 
+
 <style>
+
 body {
-    background-image: url("images/p1background.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: repeat;
 }
 </style>
+
 <body>
 
 <%

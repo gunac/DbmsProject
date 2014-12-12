@@ -119,8 +119,12 @@ function onSubmitCheck()
 	margin: 0;
 	padding: 7px 0 14px 18px;
 }
+body {
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
 </style>
-
 
 </head>
 <body onload="updateValues()">

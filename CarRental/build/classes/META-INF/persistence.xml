@@ -10,7 +10,7 @@
 	 	<class>model.Customer</class>
 	 	<class>model.Location</class>
 		<properties>
-			<property name="eclipselink.jdbc.password" value="anush"/>
+			<property name="eclipselink.jdbc.password" value="asdf"/>
 			<property name="eclipselink.jdbc.user" value="root"/>
 			<property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost/carrental"/>

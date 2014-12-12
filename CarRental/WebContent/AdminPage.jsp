@@ -24,14 +24,15 @@ function updatedatafromapi(){
 
 </head>
 
+
 <style>
+
 body {
-    background-image: url("images/background.jpeg");
-    background-size: 1400px 700px;
-    background-repeat: no-repeat;
+   background-image: url("images/background.jpeg");
+   background-size: 100% 100%;
+   background-repeat: repeat;
 }
 </style>
-
 <body>
 
 <%

@@ -29,6 +29,8 @@ public class LocationDao {
 		em.getTransaction().begin();
 		em.persist(loc);
 		em.getTransaction().commit();
+		RentalDao d = new RentalDao();
+		d.insertRentalInfoForAllLocation();
 	}
 
 	// Read all
@@ -45,6 +47,8 @@ public class LocationDao {
 		Location locObj = em.find(Location.class, loc);		
 		em.remove(locObj);
 		em.getTransaction().commit();
+		RentalDao d = new RentalDao();
+		d.insertRentalInfoForAllLocation();
 		//return true;
 	}
 

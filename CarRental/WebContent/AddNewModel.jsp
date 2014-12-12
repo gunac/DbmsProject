@@ -10,6 +10,17 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <title>Add New Model Page</title>
+
+
+<style>
+
+body {
+   background-image: url("images/p1background.jpg");
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+}
+</style>
+
 <script>
 
 function updateHandler(){
@@ -193,13 +204,7 @@ function responseHandler(response){
 
 </script>
 </head>
-<style>
-body {
-    background-image: url("images/p1background.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-</style>
+
 
 <body onLoad="buildHTMLTable()">
 
